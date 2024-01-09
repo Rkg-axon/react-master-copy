@@ -9,10 +9,10 @@ interface JumboThemeOptions extends ThemeOptions {
 }
 
 interface JumboThemeConfig {
-    main: JumboThemeExtended,
-    header?: JumboThemeExtended,
-    sidebar?: JumboThemeExtended,
-    footer?: JumboThemeExtended,
+    main: JumboThemeOptions,
+    header?: JumboThemeOptions,
+    sidebar?: JumboThemeOptions,
+    footer?: JumboThemeOptions,
 };
 
 export {JumboThemeConfig, JumboThemeOptions};
