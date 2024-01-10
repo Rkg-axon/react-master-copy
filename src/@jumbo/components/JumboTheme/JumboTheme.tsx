@@ -1,13 +1,21 @@
-import React from 'react';
-import { createTheme } from '@mui/material';
+'use client';
+import { ThemeProvider, createTheme } from '@mui/material';
 import { enUS } from '@mui/material/locale';
-import JumboThemeContext from './JumboThemeContext';
+import React from 'react';
+
 import {
   JumboThemeConfig,
   JumboThemeContextType,
   JumboThemeOptions,
 } from '@jumbo/types';
 
+import {
+  JumboThemeFooter,
+  JumboThemeHeader,
+  JumboThemeSidebar,
+} from './components';
+
+import { JumboThemeContext } from './JumboThemeContext';
 function JumboTheme({
   children,
   init,
@@ -15,7 +23,7 @@ function JumboTheme({
   children: React.ReactNode;
   init: JumboThemeConfig;
 }) {
-  const [theme, setTheme] = React.useState(init.main);
+  const [theme, setTheme] = React.useState(createTheme(init.main));
   const [muiLocale, setMuiLocale] = React.useState(enUS);
 
   const updateTheme = React.useCallback(
@@ -32,12 +40,18 @@ function JumboTheme({
       setTheme: updateTheme,
       setMuiLocale,
     }),
-    [theme, muiLocale]
+    [theme, muiLocale, updateTheme]
   );
 
   return (
     <JumboThemeContext.Provider value={themeContextValue}>
-      {children}
+      <ThemeProvider theme={theme}>
+        <JumboThemeHeader init={init.header}>
+          <JumboThemeSidebar init={init.sidebar}>
+            <JumboThemeFooter init={init.footer}>{children}</JumboThemeFooter>
+          </JumboThemeSidebar>
+        </JumboThemeHeader>
+      </ThemeProvider>
     </JumboThemeContext.Provider>
   );
 }

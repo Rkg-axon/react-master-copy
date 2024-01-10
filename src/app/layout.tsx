@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Lexend } from 'next/font/google';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
+import { JumboTheme } from '@jumbo/components';
+import { CONFIG } from './_config';
 const lexend = Lexend({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -16,7 +18,9 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={lexend.className}>
-        <AppRouterCacheProvider>{children}</AppRouterCacheProvider>
+        <AppRouterCacheProvider>
+          <JumboTheme init={CONFIG.THEME}>{children}</JumboTheme>
+        </AppRouterCacheProvider>
       </body>
     </html>
   );

@@ -1,5 +1,7 @@
+'use client';
+
 import React from 'react';
-import JumboThemeHeaderContext from './JumboThemeHeaderContext';
+import { JumboThemeHeaderContext } from './JumboThemeHeaderContext';
 import { createTheme } from '@mui/material/styles';
 import { JumboThemeHeaderContextType, JumboThemeOptions } from '@jumbo/types';
 
@@ -8,9 +10,10 @@ const JumboThemeHeader = ({
   init,
 }: {
   children: React.ReactNode;
-  init: JumboThemeOptions;
+  init: JumboThemeOptions | undefined;
 }) => {
-  const [headerTheme, setHeaderTheme] = React.useState(init);
+  //todo: later we can set a default theme for header here instead of {}
+  const [headerTheme, setHeaderTheme] = React.useState(init ?? {});
 
   const themeHeaderContextValue: JumboThemeHeaderContextType = React.useMemo(
     () => ({
@@ -27,4 +30,4 @@ const JumboThemeHeader = ({
   );
 };
 
-export default JumboThemeHeader;
+export { JumboThemeHeader };
