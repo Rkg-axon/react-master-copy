@@ -69,6 +69,7 @@ interface LayoutOptions {
     fixed: boolean;
     sx?: SxProps;
   };
+
   sidebar: {
     open: boolean;
     hide: boolean;
@@ -81,6 +82,7 @@ interface LayoutOptions {
     anchor: SidebarAnchorPositionsType;
     sx?: SxProps;
   };
+
   footer: {
     hide: boolean;
     sx?: SxProps;
