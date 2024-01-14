@@ -63,6 +63,15 @@ enum SIDEBAR_VIEWS {
 type SidebarViewKeys = keyof typeof SIDEBAR_VIEWS;
 type SidebarViewsType = (typeof SIDEBAR_VIEWS)[SidebarViewKeys];
 
+enum LAYOUT_ACTIONS {
+  SET_SIDEBAR_OPTIONS = 'set-sidebar-options',
+  SET_HEADER_OPTIONS = 'set-header-options',
+  SET_FOOTER_OPTIONS = 'set-footer-options',
+  SET_OPTIONS = 'set-options',
+  SET_ROOT_OPTIONS = 'set-root-options',
+  SET_CONTENT_OPTIONS = 'set-content-options',
+}
+
 interface LayoutOptions {
   header: {
     hide: boolean;
@@ -87,12 +96,43 @@ interface LayoutOptions {
     hide: boolean;
     sx?: SxProps;
   };
+
+  root: {
+    sx?: SxProps;
+  };
+
+  content: {
+    sx?: SxProps;
+  };
+}
+
+/**
+ * header, sidebar, footer, root and contentOptions
+ * are used to avoid putting "as" and
+ * an extra step of destructuring
+ * from the context value
+ */
+interface LayoutContext {
+  layoutOptions: LayoutOptions;
+  headerOptions: LayoutOptions.header;
+  sidebarOptions: LayoutOptions.sidebar;
+  footerOptions: LayoutOptions.footer;
+  rootOptions: LayoutOptions.root;
+  contentOptions: LayoutOptions.content;
+  setHeaderOptions?: (options: LayoutOptions) => void;
+  setFooterOptions?: (options: LayoutOptions) => void;
+  setSidebarOptions?: (options: LayoutOptions) => void;
+  setRootOptions?: (options: LayoutOptions) => void;
+  setContentOptions?: (options: LayoutOptions) => void;
+  setOptions?: (options: LayoutOptions) => void;
 }
 
 export {
+  LAYOUT_ACTIONS,
   LAYOUT_CONTAINER_STYLES,
   LAYOUT_DENSITIES,
   LayoutContainerStylesType,
+  LayoutContext,
   LayoutDensitiesType,
   LayoutOptions,
   SIDEBAR_ANCHOR_POSITIONS,

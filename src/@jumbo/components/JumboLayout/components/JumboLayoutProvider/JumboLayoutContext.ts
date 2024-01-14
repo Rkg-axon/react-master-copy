@@ -1,4 +1,5 @@
 import {
+  LayoutContext,
   LayoutOptions,
   SIDEBAR_ANCHOR_POSITIONS,
   SIDEBAR_SCROLL_TYPES,
@@ -8,7 +9,7 @@ import {
 } from '@jumbo/types';
 import React from 'react';
 
-const defaultLayout: LayoutOptions = {
+const defaultLayoutOptions: LayoutOptions = {
   header: {
     hide: false,
     fixed: true,
@@ -27,8 +28,18 @@ const defaultLayout: LayoutOptions = {
   footer: {
     hide: false,
   },
+  root: {},
+  content: {},
 };
 
-const JumboLayoutContext = React.createContext(defaultLayout);
+const defaultLayoutContext: LayoutContext = {
+  layoutOptions: defaultLayoutOptions,
+  headerOptions: defaultLayoutOptions.header,
+  sidebarOptions: defaultLayoutOptions.sidebar,
+  footerOptions: defaultLayoutOptions.footer,
+  rootOptions: defaultLayoutOptions.root,
+  contentOptions: defaultLayoutOptions.content,
+};
+const JumboLayoutContext = React.createContext(defaultLayoutContext);
 
-export { JumboLayoutContext };
+export { JumboLayoutContext, defaultLayoutContext, defaultLayoutOptions };
