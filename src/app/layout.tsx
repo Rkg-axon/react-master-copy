@@ -1,7 +1,7 @@
+import { JumboTheme } from '@jumbo/components';
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 import type { Metadata } from 'next';
 import { Lexend } from 'next/font/google';
-import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
-import { JumboTheme } from '@jumbo/components';
 import { CONFIG } from './_config';
 const lexend = Lexend({ subsets: ['latin'] });
 
