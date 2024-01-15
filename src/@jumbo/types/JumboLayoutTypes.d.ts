@@ -1,4 +1,4 @@
-import { SxProps } from '@mui/material';
+import { SxProps, Theme } from '@mui/material/styles';
 
 enum SIDEBAR_VARIANTS {
   TEMPORARY = 'temporary',
@@ -72,38 +72,44 @@ enum LAYOUT_ACTIONS {
   SET_CONTENT_OPTIONS = 'set-content-options',
 }
 
+interface LayoutHeaderOptions {
+  hide: boolean;
+  fixed: boolean;
+  sx?: SxProps<Theme>;
+}
+
+interface LayoutSidebarOptions {
+  open: boolean;
+  hide: boolean;
+  width: number;
+  minWidth: number;
+  variant: SidebarVariantsType;
+  style: SidebarStylesType;
+  scrollType: SidebarScrollTypesType;
+  view: SidebarViewsType;
+  anchor: SidebarAnchorPositionsType;
+  sx?: SxProps<Theme>;
+}
+
+interface LayoutFooterOptions {
+  hide: boolean;
+  sx?: SxProps<Theme>;
+}
+
+interface LayoutRootOptions {
+  sx?: SxProps<Theme>;
+}
+
+interface LayoutContentOptions {
+  sx?: SxProps<Theme>;
+}
+
 interface LayoutOptions {
-  header: {
-    hide: boolean;
-    fixed: boolean;
-    sx?: SxProps;
-  };
-
-  sidebar: {
-    open: boolean;
-    hide: boolean;
-    width: number | string;
-    minWidth: number | string;
-    variant: SidebarVariantsType;
-    style: SidebarStylesType;
-    scrollType: SidebarScrollTypesType;
-    view: SidebarViewsType;
-    anchor: SidebarAnchorPositionsType;
-    sx?: SxProps;
-  };
-
-  footer: {
-    hide: boolean;
-    sx?: SxProps;
-  };
-
-  root: {
-    sx?: SxProps;
-  };
-
-  content: {
-    sx?: SxProps;
-  };
+  header: LayoutHeaderOptions;
+  sidebar: LayoutSidebarOptions;
+  footer: LayoutFooterOptions;
+  root: LayoutRootOptions;
+  content: LayoutContentOptions;
 }
 
 /**
@@ -114,17 +120,24 @@ interface LayoutOptions {
  */
 interface LayoutContext {
   layoutOptions: LayoutOptions;
-  headerOptions: LayoutOptions.header;
-  sidebarOptions: LayoutOptions.sidebar;
-  footerOptions: LayoutOptions.footer;
-  rootOptions: LayoutOptions.root;
-  contentOptions: LayoutOptions.content;
-  setHeaderOptions?: (options: LayoutOptions) => void;
-  setFooterOptions?: (options: LayoutOptions) => void;
-  setSidebarOptions?: (options: LayoutOptions) => void;
-  setRootOptions?: (options: LayoutOptions) => void;
-  setContentOptions?: (options: LayoutOptions) => void;
+  headerOptions: LayoutHeaderOptions;
+  sidebarOptions: LayoutSidebarOptions;
+  footerOptions: LayoutFooterOptions;
+  rootOptions: LayoutRootOptions;
+  contentOptions: LayoutContentOptions;
+  setHeaderOptions?: (options: LayoutHeaderOptions) => void;
+  setFooterOptions?: (options: LayoutFooterOptions) => void;
+  setSidebarOptions?: (options: LayoutSidebarOptions) => void;
+  setRootOptions?: (options: LayoutRootOptions) => void;
+  setContentOptions?: (options: LayoutContentOptions) => void;
   setOptions?: (options: LayoutOptions) => void;
+}
+
+interface LayoutProps {
+  header?: React.ReactNode;
+  sidebar?: React.ReactNode;
+  children: React.ReactNode;
+  footer?: React.ReactNode;
 }
 
 export {
@@ -132,9 +145,15 @@ export {
   LAYOUT_CONTAINER_STYLES,
   LAYOUT_DENSITIES,
   LayoutContainerStylesType,
+  LayoutContentOptions,
   LayoutContext,
   LayoutDensitiesType,
+  LayoutFooterOptions,
+  LayoutHeaderOptions,
   LayoutOptions,
+  LayoutProps,
+  LayoutRootOptions,
+  LayoutSidebarOptions,
   SIDEBAR_ANCHOR_POSITIONS,
   SIDEBAR_SCROLL_TYPES,
   SIDEBAR_STYLES,
