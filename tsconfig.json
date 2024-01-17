@@ -19,11 +19,11 @@
       }
     ],
     "paths": {
-      "@jumbo/*": ["./src/@jumbo/*"],
       "@app/*": ["./src/app/*"],
+      "@jumbo/*": ["./src/@jumbo/*"],
     },
     "typeRoots" : ["./node_modules/@types", "./src/@jumbo/types"]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "**/*.d.ts"],
   "exclude": ["node_modules"]
 }

@@ -1,6 +1,6 @@
-import React from 'react';
-import { enUS } from '@mui/material/locale';
+'use client';
 import { JumboThemeSidebarContextType } from '@jumbo/types';
+import React from 'react';
 
 const defaultContextValue: JumboThemeSidebarContextType = {
   sidebarTheme: {},

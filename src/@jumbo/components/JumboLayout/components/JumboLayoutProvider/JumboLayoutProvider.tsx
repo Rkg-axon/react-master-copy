@@ -1,5 +1,5 @@
+'use client';
 import {
-  LAYOUT_ACTIONS,
   LayoutContentOptions,
   LayoutContext,
   LayoutFooterOptions,
@@ -8,14 +8,21 @@ import {
   LayoutRootOptions,
   LayoutSidebarOptions,
 } from '@jumbo/types';
+import { LAYOUT_ACTIONS } from '@jumbo/utilities/constants';
 import React from 'react';
 import { JumboLayoutContext, defaultLayoutOptions } from './JumboLayoutContext';
 import { jumboLayoutReducer } from './reducer';
 
-function JumboLayoutProvider({ children }: { children: React.ReactNode }) {
+function JumboLayoutProvider({
+  children,
+  layoutConfig,
+}: {
+  children: React.ReactNode;
+  layoutConfig?: LayoutOptions;
+}) {
   const [layoutOptions, setLayoutOptions] = React.useReducer(
     jumboLayoutReducer,
-    defaultLayoutOptions
+    layoutConfig ?? defaultLayoutOptions
   );
 
   const setHeaderOptions = React.useCallback((options: LayoutHeaderOptions) => {
@@ -94,7 +101,7 @@ function JumboLayoutProvider({ children }: { children: React.ReactNode }) {
 
   return (
     <JumboLayoutContext.Provider value={layoutContext}>
-      {children}
+      <div>{children}</div>
     </JumboLayoutContext.Provider>
   );
 }

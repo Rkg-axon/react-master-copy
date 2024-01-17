@@ -1,13 +1,23 @@
-import { Div } from '@jumbo/shared/components/Div';
-import { LayoutProps, SIDEBAR_STYLES } from '@jumbo/types';
-import { CssBaseline, Toolbar } from '@mui/material';
-import { useJumboLayout } from '.';
+'use client';
+import { LayoutProps } from '@jumbo/types';
+import { Box, CssBaseline, Toolbar } from '@mui/material';
+
+import { SIDEBAR_STYLES } from '@jumbo/utilities/constants';
+import {
+  JumboLayoutFooter,
+  JumboLayoutHeader,
+  JumboLayoutSidebar,
+} from './components';
+import { useHeaderMargin, useHeaderSpaceSx, useJumboLayout } from './hooks';
 
 function JumboLayout(props: LayoutProps) {
   const { rootOptions, sidebarOptions, headerOptions, contentOptions } =
     useJumboLayout();
+
+  const headerSpaceSx = useHeaderSpaceSx();
+  const contentMargin = useHeaderMargin();
   return (
-    <Div
+    <Box
       sx={{
         display: 'flex',
         flex: 1,
@@ -20,12 +30,10 @@ function JumboLayout(props: LayoutProps) {
     >
       <CssBaseline />
       {sidebarOptions?.style === SIDEBAR_STYLES.CLIPPED_UNDER_HEADER && (
-        <JumboLayoutHeader>
-          {props.header}
-        </JumboLayoutHeader>
+        <JumboLayoutHeader>{props.header}</JumboLayoutHeader>
       )}
 
-      <Div
+      <Box
         sx={{
           display: 'flex',
           flex: 1,
@@ -35,11 +43,9 @@ function JumboLayout(props: LayoutProps) {
         className='CmtLayout-wrapper'
       >
         {props.sidebar && (
-          <JumboLayoutSidebar headerHeightProps={headerHeightProps}>
-            {props.sidebar}
-          </JumboLayoutSidebar>
+          <JumboLayoutSidebar>{props.sidebar}</JumboLayoutSidebar>
         )}
-        <Div
+        <Box
           sx={{
             display: 'flex',
             minWidth: 0,
@@ -54,14 +60,12 @@ function JumboLayout(props: LayoutProps) {
           className='CmtLayout-main'
         >
           {sidebarOptions?.style !== SIDEBAR_STYLES.CLIPPED_UNDER_HEADER && (
-            <JumboLayoutHeader>
-              {props.header}
-            </JumboLayoutHeader>
+            <JumboLayoutHeader>{props.header}</JumboLayoutHeader>
           )}
           {!headerOptions.hide && headerOptions.fixed && (
-            <Toolbar sx={{ ...headerHeightProps }} />
+            <Toolbar sx={{ ...headerSpaceSx }} />
           )}
-          <Div
+          <Box
             sx={{
               display: 'flex',
               minWidth: 0,
@@ -74,11 +78,11 @@ function JumboLayout(props: LayoutProps) {
             className='CmtLayout-content'
           >
             {props.children}
-          </Div>
+          </Box>
           <JumboLayoutFooter>{props.footer}</JumboLayoutFooter>
-        </Div>
-      </Div>
-    </Div>
+        </Box>
+      </Box>
+    </Box>
   );
 }
 

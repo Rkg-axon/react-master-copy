@@ -1,5 +1,6 @@
-import React from 'react';
+'use client';
 import { JumboThemeFooterContextType } from '@jumbo/types';
+import React from 'react';
 
 const defaultContextValue: JumboThemeFooterContextType = {
   footerTheme: {},
@@ -8,4 +9,4 @@ const defaultContextValue: JumboThemeFooterContextType = {
 
 const JumboThemeFooterContext = React.createContext(defaultContextValue);
 
-export { JumboThemeFooterContext }
+export { JumboThemeFooterContext };

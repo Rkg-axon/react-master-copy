@@ -1,76 +1,41 @@
+import {
+  LAYOUT_CONTAINER_STYLES,
+  LAYOUT_DENSITIES,
+  POSITION_TYPES,
+  SIDEBAR_ANCHOR_POSITIONS,
+  SIDEBAR_SCROLL_TYPES,
+  SIDEBAR_STYLES,
+  SIDEBAR_VARIANTS,
+  SIDEBAR_VIEWS,
+} from '@jumbo/utilities/constants';
 import { SxProps, Theme } from '@mui/material';
 
-enum SIDEBAR_VARIANTS {
-  TEMPORARY = 'temporary',
-  PERSISTENT = 'persistent',
-  PERMANENT = 'permanent',
-}
 type SidebarVariantKeys = keyof typeof SIDEBAR_VARIANTS;
-type SidebarVariantsType = (typeof SIDEBAR_VARIANTS)[SidebarVariantsKeys];
+type SidebarVariantsType = (typeof SIDEBAR_VARIANTS)[SidebarVariantKeys];
 
-enum SIDEBAR_STYLES {
-  FULL_HEIGHT = 'full-height',
-  CLIPPED_UNDER_HEADER = 'clipped-under-header',
-}
 type SidebarStyleKeys = keyof typeof SIDEBAR_STYLES;
 type SidebarStylesType = (typeof SIDEBAR_STYLES)[SidebarStyleKeys];
 
-enum SIDEBAR_SCROLL_TYPES {
-  DEFAULT = 'default',
-  FIXED = 'fixed',
-}
 type SidebarScrollTypeKeys = keyof typeof SIDEBAR_SCROLL_TYPES;
 type SidebarScrollTypesType =
   (typeof SIDEBAR_SCROLL_TYPES)[SidebarScrollTypeKeys];
 
-enum SIDEBAR_ANCHOR_POSITIONS {
-  LEFT = 'left',
-  RIGHT = 'right',
-  TOP = 'top',
-  BOTTOM = 'bottom',
-}
 type SidebarAnchorPositionKeys = keyof typeof SIDEBAR_ANCHOR_POSITIONS;
 type SidebarAnchorPositionsType =
   (typeof SIDEBAR_ANCHOR_POSITIONS)[SidebarAnchorPositionKeys];
 
-enum LAYOUT_DENSITIES {
-  STANDARD = 'standard',
-  COMPACT = 'compact',
-  COMFORTABLE = 'comfortable',
-}
 type LayoutDensityKeys = keyof typeof LAYOUT_DENSITIES;
 type LayoutDensitiesType = (typeof LAYOUT_DENSITIES)[LayoutDensityKeys];
 
-enum LAYOUT_CONTAINER_STYLES {
-  FLUID = 'fluid',
-  BOXED = 'boxed',
-}
 type LayoutContainerStyleKeys = keyof typeof LAYOUT_CONTAINER_STYLES;
 type LayoutContainerStylesType =
   (typeof LAYOUT_CONTAINER_STYLES)[LayoutContainerStyleKeys];
 
-enum POSITION_TYPES {
-  STICKY = 'sticky',
-  DEFAULT = 'default',
-}
 type PositionTypeKeys = keyof typeof POSITION_TYPES;
 type PositionTypesType = (typeof POSITION_TYPES)[PositionTypeKeys];
 
-enum SIDEBAR_VIEWS {
-  MINI = 'mini',
-  FULL = 'full',
-}
 type SidebarViewKeys = keyof typeof SIDEBAR_VIEWS;
 type SidebarViewsType = (typeof SIDEBAR_VIEWS)[SidebarViewKeys];
-
-enum LAYOUT_ACTIONS {
-  SET_SIDEBAR_OPTIONS = 'set-sidebar-options',
-  SET_HEADER_OPTIONS = 'set-header-options',
-  SET_FOOTER_OPTIONS = 'set-footer-options',
-  SET_OPTIONS = 'set-options',
-  SET_ROOT_OPTIONS = 'set-root-options',
-  SET_CONTENT_OPTIONS = 'set-content-options',
-}
 
 interface LayoutHeaderOptions {
   hide: boolean;
@@ -79,15 +44,15 @@ interface LayoutHeaderOptions {
 }
 
 interface LayoutSidebarOptions {
-  open: boolean;
-  hide: boolean;
-  width: number;
-  minWidth: number;
-  variant: SidebarVariantsType;
-  style: SidebarStylesType;
-  scrollType: SidebarScrollTypesType;
-  view: SidebarViewsType;
-  anchor: SidebarAnchorPositionsType;
+  open?: boolean;
+  hide?: boolean;
+  width?: number;
+  minWidth?: number;
+  variant?: SidebarVariantsType;
+  style?: SidebarStylesType;
+  scrollType?: SidebarScrollTypesType;
+  view?: SidebarViewsType;
+  anchor?: SidebarAnchorPositionsType;
   sx?: SxProps<Theme>;
 }
 
@@ -141,27 +106,20 @@ interface LayoutProps {
 }
 
 export {
-  LAYOUT_ACTIONS,
-  LAYOUT_CONTAINER_STYLES,
-  LAYOUT_DENSITIES,
-  LayoutContainerStylesType,
-  LayoutContentOptions,
-  LayoutContext,
-  LayoutDensitiesType,
-  LayoutFooterOptions,
-  LayoutHeaderOptions,
-  LayoutOptions,
-  LayoutProps,
-  LayoutRootOptions,
-  LayoutSidebarOptions,
-  SIDEBAR_ANCHOR_POSITIONS,
-  SIDEBAR_SCROLL_TYPES,
-  SIDEBAR_STYLES,
-  SIDEBAR_VARIANTS,
-  SIDEBAR_VIEWS,
-  SidebarAnchorPositionsType,
-  SidebarScrollTypesType,
-  SidebarStylesType,
-  SidebarVariantsType,
-  SidebarViewsType,
+  type LayoutContainerStylesType,
+  type LayoutContentOptions,
+  type LayoutContext,
+  type LayoutDensitiesType,
+  type LayoutFooterOptions,
+  type LayoutHeaderOptions,
+  type LayoutOptions,
+  type LayoutProps,
+  type LayoutRootOptions,
+  type LayoutSidebarOptions,
+  type PositionTypesType,
+  type SidebarAnchorPositionsType,
+  type SidebarScrollTypesType,
+  type SidebarStylesType,
+  type SidebarVariantsType,
+  type SidebarViewsType,
 };

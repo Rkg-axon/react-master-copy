@@ -1,12 +1,12 @@
+'use client';
+import { LayoutContext, LayoutOptions } from '@jumbo/types';
 import {
-  LayoutContext,
-  LayoutOptions,
   SIDEBAR_ANCHOR_POSITIONS,
   SIDEBAR_SCROLL_TYPES,
   SIDEBAR_STYLES,
   SIDEBAR_VARIANTS,
   SIDEBAR_VIEWS,
-} from '@jumbo/types';
+} from '@jumbo/utilities/constants';
 import React from 'react';
 
 const defaultLayoutOptions: LayoutOptions = {
@@ -40,6 +40,7 @@ const defaultLayoutContext: LayoutContext = {
   rootOptions: defaultLayoutOptions.root,
   contentOptions: defaultLayoutOptions.content,
 };
-const JumboLayoutContext = React.createContext(defaultLayoutContext);
+const JumboLayoutContext =
+  React.createContext<LayoutContext>(defaultLayoutContext);
 
 export { JumboLayoutContext, defaultLayoutContext, defaultLayoutOptions };

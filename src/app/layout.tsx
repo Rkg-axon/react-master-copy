@@ -1,8 +1,14 @@
 import { JumboTheme } from '@jumbo/components';
+import {
+  JumboLayout,
+  JumboLayoutProvider,
+} from '@jumbo/components/JumboLayout';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 import type { Metadata } from 'next';
 import { Lexend } from 'next/font/google';
 import { CONFIG } from './_config';
+import { defaultLayoutConfig } from './_config/layouts';
+
 const lexend = Lexend({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -19,7 +25,17 @@ export default function RootLayout({
     <html lang='en'>
       <body className={lexend.className}>
         <AppRouterCacheProvider>
-          <JumboTheme init={CONFIG.THEME}>{children}</JumboTheme>
+          <JumboTheme init={CONFIG.THEME}>
+            <JumboLayoutProvider layoutConfig={defaultLayoutConfig}>
+              <JumboLayout
+                header={<div>Me header</div>}
+                footer={<div>me footer</div>}
+                sidebar={<div>me sidebar</div>}
+              >
+                {children}
+              </JumboLayout>
+            </JumboLayoutProvider>
+          </JumboTheme>
         </AppRouterCacheProvider>
       </body>
     </html>

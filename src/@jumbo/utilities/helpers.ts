@@ -22,14 +22,3 @@ export const createJumboTheme = (
   };
   return theme;
 };
-
-// export function updatedObject<Type>(object: Type, excludeProps: string[] = []) {
-//   let newSxProps: Type;
-//   let objectKeys = Object.keys([object]);
-//   objectKeys.map((key: string) => {
-//     if(!excludeProps.includes(key)) {
-//       newSxProps[key] = object[key]
-//     }
-//   })
-//   return newSxProps;
-// }

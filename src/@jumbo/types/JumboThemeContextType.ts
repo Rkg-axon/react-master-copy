@@ -1,6 +1,6 @@
-import React from 'react';
-import { JumboThemeOptions } from './JumboTheme';
 import { Localization } from '@mui/material/locale';
+import React from 'react';
+import { JumboThemeOptions, JumboThemeSidebarOptions } from './JumboTheme';
 
 interface JumboThemeContextType {
   theme: JumboThemeOptions;
@@ -20,13 +20,15 @@ interface JumboThemeFooterContextType {
 }
 
 interface JumboThemeSidebarContextType {
-  sidebarTheme: JumboThemeOptions;
-  setSidebarTheme: React.Dispatch<React.SetStateAction<JumboThemeOptions>>;
+  sidebarTheme: JumboThemeSidebarOptions;
+  setSidebarTheme: React.Dispatch<
+    React.SetStateAction<JumboThemeSidebarOptions>
+  >;
 }
 
 export {
-  JumboThemeContextType,
-  JumboThemeFooterContextType,
-  JumboThemeHeaderContextType,
-  JumboThemeSidebarContextType,
+  type JumboThemeContextType,
+  type JumboThemeFooterContextType,
+  type JumboThemeHeaderContextType,
+  type JumboThemeSidebarContextType,
 };

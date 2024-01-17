@@ -1,6 +1,7 @@
-import React from 'react';
-import { enUS } from '@mui/material/locale';
+'use client';
 import { JumboThemeContextType, JumboThemeOptions } from '@jumbo/types';
+import { enUS } from '@mui/material/locale';
+import React from 'react';
 
 const defaultContextValue: JumboThemeContextType = {
   theme: {},
