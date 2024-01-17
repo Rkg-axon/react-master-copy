@@ -6,6 +6,7 @@ interface JumboThemeOptions extends ThemeOptions {
       background?: string;
     };
   };
+  type: 'light' | 'dark';
 }
 
 type JumboThemeSidebarOptions = JumboThemeOptions & {

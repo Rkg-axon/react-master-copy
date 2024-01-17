@@ -29,6 +29,7 @@ const shadows: Shadows = [
 ];
 
 export const mainTheme = {
+  type: 'light',
   breakpoints: {
     values: {
       xs: 0,

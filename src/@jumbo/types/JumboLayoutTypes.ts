@@ -90,12 +90,12 @@ interface LayoutContext {
   footerOptions: LayoutFooterOptions;
   rootOptions: LayoutRootOptions;
   contentOptions: LayoutContentOptions;
-  setHeaderOptions?: (options: LayoutHeaderOptions) => void;
-  setFooterOptions?: (options: LayoutFooterOptions) => void;
-  setSidebarOptions?: (options: LayoutSidebarOptions) => void;
-  setRootOptions?: (options: LayoutRootOptions) => void;
-  setContentOptions?: (options: LayoutContentOptions) => void;
-  setOptions?: (options: LayoutOptions) => void;
+  setHeaderOptions: (options: LayoutHeaderOptions) => void;
+  setFooterOptions: (options: LayoutFooterOptions) => void;
+  setSidebarOptions: (options: LayoutSidebarOptions) => void;
+  setRootOptions: (options: LayoutRootOptions) => void;
+  setContentOptions: (options: LayoutContentOptions) => void;
+  setOptions: (options: LayoutOptions) => void;
 }
 
 interface LayoutProps {

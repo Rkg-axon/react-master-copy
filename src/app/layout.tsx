@@ -6,6 +6,7 @@ import {
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 import type { Metadata } from 'next';
 import { Lexend } from 'next/font/google';
+import { Header } from './_components/layout';
 import { CONFIG } from './_config';
 import { defaultLayoutConfig } from './_config/layouts';
 
@@ -28,7 +29,7 @@ export default function RootLayout({
           <JumboTheme init={CONFIG.THEME}>
             <JumboLayoutProvider layoutConfig={defaultLayoutConfig}>
               <JumboLayout
-                header={<div>Me header</div>}
+                header={<Header />}
                 footer={<div>me footer</div>}
                 sidebar={<div>me sidebar</div>}
               >

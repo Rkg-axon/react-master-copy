@@ -1,5 +1,13 @@
 'use client';
-import { LayoutContext, LayoutOptions } from '@jumbo/types';
+import {
+  LayoutContentOptions,
+  LayoutContext,
+  LayoutFooterOptions,
+  LayoutHeaderOptions,
+  LayoutOptions,
+  LayoutRootOptions,
+  LayoutSidebarOptions,
+} from '@jumbo/types';
 import {
   SIDEBAR_ANCHOR_POSITIONS,
   SIDEBAR_SCROLL_TYPES,
@@ -39,6 +47,12 @@ const defaultLayoutContext: LayoutContext = {
   footerOptions: defaultLayoutOptions.footer,
   rootOptions: defaultLayoutOptions.root,
   contentOptions: defaultLayoutOptions.content,
+  setSidebarOptions: (options: LayoutSidebarOptions) => {},
+  setRootOptions: (options: LayoutRootOptions) => {},
+  setContentOptions: (options: LayoutContentOptions) => {},
+  setFooterOptions: (options: LayoutFooterOptions) => {},
+  setOptions: (options: LayoutOptions) => {},
+  setHeaderOptions: (options: LayoutHeaderOptions) => {},
 };
 const JumboLayoutContext =
   React.createContext<LayoutContext>(defaultLayoutContext);
