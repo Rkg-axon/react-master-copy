@@ -109,7 +109,7 @@ function Header() {
             <SearchIcon fontSize={'small'} />
           </JumboIconButton>
         )}
-        {/* <MessagesDropdown /> */}
+        {/* <Message /> */}
         {/* <NotificationsDropdown />
         <AuthUserDropdown /> */}
       </Stack>
