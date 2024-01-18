@@ -1,8 +1,8 @@
 import React from 'react';
 import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
-import JumboIconButton from "@jumbo/components/JumboIconButton";
-import useJumboHeaderTheme from "@jumbo/hooks/useJumboHeaderTheme";
 import {ThemeProvider} from "@mui/material";
+import { useJumboHeaderTheme } from '@jumbo/components/JumboTheme/hooks';
+import { JumboIconButton } from '@jumbo/components';
 
 
 const MessagesTriggerButton = () => {
@@ -16,4 +16,4 @@ const MessagesTriggerButton = () => {
     );
 };
 
-export default MessagesTriggerButton;
+export {MessagesTriggerButton};

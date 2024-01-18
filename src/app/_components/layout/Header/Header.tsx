@@ -1,5 +1,7 @@
 'use client';
+import React from 'react';
 import { Logo, SearchGlobal } from '@app/_components/misc';
+import { MessagesPopover } from '@app/_components/popovers/MessagesPopover';
 import { JumboIconButton } from '@jumbo/components';
 import { useJumboLayout } from '@jumbo/components/JumboLayout/hooks';
 import { useJumboHeaderTheme } from '@jumbo/components/JumboTheme/hooks';
@@ -10,7 +12,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import MenuOpenIcon from '@mui/icons-material/MenuOpen';
 import SearchIcon from '@mui/icons-material/Search';
 import { IconButton, Slide, Stack, useMediaQuery } from '@mui/material';
-import React from 'react';
 
 function Header() {
   const { sidebarOptions, setSidebarOptions } = useJumboLayout();
@@ -109,7 +110,7 @@ function Header() {
             <SearchIcon fontSize={'small'} />
           </JumboIconButton>
         )}
-        {/* <Message /> */}
+        <MessagesPopover />
         {/* <NotificationsDropdown />
         <AuthUserDropdown /> */}
       </Stack>

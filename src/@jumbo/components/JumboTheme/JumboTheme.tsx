@@ -16,6 +16,7 @@ import {
 } from './components';
 
 import { JumboThemeContext } from './JumboThemeContext';
+
 function JumboTheme({
   children,
   init,

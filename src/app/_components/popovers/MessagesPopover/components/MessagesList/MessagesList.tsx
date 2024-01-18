@@ -1,13 +1,13 @@
 import React from 'react';
 import List from "@mui/material/List";
 import MessageItem from "./MessageItem";
-import messages from "./fake-data";
+import { messagesData } from './data';
 
 const MessagesList = () => {
     return (
         <List disablePadding>
             {
-                messages.map((item, index) => {
+                messagesData?.map((item, index) => {
                     return (
                         <MessageItem key={index} item={item}/>
                     )
@@ -17,4 +17,4 @@ const MessagesList = () => {
     );
 };
 
-export default MessagesList;
+export {MessagesList};

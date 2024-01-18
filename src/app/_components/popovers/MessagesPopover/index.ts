@@ -1,1 +1,1 @@
-export { default } from './MessagesPopover';
+export * from './MessagesPopover';
