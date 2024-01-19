@@ -1,4 +1,3 @@
-import { useSidebarCollapsible } from '@app/_hooks';
 import {
   useJumboLayout,
   useSidebarState,
@@ -9,13 +8,13 @@ import MenuOpenIcon from '@mui/icons-material/MenuOpen';
 import { IconButton } from '@mui/material';
 
 function SidebarToggleButton() {
-  const { isSidebarStyle, isSidebarOpen } = useSidebarState();
+  const { isSidebarStyle, isSidebarOpen, isSidebarCollapsible } =
+    useSidebarState();
   const { sidebarOptions, setSidebarOptions } = useJumboLayout();
-  const isSidebarCollapsible = useSidebarCollapsible();
 
   return (
     <>
-      {isSidebarCollapsible && (
+      {isSidebarCollapsible() && (
         <IconButton
           edge='start'
           color='inherit'

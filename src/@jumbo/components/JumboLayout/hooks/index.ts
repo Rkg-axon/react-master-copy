@@ -170,7 +170,21 @@ function useSidebarState() {
     function isSidebarOpen(): boolean {
       return sidebarOptions.open ?? false;
     }
-    return { isSidebarStyle, isSidebarOpen, isSidebarVariant };
+
+    function isSidebarCollapsible(): boolean {
+      return (
+        isSidebarStyle(SIDEBAR_STYLES.CLIPPED_UNDER_HEADER) ||
+        isSidebarVariant(SIDEBAR_VARIANTS.TEMPORARY) ||
+        (isSidebarVariant(SIDEBAR_VARIANTS.PERSISTENT) && !isSidebarOpen())
+      );
+    }
+
+    return {
+      isSidebarStyle,
+      isSidebarOpen,
+      isSidebarVariant,
+      isSidebarCollapsible,
+    };
   }, [sidebarOptions.open, sidebarOptions.variant, sidebarOptions.style]);
 
   return stateFunctions;
