@@ -1,6 +1,6 @@
-import React from 'react';
 import { Div } from '@jumbo/shared';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import React from 'react';
 
 import { JumboDdPopover } from '@jumbo/components';
 import { useJumboTheme } from '@jumbo/components/JumboTheme/hooks';

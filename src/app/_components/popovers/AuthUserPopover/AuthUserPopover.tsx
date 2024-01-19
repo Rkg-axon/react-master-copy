@@ -23,7 +23,7 @@ const AuthUserPopover = () => {
   // todo: pending logout option
   const onLogout = () => {
     console.log('success logout');
-    // logout();
+    // logout();F
   };
 
   return (
