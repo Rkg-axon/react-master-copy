@@ -1,19 +1,17 @@
 'use client';
-import { Logo, SearchGlobal } from '@app/_components/misc';
+import { Logo, SearchGlobal, SidebarToggleButton } from '@app/_components/misc';
 import { JumboIconButton } from '@jumbo/components';
 import { useJumboLayout } from '@jumbo/components/JumboLayout/hooks';
 import { useJumboHeaderTheme } from '@jumbo/components/JumboTheme/hooks';
 import { Div } from '@jumbo/shared';
-import { SIDEBAR_STYLES, SIDEBAR_VARIANTS } from '@jumbo/utilities/constants';
+import { SIDEBAR_STYLES } from '@jumbo/utilities/constants';
 import CloseIcon from '@mui/icons-material/Close';
-import MenuIcon from '@mui/icons-material/Menu';
-import MenuOpenIcon from '@mui/icons-material/MenuOpen';
 import SearchIcon from '@mui/icons-material/Search';
 import { IconButton, Slide, Stack, useMediaQuery } from '@mui/material';
 import React from 'react';
 
 function Header() {
-  const { sidebarOptions, setSidebarOptions } = useJumboLayout();
+  const { sidebarOptions } = useJumboLayout();
 
   const [dropdownSearchVisibility, setDropdownSearchVisibility] =
     React.useState(false);
@@ -23,26 +21,7 @@ function Header() {
 
   return (
     <React.Fragment>
-      {(sidebarOptions.style === SIDEBAR_STYLES.CLIPPED_UNDER_HEADER ||
-        sidebarOptions.variant === SIDEBAR_VARIANTS.TEMPORARY ||
-        (sidebarOptions.variant === SIDEBAR_VARIANTS.PERSISTENT &&
-          !sidebarOptions.open)) && (
-        <IconButton
-          edge='start'
-          color='inherit'
-          aria-label='open drawer'
-          sx={{
-            ml:
-              sidebarOptions.style === SIDEBAR_STYLES.CLIPPED_UNDER_HEADER
-                ? -2
-                : 0,
-            mr: 3,
-          }}
-          onClick={() => setSidebarOptions({ open: !sidebarOptions.open })}
-        >
-          {sidebarOptions?.open ? <MenuOpenIcon /> : <MenuIcon />}
-        </IconButton>
-      )}
+      <SidebarToggleButton />
       {sidebarOptions?.style === SIDEBAR_STYLES.CLIPPED_UNDER_HEADER && (
         <Logo sx={{ mr: 3 }} mode={headerTheme.type ?? 'light'} />
       )}
