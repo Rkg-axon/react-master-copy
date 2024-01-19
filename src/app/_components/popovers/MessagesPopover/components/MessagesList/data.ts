@@ -1,6 +1,6 @@
 import { getCustomDateTime } from '@jumbo/utilities/formatHelpers';
 
-export type MessagesProps = {
+export type MessagesDataProps = {
   user: {
     id: number;
     name: string;
@@ -9,7 +9,7 @@ export type MessagesProps = {
   message: string;
   date: string;
 };
-export const messagesData: MessagesProps[] = [
+export const messagesData: MessagesDataProps[] = [
   {
     user: {
       id: 1,

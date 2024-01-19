@@ -7,11 +7,10 @@ import {
   ListItemText,
   Typography,
 } from '@mui/material';
-import { MessagesProps } from './data';
+import { MessagesDataProps } from './data';
 
 type MessageItemProps = {
-  key: number;
-  item: MessagesProps;
+  item: MessagesDataProps;
 };
 const MessageItem = ({ item }: MessageItemProps) => {
   return (

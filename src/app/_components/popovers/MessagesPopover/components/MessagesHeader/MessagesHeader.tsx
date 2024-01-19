@@ -1,8 +1,8 @@
+import React from 'react';
 import ModeEditIcon from '@mui/icons-material/ModeEdit';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import { CardHeader, IconButton, Stack } from '@mui/material';
-import React from 'react';
 
 type MessagesHeaderProps = {
   settingMenuCallback: React.MouseEventHandler;
@@ -38,4 +38,4 @@ const MessagesHeader = ({ settingMenuCallback }: MessagesHeaderProps) => {
   );
 };
 
-export {MessagesHeader};
+export { MessagesHeader };

@@ -1,20 +1,21 @@
+import React from 'react';
 import { Div } from '@jumbo/shared';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import React from 'react';
 
 import { JumboDdPopover } from '@jumbo/components';
 import { useJumboTheme } from '@jumbo/components/JumboTheme/hooks';
 import { Button, CardActions, Divider, ThemeProvider } from '@mui/material';
-import { useState } from 'react';
-import { MessagesHeader } from './components/MessagesHeader';
-import { MessagesList } from './components/MessagesList';
-import { SettingsList } from './components/MessagesSetting';
-import { MessagesTriggerButton } from './components/MessagesTriggerButton';
-import { SearchMessages } from './components/SearchMessages';
-import { SettingHeader } from './components/SettingHeader';
+import {
+  MessagesHeader,
+  MessagesList,
+  MessagesTriggerButton,
+  SearchMessages,
+  SettingHeader,
+  SettingsList,
+} from './components';
 
 const MessagesPopover = () => {
-  const [showSettings, setShowSettings] = useState<boolean>(false);
+  const [showSettings, setShowSettings] = React.useState<boolean>(false);
   const { theme } = useJumboTheme();
 
   const toggleSettingWindow = React.useCallback(() => {

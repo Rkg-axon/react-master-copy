@@ -1,6 +1,10 @@
-import { ListItemButton, ListItemText, Switch } from '@mui/material';
-import ListItemIcon from '@mui/material/ListItemIcon';
 import React from 'react';
+import {
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+  Switch,
+} from '@mui/material';
 
 type SettingItemProps = {
   icon: React.ReactNode;
@@ -8,7 +12,7 @@ type SettingItemProps = {
   subheader?: string;
   onChangeCallback?: (value: string) => void;
   isChecked?: boolean;
-  value?: string | undefined;
+  value?: string;
 };
 const SettingItem = ({
   icon,

@@ -4,12 +4,8 @@ import {
   StyledInputBase,
 } from '@app/_components/misc/SearchGlobal/style';
 import SearchIcon from '@mui/icons-material/Search';
-import { SxProps, Theme } from '@mui/material';
 
-type SearchMessagesProps = {
-  sx?: SxProps<Theme>;
-};
-const SearchMessages = ({ sx }: SearchMessagesProps) => {
+const SearchMessages = () => {
   return (
     <Search
       sx={{
