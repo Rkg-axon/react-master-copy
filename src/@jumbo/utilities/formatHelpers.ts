@@ -1,9 +1,9 @@
 import moment from 'moment';
 
 export const getCustomDateTime = (
-  value = 0,
-  unit = 'days',
-  format = 'HH:mm a | MMMM DD, YYYY'
+  value: number = 0,
+  unit: moment.unitOfTime.DurationConstructor = 'days',
+  format: string = 'HH:mm a | MMMM DD, YYYY'
 ) => {
   if (value === 0) {
     return moment().format(format);
@@ -12,20 +12,20 @@ export const getCustomDateTime = (
   }
 };
 
-export const getDateElements = date => {
+export const getDateElements = (date: string) => {
   const dateString = moment(date).format('dddd, MMMM DD YYYY, hh:mm A');
   const dateSections = dateString.split(',');
   const day = dateSections[0];
   const time = dateSections[2];
   const datePart = dateSections[1].trim().split(' ');
   return {
-      day,
-      time,
-      date: {
-          dateString: dateSections[1],
-          month: datePart[0],
-          date: datePart[1],
-          year: datePart[2],
-      },
+    day,
+    time,
+    date: {
+      dateString: dateSections[1],
+      month: datePart[0],
+      date: datePart[1],
+      year: datePart[2],
+    },
   };
 };
