@@ -1,7 +1,7 @@
 'use client';
 import { Logo, SearchGlobal, SidebarToggleButton } from '@app/_components/misc';
 import { JumboIconButton } from '@jumbo/components';
-import { useJumboLayout } from '@jumbo/components/JumboLayout/hooks';
+import { useSidebarState } from '@jumbo/components/JumboLayout/hooks';
 import { useJumboHeaderTheme } from '@jumbo/components/JumboTheme/hooks';
 import { Div } from '@jumbo/shared';
 import { SIDEBAR_STYLES } from '@jumbo/utilities/constants';
@@ -11,7 +11,7 @@ import { IconButton, Slide, Stack, useMediaQuery } from '@mui/material';
 import React from 'react';
 
 function Header() {
-  const { sidebarOptions } = useJumboLayout();
+  const { isSidebarStyle } = useSidebarState();
 
   const [dropdownSearchVisibility, setDropdownSearchVisibility] =
     React.useState(false);
@@ -22,7 +22,7 @@ function Header() {
   return (
     <React.Fragment>
       <SidebarToggleButton />
-      {sidebarOptions?.style === SIDEBAR_STYLES.CLIPPED_UNDER_HEADER && (
+      {isSidebarStyle(SIDEBAR_STYLES.CLIPPED_UNDER_HEADER) && (
         <Logo sx={{ mr: 3 }} mode={headerTheme.type ?? 'light'} />
       )}
       {showDropdownSearch && (
