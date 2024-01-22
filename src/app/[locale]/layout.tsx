@@ -5,10 +5,13 @@ import {
 } from '@jumbo/components/JumboLayout';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 import type { Metadata } from 'next';
+import { Params } from 'next/dist/shared/lib/router/utils/route-matcher';
 import { Lexend } from 'next/font/google';
-import { Header } from './_components/layout';
-import { CONFIG } from './_config';
-import { defaultLayoutConfig } from './_config/layouts';
+import { Header } from '../_components/layout';
+import { Sidebar } from '../_components/layout/Sidebar';
+import { CONFIG } from '../_config';
+import { defaultLayoutConfig } from '../_config/layouts';
+import '../_utilities/style/scrollbar.css';
 
 const lexend = Lexend({ subsets: ['latin'] });
 
@@ -19,11 +22,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  params: { locale },
 }: {
   children: React.ReactNode;
+  params: Params;
 }) {
   return (
-    <html lang='en'>
+    <html lang={locale}>
       <body className={lexend.className}>
         <AppRouterCacheProvider>
           <JumboTheme init={CONFIG.THEME}>
@@ -31,7 +36,7 @@ export default function RootLayout({
               <JumboLayout
                 header={<Header />}
                 footer={<div>me footer</div>}
-                sidebar={<div>me sidebar</div>}
+                sidebar={<Sidebar />}
               >
                 {children}
               </JumboLayout>

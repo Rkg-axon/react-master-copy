@@ -18,7 +18,9 @@
     "@mui/material": "^5.15.3",
     "@mui/material-nextjs": "^5.15.3",
     "next": "14.0.3",
+    "next-intl": "^3.5.0",
     "react": "^18",
+    "react-custom-scrollbars-2": "^4.5.0",
     "react-dom": "^18"
   },
   "devDependencies": {

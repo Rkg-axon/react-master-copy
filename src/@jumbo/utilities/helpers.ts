@@ -1,4 +1,9 @@
-import { JumboThemeConfig, JumboThemeOptions } from '@jumbo/types';
+import {
+  JumboThemeConfig,
+  JumboThemeOptions,
+  NavbarGroup,
+  NavbarItem,
+} from '@jumbo/types';
 export const createJumboTheme = (
   mainTheme: JumboThemeOptions,
   headerTheme: JumboThemeOptions,
@@ -22,3 +27,17 @@ export const createJumboTheme = (
   };
   return theme;
 };
+
+function isNavbarItem(object: any): object is NavbarItem {
+  return 'path' in object;
+}
+
+function isNavbarGroup(object: any): object is NavbarGroup {
+  return !('path' in object);
+}
+
+function isNavbarGroupWithChildren(object: any): object is NavbarGroup {
+  return 'children' in object && Array.isArray(object?.children);
+}
+
+export { isNavbarGroup, isNavbarGroupWithChildren, isNavbarItem };

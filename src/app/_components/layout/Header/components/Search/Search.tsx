@@ -9,9 +9,11 @@ type SearchProps = {
   onClose: (value: boolean) => void;
 };
 
-function Search({ show, onClose }: SearchProps) {
+function Search(
+  props: SearchProps = { show: true, onClose: (value: boolean) => value }
+) {
   const smallScreen = useSmallScreen();
-
+  const { show, onClose } = props;
   if (!smallScreen) {
     return (
       <SearchGlobal
@@ -65,10 +67,5 @@ function Search({ show, onClose }: SearchProps) {
     </Slide>
   );
 }
-
-Search.defaultProps = {
-  show: true,
-  onClose: (value: boolean) => value,
-};
 
 export { Search };

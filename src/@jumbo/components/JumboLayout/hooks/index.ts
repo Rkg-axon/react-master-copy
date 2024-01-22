@@ -179,13 +179,25 @@ function useSidebarState() {
       );
     }
 
+    function isMiniAndClosed(): boolean {
+      return (
+        sidebarOptions?.view === SIDEBAR_VIEWS.MINI && !sidebarOptions?.open
+      );
+    }
+
     return {
       isSidebarStyle,
       isSidebarOpen,
       isSidebarVariant,
       isSidebarCollapsible,
+      isMiniAndClosed,
     };
-  }, [sidebarOptions.open, sidebarOptions.variant, sidebarOptions.style]);
+  }, [
+    sidebarOptions.open,
+    sidebarOptions.variant,
+    sidebarOptions.style,
+    sidebarOptions.view,
+  ]);
 
   return stateFunctions;
 }
