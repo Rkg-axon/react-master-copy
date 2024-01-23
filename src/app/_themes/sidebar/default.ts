@@ -1,4 +1,6 @@
-export const sidebarTheme = {
+import { JumboThemeOptions } from '@jumbo/types';
+
+export const sidebarTheme: JumboThemeOptions = {
   type: 'light',
   palette: {
     primary: {
