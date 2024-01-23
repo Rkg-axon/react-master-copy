@@ -1,5 +1,5 @@
 import { NavbarGroup, NavbarItem } from '@jumbo/types';
-import { isNavbarGroup } from '@jumbo/utilities/helpers';
+import { isNavGroup, isNavItem } from '@jumbo/utilities/helpers';
 import { JumboNavGroup, JumboNavItem } from '..';
 
 type JumboNavIdentifierProps = {
@@ -11,13 +11,15 @@ function JumboNavIdentifier({
   item,
   isNested = false,
 }: JumboNavIdentifierProps) {
-  if (!item) return null;
-
-  if (isNavbarGroup(item)) {
+  if (isNavGroup(item)) {
     return <JumboNavGroup item={item} />;
   }
 
-  return <JumboNavItem item={item} isNested={isNested} />;
+  if (isNavItem(item)) {
+    return <JumboNavItem item={item} isNested={isNested} />;
+  }
+
+  return null;
 }
 
 export { JumboNavIdentifier };

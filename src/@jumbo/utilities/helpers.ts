@@ -1,6 +1,7 @@
 import {
   JumboThemeConfig,
   JumboThemeOptions,
+  MenuItems,
   NavbarGroup,
   NavbarItem,
 } from '@jumbo/types';
@@ -28,16 +29,31 @@ export const createJumboTheme = (
   return theme;
 };
 
-function isNavbarItem(object: any): object is NavbarItem {
+function isNavItem(object: any): object is NavbarItem {
   return 'path' in object;
 }
 
-function isNavbarGroup(object: any): object is NavbarGroup {
+function isNavGroup(object: any): object is NavbarGroup {
   return !('path' in object);
 }
 
-function isNavbarGroupWithChildren(object: any): object is NavbarGroup {
+function isNavSection(object: any): object is NavbarGroup {
+  return !('path' in object) && !('collapsible' in object);
+}
+
+function isNavCollapsible(object: any): object is NavbarGroup {
+  return !('path' in object) && 'collapsible' in object;
+}
+
+function isNavWithChildren(object: any): object is NavbarGroup {
   return 'children' in object && Array.isArray(object?.children);
 }
 
-export { isNavbarGroup, isNavbarGroupWithChildren, isNavbarItem };
+function getNavChildren(item: NavbarGroup): MenuItems {
+  if (item.children && Array.isArray(item.children)) {
+    return item.children;
+  }
+  return [];
+}
+
+export { getNavChildren, isNavGroup, isNavItem, isNavSection };

@@ -1,14 +1,14 @@
 type NavbarItem = {
   label: string;
   path: string;
-  icon?: React.ReactNode;
+  icon?: string;
   target?: string;
 };
 
 type NavbarGroup = {
   label: string;
   collapsible?: boolean;
-  icon?: React.ReactNode;
+  icon?: string;
   children?: (NavbarGroup | NavbarItem)[];
 };
 

@@ -1,13 +1,17 @@
 'use client';
-import { useJumboLayout } from '@jumbo/components/JumboLayout/hooks';
+import { useSidebarState } from '@jumbo/components/JumboLayout/hooks';
 import { useJumboSidebarTheme } from '@jumbo/components/JumboTheme/hooks';
 import { Div } from '@jumbo/shared';
-import { MenuItems, NavbarGroup, NavbarItem } from '@jumbo/types';
-import { SIDEBAR_VIEWS } from '@jumbo/utilities/constants';
-import { isNavbarGroup } from '@jumbo/utilities/helpers';
+import { MenuItems, NavbarGroup } from '@jumbo/types';
+import { getNavChildren, isNavSection } from '@jumbo/utilities/helpers';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
-import { ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
+import {
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+  ListSubheader,
+} from '@mui/material';
 import React from 'react';
 import { SubMenusCollapsible } from './components/SubMenusCollapsible';
 import { SubMenusPopover } from './components/SubMenusPopover';
@@ -24,19 +28,17 @@ const menuBefore = {
 };
 
 type JumboNavGroupProps = {
-  item: NavbarGroup | NavbarItem | undefined;
+  item: NavbarGroup | undefined;
 };
 
 function JumboNavGroup({ item }: JumboNavGroupProps) {
   const [open, setOpen] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState<HTMLLIElement | null>(null);
 
-  const { sidebarOptions } = useJumboLayout();
   const { sidebarTheme } = useJumboSidebarTheme();
 
-  const isMiniAndClosed = React.useMemo(() => {
-    return sidebarOptions?.view === SIDEBAR_VIEWS.MINI && !sidebarOptions?.open;
-  }, [sidebarOptions.view, sidebarOptions.open]);
+  const { isMiniAndClosed } = useSidebarState();
+  const miniAndClosed = isMiniAndClosed();
 
   const handlePopoverOpen = React.useCallback(
     (event: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
@@ -49,44 +51,47 @@ function JumboNavGroup({ item }: JumboNavGroupProps) {
     setAnchorEl(null);
   }, []);
 
-  //   React.useEffect(() => {
-  //     if (previousPath !== location.pathname) {
-  //       setPreviousPath(location.pathname);
-  //     }
-  //   }, [item, location.pathname, previousPath]);
-
-  //   React.useEffect(() => {
-  //     setOpen(isUrlInChildren(item, previousPath));
-  //   }, [item, previousPath]);
-
   if (!item) return null;
 
-  const subMenus: MenuItems = isNavbarGroup(item)
-    ? item?.children
-      ? item.children
-      : []
-    : [];
+  const subMenus: MenuItems = getNavChildren(item);
 
-  return (
-    <React.Fragment>
-      {/* TODO: need to clean this code */}
+  function renderItem(navItem: NavbarGroup) {
+    if (isNavSection(navItem)) {
+      return (
+        <ListSubheader
+          component='li'
+          disableSticky
+          sx={{
+            fontSize: '80%',
+            fontWeight: '400',
+            lineHeight: 'normal',
+            textTransform: 'uppercase',
+            bgcolor: 'transparent',
+            p: (theme) => theme.spacing(3.75, 3.75, 1.875),
+          }}
+        >
+          {navItem.label}
+        </ListSubheader>
+      );
+    }
+    return (
       <ListItemButton
         component={'li'}
         onClick={() => setOpen(!open)}
         onMouseEnter={handlePopoverOpen}
         onMouseLeave={handlePopoverClose}
         sx={{
-          p: (theme) => (!isMiniAndClosed ? theme.spacing(1, 3.75) : 0),
-          borderRadius: isMiniAndClosed ? '50%' : '0 24px 24px 0',
-          margin: isMiniAndClosed ? '0 auto' : '0',
-          ...(isMiniAndClosed
+          p: (theme) => (!miniAndClosed ? theme.spacing(1, 3.75) : 0),
+          borderRadius: miniAndClosed ? '50%' : '0 24px 24px 0',
+          margin: miniAndClosed ? '0 auto' : '0',
+          ...(miniAndClosed
             ? { width: 40, height: 40, justifyContent: 'center' }
             : {}),
           overflow: 'hidden',
           '&:hover': {
             color: sidebarTheme.palette.nav?.action?.hover,
             backgroundColor: sidebarTheme.palette.nav?.background?.hover,
-            ...(!isMiniAndClosed
+            ...(!miniAndClosed
               ? {
                   '&::before': {
                     ...menuBefore,
@@ -95,10 +100,10 @@ function JumboNavGroup({ item }: JumboNavGroupProps) {
                 }
               : {}),
           },
-          ...(!isMiniAndClosed ? { '&::before': menuBefore } : {}),
+          ...(!miniAndClosed ? { '&::before': menuBefore } : {}),
         }}
       >
-        {!isMiniAndClosed && (
+        {!miniAndClosed && (
           <Div
             sx={{
               position: 'absolute',
@@ -111,16 +116,16 @@ function JumboNavGroup({ item }: JumboNavGroupProps) {
             {open ? <ArrowDropDownIcon /> : <ArrowRightIcon />}
           </Div>
         )}
-        {item.icon && (
+        {navItem.icon && (
           <ListItemIcon
-            sx={{ minWidth: isMiniAndClosed ? 20 : 32, color: 'inherit' }}
+            sx={{ minWidth: miniAndClosed ? 20 : 32, color: 'inherit' }}
           >
-            {item.icon}
+            {navItem.icon}
           </ListItemIcon>
         )}
-        {!isMiniAndClosed && (
+        {!miniAndClosed && (
           <ListItemText
-            primary={item.label}
+            primary={navItem.label}
             sx={{
               m: 0,
               '& .MuiTypography-root': {
@@ -132,6 +137,14 @@ function JumboNavGroup({ item }: JumboNavGroupProps) {
           />
         )}
       </ListItemButton>
+    );
+  }
+
+  return (
+    <React.Fragment>
+      {/* TODO: need to clean this code */}
+      {renderItem(item)}
+
       {subMenus !== undefined && !isMiniAndClosed && (
         <SubMenusCollapsible items={subMenus} open={open} />
       )}

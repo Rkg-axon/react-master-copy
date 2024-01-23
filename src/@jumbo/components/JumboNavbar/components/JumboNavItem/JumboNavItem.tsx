@@ -20,12 +20,12 @@ const menuBefore = {
   backgroundColor: 'transparent',
 };
 
-type JumboNavGroupProps = {
+type JumboNavItemProps = {
   item: NavbarItem | undefined;
   isNested: boolean;
 };
 
-function JumboNavItem({ item, isNested }: JumboNavGroupProps) {
+function JumboNavItem({ item, isNested }: JumboNavItemProps) {
   const { sidebarTheme } = useJumboSidebarTheme();
 
   const { isMiniAndClosed } = useSidebarState();
