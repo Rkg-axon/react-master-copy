@@ -16,6 +16,26 @@ const menus: MenuItems = [
       },
     ],
   },
+  {
+    label: 'sidebar.menu.extensions',
+    children: [
+      {
+        label: 'sidebar.menu.editor',
+        collapsible: true,
+        icon: 'some',
+        children: [
+          {
+            path: '/extensions/editors/ck',
+            label: 'sidebar.menuItem.ckEditor',
+          },
+          {
+            path: '/extensions/editors/wysiwyg',
+            label: 'sidebar.menuItem.wysiwygEditor',
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 export { menus };

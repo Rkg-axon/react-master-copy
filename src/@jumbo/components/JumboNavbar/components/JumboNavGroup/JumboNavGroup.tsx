@@ -2,7 +2,7 @@
 import { useSidebarState } from '@jumbo/components/JumboLayout/hooks';
 import { useJumboSidebarTheme } from '@jumbo/components/JumboTheme/hooks';
 import { Div } from '@jumbo/shared';
-import { MenuItems, NavbarGroup } from '@jumbo/types';
+import { MenuItems, NavbarGroup, NavbarItem } from '@jumbo/types';
 import { getNavChildren, isNavSection } from '@jumbo/utilities/helpers';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
@@ -13,6 +13,7 @@ import {
   ListSubheader,
 } from '@mui/material';
 import React from 'react';
+import { JumboNavIdentifier } from '..';
 import { SubMenusCollapsible } from './components/SubMenusCollapsible';
 import { SubMenusPopover } from './components/SubMenusPopover';
 
@@ -54,7 +55,7 @@ function JumboNavGroup({ item }: JumboNavGroupProps) {
   if (!item) return null;
 
   const subMenus: MenuItems = getNavChildren(item);
-
+  console.log('subMenus are: ', subMenus);
   function renderItem(navItem: NavbarGroup) {
     if (isNavSection(navItem)) {
       return (
@@ -140,21 +141,39 @@ function JumboNavGroup({ item }: JumboNavGroupProps) {
     );
   }
 
+  function renderSubMenus(subMenus: MenuItems) {
+    if (isNavSection(item)) {
+      return (
+        <>
+          {subMenus &&
+            subMenus.map((child: NavbarGroup | NavbarItem, index) => {
+              return <JumboNavIdentifier item={child} key={index} />;
+            })}
+        </>
+      );
+    }
+
+    return (
+      <>
+        {subMenus !== undefined && !miniAndClosed && (
+          <SubMenusCollapsible items={subMenus} open={open} />
+        )}
+        {subMenus && miniAndClosed && (
+          <SubMenusPopover
+            items={subMenus}
+            anchorEl={anchorEl}
+            onClose={handlePopoverClose}
+          />
+        )}
+      </>
+    );
+  }
+
   return (
     <React.Fragment>
       {/* TODO: need to clean this code */}
       {renderItem(item)}
-
-      {subMenus !== undefined && !isMiniAndClosed && (
-        <SubMenusCollapsible items={subMenus} open={open} />
-      )}
-      {subMenus && isMiniAndClosed && (
-        <SubMenusPopover
-          items={subMenus}
-          anchorEl={anchorEl}
-          onClose={handlePopoverClose}
-        />
-      )}
+      {renderSubMenus(subMenus)}
     </React.Fragment>
   );
 }

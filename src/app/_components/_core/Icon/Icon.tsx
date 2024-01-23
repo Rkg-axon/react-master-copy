@@ -1,18 +1,15 @@
 import { APP_ICONS } from '@app/_utilities/constants/icons';
-import { SxProps } from '@mui/material';
-import { Theme } from '@mui/system';
-import React, { CSSProperties } from 'react';
+import React from 'react';
 
-function Icon(
-  name: string,
-  { sx, style }: { sx?: SxProps<Theme>; style?: CSSProperties }
-): React.ReactNode {
+function Icon({ name }: { name: string | undefined }): React.ReactNode {
+  if (!name) return '';
+
   const appIcon = APP_ICONS.find((icon) => {
     return icon.name === name;
   });
 
   if (!appIcon) {
-    return name;
+    return name ?? '';
   }
 
   const { Component, props } = appIcon;

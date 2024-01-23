@@ -1,3 +1,4 @@
+import { Icon } from '@app/_components/_core/Icon';
 import { useSidebarState } from '@jumbo/components/JumboLayout/hooks';
 import { useJumboSidebarTheme } from '@jumbo/components/JumboTheme/hooks';
 import { Link } from '@jumbo/shared';
@@ -96,7 +97,11 @@ function JumboNavItem({ item, isNested }: JumboNavItemProps) {
         <ListItemIcon
           sx={{ minWidth: miniAndClosed ? 20 : 32, color: 'inherit' }}
         >
-          {isNested ? <CircleIcon sx={{ fontSize: 6, ml: 1 }} /> : item.icon}
+          {isNested ? (
+            <CircleIcon sx={{ fontSize: 6, ml: 1 }} />
+          ) : (
+            <Icon name={item.icon} />
+          )}
         </ListItemIcon>
         {!miniAndClosed && (
           <ListItemText
