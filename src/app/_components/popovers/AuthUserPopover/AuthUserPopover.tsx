@@ -46,7 +46,7 @@ const AuthUserPopover = () => {
           }}
         >
           <Avatar
-            src={authUser.profile_pic}
+            src={authUser?.profile_pic}
             alt={authUser.name}
             sx={{ width: 60, height: 60, mb: 2 }}
           />

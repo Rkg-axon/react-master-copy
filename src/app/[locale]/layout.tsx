@@ -7,7 +7,7 @@ import type { Metadata } from 'next';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import { Params } from 'next/dist/shared/lib/router/utils/route-matcher';
 import { Lexend } from 'next/font/google';
-import { Header, Sidebar } from '../_components/layout';
+import { Header, Sidebar,Footer } from '../_components/layout';
 import { CONFIG } from '../_config';
 import '../_utilities/style/scrollbar.css';
 
@@ -39,7 +39,7 @@ export default async function RootLayout({
           <AppBuilder>
             <JumboLayout
               header={<Header />}
-              footer={<div>me footer</div>}
+              footer={<Footer/>}
               sidebar={<Sidebar menus={menus} />}
             >
               {children}
