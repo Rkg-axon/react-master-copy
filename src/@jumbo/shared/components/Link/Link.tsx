@@ -1,8 +1,9 @@
-import { config } from '@jumbo/jumbo.config';
-
-const LinkComponent = config.LinkComponent;
+'use client';
+import { useJumboConfig } from '@jumbo/components/JumboConfigProvider/hooks';
 
 function Link(props: any) {
+  const { LinkComponent } = useJumboConfig();
+
   return <LinkComponent {...props} />;
 }
 

@@ -1,3 +1,4 @@
+'use client';
 import { createLocalizedPathnamesNavigation } from 'next-intl/navigation';
 import { localePrefix, locales, pathnames } from './locale-config';
 

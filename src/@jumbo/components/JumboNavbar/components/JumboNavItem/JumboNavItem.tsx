@@ -11,6 +11,7 @@ import {
   SxProps,
   ThemeOptions,
 } from '@mui/material';
+import { useTranslations } from 'next-intl';
 import { useJumboNavItemSx } from '../../hooks';
 type JumboNavItemProps = {
   item: NavbarItem | undefined;
@@ -30,6 +31,9 @@ function JumboNavItem({
     miniAndClosed,
     theme
   );
+
+  //TODO: this component depends on this useTranslations
+  const t = useTranslations();
 
   if (!item) return null;
 
@@ -67,7 +71,7 @@ function JumboNavItem({
         </ListItemIcon>
         {!miniAndClosed && (
           <ListItemText
-            primary={item.label}
+            primary={t(item.label)}
             sx={{
               m: 0,
               '& .MuiTypography-root': {

@@ -1,3 +1,4 @@
+export * from './JumboConfigProvider';
 export * from './JumboDdPopover';
 export * from './JumboIconButton';
 export * from './JumboLayout';

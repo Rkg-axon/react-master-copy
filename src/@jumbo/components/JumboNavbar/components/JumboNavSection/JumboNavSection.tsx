@@ -1,6 +1,7 @@
 import { JumboThemeOptions, MenuItems, NavbarSection } from '@jumbo/types';
 import { getNavChildren } from '@jumbo/utilities/helpers';
 import { ListSubheader } from '@mui/material';
+import { useTranslations } from 'next-intl';
 import { JumboNavIdentifier } from '..';
 
 type JumboNavSectionProps = {
@@ -10,6 +11,8 @@ type JumboNavSectionProps = {
 };
 
 function JumboNavSection({ item, miniAndClosed, theme }: JumboNavSectionProps) {
+  //TODO: this component depends on this useTranslations
+  const t = useTranslations();
   if (!item) return null;
 
   const subMenus: MenuItems = getNavChildren(item);
@@ -29,7 +32,7 @@ function JumboNavSection({ item, miniAndClosed, theme }: JumboNavSectionProps) {
             p: (theme) => theme.spacing(3.75, 3.75, 1.875),
           }}
         >
-          {item.label}
+          {t(item.label)}
         </ListSubheader>
       )}
       {subMenus &&

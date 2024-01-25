@@ -5,7 +5,6 @@ function useSmallScreen(): boolean {
   return useMediaQuery('(max-width:575px)');
 }
 
-function useMenus(menus: MenuItems) {
-  
-}
+function useMenus(menus: MenuItems) {}
+
 export { useSmallScreen };

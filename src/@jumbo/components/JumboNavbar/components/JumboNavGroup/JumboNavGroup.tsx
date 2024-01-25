@@ -11,6 +11,7 @@ import {
   SxProps,
   Theme,
 } from '@mui/material';
+import { useTranslations } from 'next-intl';
 import React from 'react';
 import { useJumboNavGroupSx } from '../../hooks';
 import { SubMenusCollapsible } from './components/SubMenusCollapsible';
@@ -39,6 +40,8 @@ function JumboNavGroup({ item, miniAndClosed, theme }: JumboNavGroupProps) {
     setAnchorEl(null);
   }, []);
 
+  //TODO: this component depends on this useTranslations
+  const t = useTranslations();
   if (!item) return null;
 
   const subMenus: MenuItems = getNavChildren(item);
@@ -70,7 +73,7 @@ function JumboNavGroup({ item, miniAndClosed, theme }: JumboNavGroupProps) {
         </Div>
 
         <ListItemText
-          primary={navItem.label}
+          primary={t(navItem.label)}
           sx={{
             m: 0,
             '& .MuiTypography-root': {

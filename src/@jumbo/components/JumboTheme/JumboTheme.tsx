@@ -1,5 +1,5 @@
 'use client';
-import { ThemeProvider, createTheme } from '@mui/material';
+import { Theme, ThemeProvider, createTheme } from '@mui/material';
 import { enUS } from '@mui/material/locale';
 import React from 'react';
 
@@ -23,7 +23,7 @@ function JumboTheme({
   children: React.ReactNode;
   init: JumboThemeConfig;
 }) {
-  const [theme, setTheme] = React.useState(createTheme(init.main));
+  const [theme, setTheme] = React.useState<Theme>(createTheme(init.main));
   const [muiLocale, setMuiLocale] = React.useState(enUS);
 
   const updateTheme = React.useCallback(
