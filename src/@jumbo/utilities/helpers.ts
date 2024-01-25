@@ -3,6 +3,7 @@ import {
   JumboThemeOptions,
   NavbarGroup,
   NavbarItem,
+  NavbarSection,
 } from '@jumbo/types';
 export const createJumboTheme = (
   mainTheme: JumboThemeOptions,
@@ -33,22 +34,24 @@ function isNavItem(object: any): object is NavbarItem {
 }
 
 function isNavGroup(object: any): object is NavbarGroup {
-  return !('path' in object);
+  return (
+    !('path' in object) &&
+    'label' in object &&
+    'children' in object &&
+    'collapsible' in object
+  );
 }
 
-function isNavSection(object: any) {
-  return !('path' in object) && !('collapsible' in object);
+function isNavSection(object: any): object is NavbarSection {
+  return (
+    !('path' in object) &&
+    !('collapsible' in object) &&
+    'label' in object &&
+    'children' in object
+  );
 }
 
-function isNavCollapsible(object: any) {
-  return !('path' in object) && 'collapsible' in object;
-}
-
-function isNavWithChildren(object: any) {
-  return 'children' in object && Array.isArray(object?.children);
-}
-
-function getNavChildren(item: NavbarGroup) {
+function getNavChildren(item: NavbarGroup | NavbarSection) {
   if (item.children && Array.isArray(item.children)) {
     return item.children;
   }

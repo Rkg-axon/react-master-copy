@@ -5,9 +5,15 @@ import { SubMenus } from '..';
 type SubMenusPopoverProps = {
   items: MenuItems;
   anchorEl: HTMLLIElement | null;
+  miniAndClosed: boolean;
   onClose: () => void;
 };
-function SubMenusPopover({ items, anchorEl, onClose }: SubMenusPopoverProps) {
+function SubMenusPopover({
+  items,
+  anchorEl,
+  onClose,
+  miniAndClosed,
+}: SubMenusPopoverProps) {
   const open = Boolean(anchorEl);
 
   return (
@@ -29,7 +35,7 @@ function SubMenusPopover({ items, anchorEl, onClose }: SubMenusPopoverProps) {
       onClose={onClose}
       disableRestoreFocus
     >
-      <SubMenus items={items} />
+      <SubMenus items={items} miniAndClosed={miniAndClosed} />
     </Popover>
   );
 }

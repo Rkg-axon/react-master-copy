@@ -7,11 +7,23 @@ type NavbarItem = {
 
 type NavbarGroup = {
   label: string;
+  children: (NavbarGroup | NavbarItem)[];
   collapsible?: boolean;
   icon?: string;
-  children?: (NavbarGroup | NavbarItem)[];
 };
 
-type MenuItems = (NavbarGroup | NavbarItem)[];
+type NavbarSection = {
+  label: string;
+  children: (NavbarGroup | NavbarItem)[];
+};
 
-export { type MenuItems, type NavbarGroup, type NavbarItem };
+type MenuItem = NavbarSection | NavbarGroup | NavbarItem;
+type MenuItems = MenuItem[];
+
+export {
+  type MenuItem,
+  type MenuItems,
+  type NavbarGroup,
+  type NavbarItem,
+  type NavbarSection,
+};

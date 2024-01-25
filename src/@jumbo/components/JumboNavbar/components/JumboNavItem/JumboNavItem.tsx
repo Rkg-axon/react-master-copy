@@ -1,80 +1,42 @@
 import { Icon } from '@app/_components/_core/Icon';
-import { useSidebarState } from '@jumbo/components/JumboLayout/hooks';
-import { useJumboSidebarTheme } from '@jumbo/components/JumboTheme/hooks';
+import { Theme } from '@emotion/react';
 import { Link } from '@jumbo/shared';
-import { NavbarItem } from '@jumbo/types';
+import { JumboThemeOptions, NavbarItem } from '@jumbo/types';
 import CircleIcon from '@mui/icons-material/Circle';
 import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
+  Link as MuiLink,
+  SxProps,
   ThemeOptions,
 } from '@mui/material';
-const menuBefore = {
-  left: 0,
-  top: 0,
-  content: `''`,
-  position: 'absolute',
-  display: 'inline-block',
-  width: '4px',
-  height: '100%',
-  backgroundColor: 'transparent',
-};
-
+import { useJumboNavItemSx } from '../../hooks';
 type JumboNavItemProps = {
   item: NavbarItem | undefined;
   isNested: boolean;
+  miniAndClosed: boolean;
+  theme: JumboThemeOptions;
 };
 
-function JumboNavItem({ item, isNested }: JumboNavItemProps) {
-  const { sidebarTheme } = useJumboSidebarTheme();
-
-  const { isMiniAndClosed } = useSidebarState();
-  const miniAndClosed = isMiniAndClosed();
+function JumboNavItem({
+  item,
+  isNested,
+  miniAndClosed,
+  theme,
+}: JumboNavItemProps) {
+  const navSx: SxProps<Theme> = useJumboNavItemSx(
+    item?.path ?? '',
+    miniAndClosed,
+    theme
+  );
 
   if (!item) return null;
 
   return (
-    <ListItemButton
-      component={'li'}
-      sx={{
-        p: 0,
-        overflow: 'hidden',
-        borderRadius: miniAndClosed ? '50%' : '0 24px 24px 0',
-        margin: miniAndClosed ? '0 auto' : '0',
-        ...(miniAndClosed
-          ? { width: 40, height: 40, justifyContent: 'center' }
-          : {}),
-        ...(!miniAndClosed ? { '&::before': menuBefore } : {}),
-        '&:hover': {
-          color: sidebarTheme.palette.nav?.action?.hover,
-          backgroundColor: sidebarTheme.palette.nav?.background?.hover,
-          ...(!miniAndClosed
-            ? {
-                '&::before': {
-                  ...menuBefore,
-                  backgroundColor: sidebarTheme.palette.nav?.tick?.hover,
-                },
-              }
-            : {}),
-        },
-        ...(location.pathname === item?.path
-          ? {
-              color: sidebarTheme.palette.nav?.action?.active,
-              backgroundColor: sidebarTheme.palette.nav?.background?.active,
-              ...(!miniAndClosed
-                ? {
-                    '&::before': {
-                      ...menuBefore,
-                      backgroundColor: sidebarTheme.palette.nav?.tick?.active,
-                    },
-                  }
-                : {}),
-            }
-          : {}),
-      }}
-    >
-      <Link
+    <ListItemButton component={'li'} sx={{ ...navSx }}>
+      <MuiLink
+        component={Link}
         underline={'none'}
         href={item.path}
         {...(item.target ? { target: item.target } : {})}
@@ -116,7 +78,7 @@ function JumboNavItem({ item, isNested }: JumboNavItemProps) {
             }}
           />
         )}
-      </Link>
+      </MuiLink>
     </ListItemButton>
   );
 }

@@ -1,20 +1,29 @@
 'use client';
-import { MenuItems } from '@jumbo/types';
+import { JumboThemeOptions, MenuItems } from '@jumbo/types';
 import { List } from '@mui/material';
 
-import { useSidebarState } from '../JumboLayout/hooks';
+import { useJumboTheme } from '../JumboTheme/hooks';
 import { JumboNavIdentifier } from './components';
 
 type JumboNavbarProps = {
   items: MenuItems;
   groupBehaviour: 'collapsible' | 'popover';
+  mini?: boolean;
+  open?: boolean;
+  theme?: JumboThemeOptions;
 };
 
 function JumboNavbar(
-  props: JumboNavbarProps = { items: [], groupBehaviour: 'collapsible' }
+  props: JumboNavbarProps = {
+    items: [],
+    groupBehaviour: 'collapsible',
+    mini: false,
+    open: true,
+  }
 ) {
-  const { isMiniAndClosed } = useSidebarState();
-  const miniAndClosed = isMiniAndClosed();
+  const miniAndClosed: boolean = !!props.mini && !props.open;
+  const { theme: jumboTheme } = useJumboTheme();
+  const activeTheme = props.theme || jumboTheme;
 
   return (
     <List
@@ -25,7 +34,12 @@ function JumboNavbar(
       }}
     >
       {props.items.map((item, index) => (
-        <JumboNavIdentifier item={item} key={index} />
+        <JumboNavIdentifier
+          item={item}
+          miniAndClosed={miniAndClosed}
+          key={index}
+          theme={activeTheme}
+        />
       ))}
     </List>
   );

@@ -1,45 +1,32 @@
 'use client';
-import { useSidebarState } from '@jumbo/components/JumboLayout/hooks';
-import { useJumboSidebarTheme } from '@jumbo/components/JumboTheme/hooks';
 import { Div } from '@jumbo/shared';
-import { MenuItems, NavbarGroup, NavbarItem } from '@jumbo/types';
-import { getNavChildren, isNavSection } from '@jumbo/utilities/helpers';
+import { JumboThemeOptions, MenuItems, NavbarGroup } from '@jumbo/types';
+import { getNavChildren } from '@jumbo/utilities/helpers';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
-  ListSubheader,
+  SxProps,
+  Theme,
 } from '@mui/material';
 import React from 'react';
-import { JumboNavIdentifier } from '..';
+import { useJumboNavGroupSx } from '../../hooks';
 import { SubMenusCollapsible } from './components/SubMenusCollapsible';
 import { SubMenusPopover } from './components/SubMenusPopover';
 
-const menuBefore = {
-  left: 0,
-  top: 0,
-  content: `''`,
-  position: 'absolute',
-  display: 'inline-block',
-  width: '4px',
-  height: '100%',
-  backgroundColor: 'transparent',
-};
-
 type JumboNavGroupProps = {
   item: NavbarGroup | undefined;
+  miniAndClosed: boolean;
+  theme: JumboThemeOptions;
 };
 
-function JumboNavGroup({ item }: JumboNavGroupProps) {
+function JumboNavGroup({ item, miniAndClosed, theme }: JumboNavGroupProps) {
   const [open, setOpen] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState<HTMLLIElement | null>(null);
 
-  const { sidebarTheme } = useJumboSidebarTheme();
-
-  const { isMiniAndClosed } = useSidebarState();
-  const miniAndClosed = isMiniAndClosed();
+  const navGroupSx: SxProps<Theme> = useJumboNavGroupSx(miniAndClosed, theme);
 
   const handlePopoverOpen = React.useCallback(
     (event: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
@@ -55,125 +42,74 @@ function JumboNavGroup({ item }: JumboNavGroupProps) {
   if (!item) return null;
 
   const subMenus: MenuItems = getNavChildren(item);
-  console.log('subMenus are: ', subMenus);
+
   function renderItem(navItem: NavbarGroup) {
-    if (isNavSection(navItem)) {
+    if (miniAndClosed) {
+      if (!navItem.icon) return null;
       return (
-        <ListSubheader
-          component='li'
-          disableSticky
+        <ListItemIcon
+          sx={{ minWidth: miniAndClosed ? 20 : 32, color: 'inherit' }}
+        >
+          {navItem.icon}
+        </ListItemIcon>
+      );
+    }
+
+    return (
+      <React.Fragment>
+        <Div
           sx={{
-            fontSize: '80%',
-            fontWeight: '400',
-            lineHeight: 'normal',
-            textTransform: 'uppercase',
-            bgcolor: 'transparent',
-            p: (theme) => theme.spacing(3.75, 3.75, 1.875),
+            position: 'absolute',
+            left: 5,
+            display: 'inline-flex',
+            top: '50%',
+            transform: 'translateY(-50%)',
           }}
         >
-          {navItem.label}
-        </ListSubheader>
-      );
-    }
-    return (
-      <ListItemButton
-        component={'li'}
-        onClick={() => setOpen(!open)}
-        onMouseEnter={handlePopoverOpen}
-        onMouseLeave={handlePopoverClose}
-        sx={{
-          p: (theme) => (!miniAndClosed ? theme.spacing(1, 3.75) : 0),
-          borderRadius: miniAndClosed ? '50%' : '0 24px 24px 0',
-          margin: miniAndClosed ? '0 auto' : '0',
-          ...(miniAndClosed
-            ? { width: 40, height: 40, justifyContent: 'center' }
-            : {}),
-          overflow: 'hidden',
-          '&:hover': {
-            color: sidebarTheme.palette.nav?.action?.hover,
-            backgroundColor: sidebarTheme.palette.nav?.background?.hover,
-            ...(!miniAndClosed
-              ? {
-                  '&::before': {
-                    ...menuBefore,
-                    backgroundColor: sidebarTheme.palette.nav?.tick?.hover,
-                  },
-                }
-              : {}),
-          },
-          ...(!miniAndClosed ? { '&::before': menuBefore } : {}),
-        }}
-      >
-        {!miniAndClosed && (
-          <Div
-            sx={{
-              position: 'absolute',
-              left: 5,
-              display: 'inline-flex',
-              top: '50%',
-              transform: 'translateY(-50%)',
-            }}
-          >
-            {open ? <ArrowDropDownIcon /> : <ArrowRightIcon />}
-          </Div>
-        )}
-        {navItem.icon && (
-          <ListItemIcon
-            sx={{ minWidth: miniAndClosed ? 20 : 32, color: 'inherit' }}
-          >
-            {navItem.icon}
-          </ListItemIcon>
-        )}
-        {!miniAndClosed && (
-          <ListItemText
-            primary={navItem.label}
-            sx={{
-              m: 0,
-              '& .MuiTypography-root': {
-                whiteSpace: 'nowrap',
-                overflow: 'hidden',
-                textOverflow: 'ellipsis',
-              },
-            }}
-          />
-        )}
-      </ListItemButton>
-    );
-  }
+          {open ? <ArrowDropDownIcon /> : <ArrowRightIcon />}
+        </Div>
 
-  function renderSubMenus(subMenus: MenuItems) {
-    if (isNavSection(item)) {
-      return (
-        <>
-          {subMenus &&
-            subMenus.map((child: NavbarGroup | NavbarItem, index) => {
-              return <JumboNavIdentifier item={child} key={index} />;
-            })}
-        </>
-      );
-    }
-
-    return (
-      <>
-        {subMenus !== undefined && !miniAndClosed && (
-          <SubMenusCollapsible items={subMenus} open={open} />
-        )}
-        {subMenus && miniAndClosed && (
-          <SubMenusPopover
-            items={subMenus}
-            anchorEl={anchorEl}
-            onClose={handlePopoverClose}
-          />
-        )}
-      </>
+        <ListItemText
+          primary={navItem.label}
+          sx={{
+            m: 0,
+            '& .MuiTypography-root': {
+              whiteSpace: 'nowrap',
+              overflow: 'hidden',
+              textOverflow: 'ellipsis',
+            },
+          }}
+        />
+      </React.Fragment>
     );
   }
 
   return (
     <React.Fragment>
-      {/* TODO: need to clean this code */}
-      {renderItem(item)}
-      {renderSubMenus(subMenus)}
+      <ListItemButton
+        component={'li'}
+        onClick={() => setOpen(!open)}
+        onMouseEnter={handlePopoverOpen}
+        onMouseLeave={handlePopoverClose}
+        sx={{ ...navGroupSx }}
+      >
+        {renderItem(item)}
+      </ListItemButton>
+      {subMenus !== undefined && !miniAndClosed && (
+        <SubMenusCollapsible
+          items={subMenus}
+          open={open}
+          miniAndClosed={miniAndClosed}
+        />
+      )}
+      {subMenus && miniAndClosed && (
+        <SubMenusPopover
+          items={subMenus}
+          anchorEl={anchorEl}
+          onClose={handlePopoverClose}
+          miniAndClosed={miniAndClosed}
+        />
+      )}
     </React.Fragment>
   );
 }

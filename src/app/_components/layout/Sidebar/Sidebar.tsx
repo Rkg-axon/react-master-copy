@@ -1,5 +1,7 @@
+'use client';
 import { JumboNavbar } from '@jumbo/components';
 import { JumboScrollbar } from '@jumbo/components/JumboScrollbar';
+import { useJumboSidebarTheme } from '@jumbo/components/JumboTheme/hooks';
 import { Div } from '@jumbo/shared';
 import { MenuItems } from '@jumbo/types';
 import React, { Suspense } from 'react';
@@ -8,6 +10,7 @@ type SidebarProps = {
   menus: MenuItems;
 };
 function Sidebar({ menus }: SidebarProps) {
+  const { sidebarTheme } = useJumboSidebarTheme();
   return (
     <React.Fragment>
       <SidebarHeader />
@@ -28,7 +31,11 @@ function Sidebar({ menus }: SidebarProps) {
           }
         >
           {/* <SidebarSkeleton /> */}
-          <JumboNavbar items={menus} groupBehaviour='collapsible' />
+          <JumboNavbar
+            items={menus}
+            groupBehaviour='collapsible'
+            theme={sidebarTheme}
+          />
         </Suspense>
       </JumboScrollbar>
     </React.Fragment>

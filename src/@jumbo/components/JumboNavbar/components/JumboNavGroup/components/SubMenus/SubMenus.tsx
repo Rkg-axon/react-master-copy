@@ -1,12 +1,13 @@
 import { MenuItems } from '@jumbo/types';
 import { List } from '@mui/material';
-import { JumboNavIdentifier } from '../../../JumboNavIdentifier/JumboNavIdentifier';
+import { JumboNavIdentifier } from '../../..';
 
 type SubMenusProps = {
   items: MenuItems;
+  miniAndClosed: boolean;
 };
 
-function SubMenus({ items }: SubMenusProps) {
+function SubMenus({ items, miniAndClosed }: SubMenusProps) {
   return (
     <List disablePadding>
       {items.map((child, index) => {
@@ -16,6 +17,7 @@ function SubMenus({ items }: SubMenusProps) {
             item={child}
             key={`${eventKey}${index}`}
             isNested={true}
+            miniAndClosed={miniAndClosed}
           />
         );
       })}

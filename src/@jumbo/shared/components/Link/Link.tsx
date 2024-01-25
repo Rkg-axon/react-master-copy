@@ -1,17 +1,9 @@
-import { LinkProps, Link as MUILink } from '@mui/material';
-import { Url } from 'next/dist/shared/lib/router/router';
-import NextLink from 'next/link';
+import { config } from '@jumbo/jumbo.config';
 
-type JumboLinkProps = LinkProps & {
-  href: Url;
-};
+const LinkComponent = config.LinkComponent;
 
-function Link(props: JumboLinkProps) {
-  return (
-    <MUILink component={NextLink} {...props}>
-      {props.children}
-    </MUILink>
-  );
+function Link(props: any) {
+  return <LinkComponent {...props} />;
 }
 
 export { Link };
