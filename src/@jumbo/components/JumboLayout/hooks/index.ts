@@ -155,6 +155,52 @@ function useAppBarSx() {
   return appBarSx;
 }
 
+function useSidebarState() {
+  const { sidebarOptions } = useJumboLayout();
+
+  const stateFunctions = React.useMemo(() => {
+    function isSidebarStyle(style: SIDEBAR_STYLES): boolean {
+      return sidebarOptions.style === style;
+    }
+
+    function isSidebarVariant(variant: SIDEBAR_VARIANTS): boolean {
+      return sidebarOptions.variant === variant;
+    }
+
+    function isSidebarOpen(): boolean {
+      return sidebarOptions.open ?? false;
+    }
+
+    function isSidebarCollapsible(): boolean {
+      return (
+        isSidebarStyle(SIDEBAR_STYLES.CLIPPED_UNDER_HEADER) ||
+        isSidebarVariant(SIDEBAR_VARIANTS.TEMPORARY) ||
+        (isSidebarVariant(SIDEBAR_VARIANTS.PERSISTENT) && !isSidebarOpen())
+      );
+    }
+
+    function isMiniAndClosed(): boolean {
+      return (
+        sidebarOptions?.view === SIDEBAR_VIEWS.MINI && !sidebarOptions?.open
+      );
+    }
+
+    return {
+      isSidebarStyle,
+      isSidebarOpen,
+      isSidebarVariant,
+      isSidebarCollapsible,
+      isMiniAndClosed,
+    };
+  }, [
+    sidebarOptions.open,
+    sidebarOptions.variant,
+    sidebarOptions.style,
+    sidebarOptions.view,
+  ]);
+
+  return stateFunctions;
+}
 export {
   useAppBarSx,
   useDrawerVariant,
@@ -163,4 +209,5 @@ export {
   useJumboLayout,
   useSidebarDrawerHandlers,
   useSidebarDrawerSx,
+  useSidebarState,
 };

@@ -1,6 +1,7 @@
 import { JumboThemeOptions } from '@jumbo/types';
 
 export const footerTheme: JumboThemeOptions = {
+  type: 'light',
   palette: {
     primary: {
       main: '#7352C7',

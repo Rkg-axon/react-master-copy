@@ -1,0 +1,19 @@
+{
+  "Index": {
+    "title": "Hello world!"
+  },
+  "sidebar": {
+    "menu": {
+      "home": "Home",
+      "extensions": "Extensions",
+      "editor": "Editor"
+    },
+    "menuItem": {
+      "misc": "Misc",
+      "crypto": "Crypto",
+      "editor": "Editor",
+      "wysiwygEditor": "Wyswyg Editor",
+      "ckEditor": "CK Editor"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "Index": {
+    "title": "German Hello world!"
+  },
+  "sidebar": {
+    "menu": {
+      "home": "G Home",
+      "extensions": "G Extensions"
+    },
+    "menuItem": {
+      "misc": "G Misc",
+      "crypto": "G Crypto",
+      "editor": "G Editor"
+    }
+  }
+}

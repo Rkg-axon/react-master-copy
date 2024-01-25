@@ -1,9 +1,25 @@
-import { ThemeOptions } from '@mui/material';
+import { PaletteOptions, ThemeOptions } from '@mui/material';
 
 interface JumboThemeOptions extends ThemeOptions {
   jumboComponents?: {
     JumboSearch?: {
       background?: string;
+    };
+  };
+  palette: PaletteOptions & {
+    nav?: {
+      action?: {
+        active?: string;
+        hover?: string;
+      };
+      background?: {
+        active?: string;
+        hover?: string;
+      };
+      tick?: {
+        active?: string;
+        hover?: string;
+      };
     };
   };
   type: 'light' | 'dark';

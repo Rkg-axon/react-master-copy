@@ -6,9 +6,9 @@ import Image from 'next/image';
 type LogoProps = {
   mini: boolean;
   mode: 'light' | 'dark';
-  sx: SxProps<Theme>;
+  sx?: SxProps<Theme>;
 };
-const Logo = ({ mini, mode, sx }: LogoProps) => {
+const Logo = ({ mini = false, mode = 'light', sx }: LogoProps) => {
   return (
     <Div sx={{ display: 'inline-flex', ...sx }}>
       <Link href={'/dashboards/misc'}>
@@ -20,6 +20,8 @@ const Logo = ({ mini, mode, sx }: LogoProps) => {
                 : `/assets/images/logo-white.png`
             }
             alt='Jumbo React'
+            width={110}
+            height={35}
           />
         ) : (
           <Image
@@ -29,16 +31,13 @@ const Logo = ({ mini, mode, sx }: LogoProps) => {
                 : `/assets/images/logo-short-white.png`
             }
             alt='Jumbo React'
+            width={35}
+            height={35}
           />
         )}
       </Link>
     </Div>
   );
-};
-
-Logo.defaultProps = {
-  mode: 'light',
-  mini: false,
 };
 
 export { Logo };
