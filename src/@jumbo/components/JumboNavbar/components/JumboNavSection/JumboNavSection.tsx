@@ -1,13 +1,13 @@
-import { JumboThemeOptions, MenuItems, NavbarSection } from '@jumbo/types';
+import { MenuItems, NavbarSection } from '@jumbo/types';
 import { getNavChildren } from '@jumbo/utilities/helpers';
-import { ListSubheader } from '@mui/material';
+import { ListSubheader, Theme } from '@mui/material';
 import { useTranslations } from 'next-intl';
 import { JumboNavIdentifier } from '..';
 
 type JumboNavSectionProps = {
   item: NavbarSection | undefined;
   miniAndClosed: boolean;
-  theme: JumboThemeOptions;
+  theme: Theme;
 };
 
 function JumboNavSection({ item, miniAndClosed, theme }: JumboNavSectionProps) {

@@ -38,6 +38,7 @@ function JumboNavbar(
           item={item}
           miniAndClosed={miniAndClosed}
           key={index}
+          groupBehaviour={props.groupBehaviour}
           theme={activeTheme}
         />
       ))}

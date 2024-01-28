@@ -33,7 +33,7 @@ function Sidebar({ menus }: SidebarProps) {
           {/* <SidebarSkeleton /> */}
           <JumboNavbar
             items={menus}
-            groupBehaviour='collapsible'
+            groupBehaviour='popover'
             theme={sidebarTheme}
           />
         </Suspense>

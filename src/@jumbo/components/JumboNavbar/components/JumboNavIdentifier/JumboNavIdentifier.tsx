@@ -7,6 +7,7 @@ type JumboNavIdentifierProps = {
   item: NavbarGroup | NavbarItem;
   miniAndClosed: boolean;
   isNested?: boolean;
+  groupBehaviour: 'collapsible' | 'popover';
   theme: JumboThemeOptions;
 };
 
@@ -14,11 +15,17 @@ function JumboNavIdentifier({
   item,
   isNested = false,
   miniAndClosed,
+  groupBehaviour = 'collapsible',
   theme,
 }: JumboNavIdentifierProps) {
   if (isNavGroup(item)) {
     return (
-      <JumboNavGroup item={item} miniAndClosed={miniAndClosed} theme={theme} />
+      <JumboNavGroup
+        item={item}
+        miniAndClosed={miniAndClosed}
+        theme={theme}
+        groupBehaviour={groupBehaviour}
+      />
     );
   } else if (isNavSection(item)) {
     return (

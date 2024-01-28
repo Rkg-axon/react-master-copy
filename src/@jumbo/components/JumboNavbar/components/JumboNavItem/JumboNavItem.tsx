@@ -39,8 +39,7 @@ function JumboNavItem({
 
   return (
     <ListItemButton component={'li'} sx={{ ...navSx }}>
-      <MuiLink
-        component={Link}
+      <Link
         underline={'none'}
         href={item.path}
         {...(item.target ? { target: item.target } : {})}
@@ -82,7 +81,7 @@ function JumboNavItem({
             }}
           />
         )}
-      </MuiLink>
+      </Link>
     </ListItemButton>
   );
 }

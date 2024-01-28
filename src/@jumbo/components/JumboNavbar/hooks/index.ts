@@ -52,11 +52,7 @@ function useJumboNavGroupSx(miniAndClosed: boolean, theme: JumboThemeOptions) {
   return sx;
 }
 
-function useJumboNavItemSx(
-  path: string,
-  miniAndClosed: boolean,
-  theme: JumboThemeOptions
-) {
+function useJumboNavItemSx(path: string, miniAndClosed: boolean, theme: Theme) {
   const menuBefore = {
     left: 0,
     top: 0,

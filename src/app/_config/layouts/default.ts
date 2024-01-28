@@ -1,3 +1,4 @@
+import { LayoutOptions } from '@jumbo/types';
 import {
   SIDEBAR_ANCHOR_POSITIONS,
   SIDEBAR_SCROLL_TYPES,
@@ -6,7 +7,7 @@ import {
   SIDEBAR_VIEWS,
 } from '@jumbo/utilities/constants';
 
-const defaultLayoutConfig = {
+const defaultLayoutConfig: LayoutOptions = {
   sidebar: {
     open: true,
     hide: false,
@@ -16,11 +17,11 @@ const defaultLayoutConfig = {
     scrollType: SIDEBAR_SCROLL_TYPES.FIXED,
     anchor: SIDEBAR_ANCHOR_POSITIONS.LEFT,
     width: 250,
+    minWidth: 80,
   },
   header: {
     hide: false,
     fixed: true,
-    height: 120,
   },
   footer: {
     hide: false,
