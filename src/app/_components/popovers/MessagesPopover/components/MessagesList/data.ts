@@ -1,4 +1,4 @@
-import { getCustomDateTime } from '@jumbo/utilities/formatHelpers';
+import { getCustomDateTime } from '@app/_utilities/helpers';
 
 export type MessagesDataProps = {
   user: {

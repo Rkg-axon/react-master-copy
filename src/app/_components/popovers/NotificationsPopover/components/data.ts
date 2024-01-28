@@ -1,4 +1,6 @@
-import { getCustomDateTime } from '@jumbo/utilities/formatHelpers';
+//TODO: move this data to /api folder and need to fetch the data using API
+
+import { getCustomDateTime } from '@app/_utilities/helpers';
 
 export type NotificationsDataProps = {
   id: number;
@@ -9,16 +11,15 @@ export type NotificationsDataProps = {
   };
   type: 'POSTING' | 'SHARED_POST' | 'INVITATION' | 'BIRTHDAY';
   metaData?: {
-    post?:
-       {
-          type?: string;
-          title: string;
-          owner: {
-            id: number;
-            name: string;
-            profile_pic: string;
-          };
-        }
+    post?: {
+      type?: string;
+      title: string;
+      owner: {
+        id: number;
+        name: string;
+        profile_pic: string;
+      };
+    };
     user?: {
       id: number;
       name: string;
