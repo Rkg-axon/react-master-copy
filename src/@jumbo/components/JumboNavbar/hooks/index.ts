@@ -1,19 +1,21 @@
-import { JumboThemeOptions } from '@jumbo/types';
 import { SxProps } from '@mui/material';
 import { Theme } from '@mui/system';
 import { usePathname } from 'next/navigation';
+import React from 'react';
+import { JumboNavbarContext } from '../components/JumboNavbarProvider/JumboNavbarContext';
 
 function useJumboNavbar() {
   const pathname = usePathname();
+  const context = React.useContext(JumboNavbarContext);
   function isActive(path: string) {
-    console.log('pathname, path', pathname, path);
     return pathname === path;
   }
 
-  return { isActive };
+  return { isActive, ...context };
 }
 
-function useJumboNavGroupSx(miniAndClosed: boolean, theme: JumboThemeOptions) {
+function useJumboNavGroupSx() {
+  const { theme, miniAndClosed } = useJumboNavbar();
   const menuBefore = {
     left: 0,
     top: 0,
@@ -31,12 +33,12 @@ function useJumboNavGroupSx(miniAndClosed: boolean, theme: JumboThemeOptions) {
     margin: miniAndClosed ? '0 auto' : '0',
     overflow: 'hidden',
     '&:hover': {
-      color: theme.palette.nav?.action?.hover,
-      backgroundColor: theme.palette.nav?.background?.hover,
+      color: (theme) => theme.palette.nav?.action?.hover,
+      backgroundColor: (theme) => theme.palette.nav?.background?.hover,
       ...(!miniAndClosed && {
         '&::before': {
           ...menuBefore,
-          backgroundColor: theme.palette.nav?.tick?.hover,
+          backgroundColor: (theme) => theme.palette.nav?.tick?.hover,
         },
       }),
     },
@@ -52,7 +54,8 @@ function useJumboNavGroupSx(miniAndClosed: boolean, theme: JumboThemeOptions) {
   return sx;
 }
 
-function useJumboNavItemSx(path: string, miniAndClosed: boolean, theme: Theme) {
+function useJumboNavItemSx(path: string) {
+  const { miniAndClosed } = useJumboNavbar();
   const menuBefore = {
     left: 0,
     top: 0,
@@ -104,4 +107,5 @@ function useJumboNavItemSx(path: string, miniAndClosed: boolean, theme: Theme) {
   };
   return sx;
 }
+
 export { useJumboNavGroupSx, useJumboNavItemSx, useJumboNavbar };

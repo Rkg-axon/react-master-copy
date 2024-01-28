@@ -1,36 +1,25 @@
 import { Icon } from '@app/_components/_core/Icon';
 import { Theme } from '@emotion/react';
 import { Link } from '@jumbo/shared';
-import { JumboThemeOptions, NavbarItem } from '@jumbo/types';
+import { NavbarItem } from '@jumbo/types';
 import CircleIcon from '@mui/icons-material/Circle';
 import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
-  Link as MuiLink,
   SxProps,
   ThemeOptions,
 } from '@mui/material';
 import { useTranslations } from 'next-intl';
-import { useJumboNavItemSx } from '../../hooks';
+import { useJumboNavItemSx, useJumboNavbar } from '../../hooks';
 type JumboNavItemProps = {
   item: NavbarItem | undefined;
   isNested: boolean;
-  miniAndClosed: boolean;
-  theme: JumboThemeOptions;
 };
 
-function JumboNavItem({
-  item,
-  isNested,
-  miniAndClosed,
-  theme,
-}: JumboNavItemProps) {
-  const navSx: SxProps<Theme> = useJumboNavItemSx(
-    item?.path ?? '',
-    miniAndClosed,
-    theme
-  );
+function JumboNavItem({ item, isNested }: JumboNavItemProps) {
+  const navSx: SxProps<Theme> = useJumboNavItemSx(item?.path ?? '');
+  const { miniAndClosed } = useJumboNavbar();
 
   //TODO: this component depends on this useTranslations
   const t = useTranslations();

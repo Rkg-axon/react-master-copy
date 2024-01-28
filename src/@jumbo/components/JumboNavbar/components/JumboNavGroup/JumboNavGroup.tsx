@@ -13,27 +13,20 @@ import {
 } from '@mui/material';
 import { useTranslations } from 'next-intl';
 import React from 'react';
-import { useJumboNavGroupSx } from '../../hooks';
+import { useJumboNavGroupSx, useJumboNavbar } from '../../hooks';
 import { SubMenusCollapsible } from './components/SubMenusCollapsible';
 import { SubMenusPopover } from './components/SubMenusPopover';
 
 type JumboNavGroupProps = {
   item: NavbarGroup | undefined;
-  miniAndClosed: boolean;
-  theme: Theme;
-  groupBehaviour: 'collapsible' | 'popover';
 };
 
-function JumboNavGroup({
-  item,
-  miniAndClosed,
-  theme,
-  groupBehaviour,
-}: JumboNavGroupProps) {
+function JumboNavGroup({ item }: JumboNavGroupProps) {
   const [open, setOpen] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState<HTMLLIElement | null>(null);
+  const { miniAndClosed, groupBehaviour } = useJumboNavbar();
 
-  const navGroupSx: SxProps<Theme> = useJumboNavGroupSx(miniAndClosed, theme);
+  const navGroupSx: SxProps<Theme> = useJumboNavGroupSx();
 
   const handlePopoverOpen = React.useCallback(
     (event: React.MouseEvent<HTMLLIElement, MouseEvent>) => {

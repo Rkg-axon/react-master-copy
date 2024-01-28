@@ -6,9 +6,11 @@ import { Div } from '@jumbo/shared';
 import { MenuItems } from '@jumbo/types';
 import React, { Suspense } from 'react';
 import { SidebarHeader, SidebarSkeleton } from './components';
+
 type SidebarProps = {
   menus: MenuItems;
 };
+
 function Sidebar({ menus }: SidebarProps) {
   const { sidebarTheme } = useJumboSidebarTheme();
   return (
@@ -31,11 +33,7 @@ function Sidebar({ menus }: SidebarProps) {
           }
         >
           {/* <SidebarSkeleton /> */}
-          <JumboNavbar
-            items={menus}
-            groupBehaviour='popover'
-            theme={sidebarTheme}
-          />
+          <JumboNavbar items={menus} theme={sidebarTheme} />
         </Suspense>
       </JumboScrollbar>
     </React.Fragment>

@@ -1,3 +1,14 @@
+import { Theme } from '@mui/material';
+
+type NavbarContext = {
+  items: MenuItems;
+  groupBehaviour: 'collapsible' | 'popover';
+  mini: boolean;
+  open: boolean;
+  theme: Theme;
+  miniAndClosed: boolean;
+};
+
 type NavbarItem = {
   label: string;
   path: string;
@@ -23,6 +34,7 @@ type MenuItems = MenuItem[];
 export {
   type MenuItem,
   type MenuItems,
+  type NavbarContext,
   type NavbarGroup,
   type NavbarItem,
   type NavbarSection,

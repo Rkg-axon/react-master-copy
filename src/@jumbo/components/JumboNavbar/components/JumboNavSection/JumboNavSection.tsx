@@ -1,18 +1,18 @@
 import { MenuItems, NavbarSection } from '@jumbo/types';
 import { getNavChildren } from '@jumbo/utilities/helpers';
-import { ListSubheader, Theme } from '@mui/material';
+import { ListSubheader } from '@mui/material';
 import { useTranslations } from 'next-intl';
 import { JumboNavIdentifier } from '..';
+import { useJumboNavbar } from '../../hooks';
 
 type JumboNavSectionProps = {
   item: NavbarSection | undefined;
-  miniAndClosed: boolean;
-  theme: Theme;
 };
 
-function JumboNavSection({ item, miniAndClosed, theme }: JumboNavSectionProps) {
+function JumboNavSection({ item }: JumboNavSectionProps) {
   //TODO: this component depends on this useTranslations
   const t = useTranslations();
+  const { miniAndClosed } = useJumboNavbar();
   if (!item) return null;
 
   const subMenus: MenuItems = getNavChildren(item);
@@ -37,14 +37,7 @@ function JumboNavSection({ item, miniAndClosed, theme }: JumboNavSectionProps) {
       )}
       {subMenus &&
         subMenus.map((child, index) => {
-          return (
-            <JumboNavIdentifier
-              item={child}
-              miniAndClosed={miniAndClosed}
-              key={index}
-              theme={theme}
-            />
-          );
+          return <JumboNavIdentifier item={child} key={index} />;
         })}
     </>
   );
