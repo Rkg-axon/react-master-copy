@@ -34,6 +34,7 @@ function JumboLayoutProvider({
 
   const setSidebarOptions = React.useCallback(
     (options: LayoutSidebarOptions) => {
+      console.log('received options are: ', options);
       setLayoutOptions({
         type: LAYOUT_ACTIONS.SET_SIDEBAR_OPTIONS,
         payload: options,

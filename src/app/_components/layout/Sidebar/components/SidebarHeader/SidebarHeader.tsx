@@ -20,6 +20,7 @@ function SidebarHeader() {
   function handleMenuToggle() {
     setSidebarOptions({ open: false });
   }
+  console.log('Sidebar Options now are: ', sidebarOptions);
   return (
     <React.Fragment>
       {sidebarOptions?.style !== SIDEBAR_STYLES.CLIPPED_UNDER_HEADER && (
