@@ -1,5 +1,5 @@
+import { getDateElements } from '@app/_utilities/helpers';
 import { Span } from '@jumbo/shared';
-import { getDateElements } from '@jumbo/utilities/formatHelpers';
 import ShareOutlinedIcon from '@mui/icons-material/ShareOutlined';
 import {
   Avatar,
@@ -20,8 +20,8 @@ const NotificationSharedPost = ({ item }: { item: NotificationsDataProps }) => {
       <ListItemText>
         <Link underline={'none'} href='#/'>
           {item.user.name}
-        </Link>{' '}
-        has shared {item?.metaData?.post?.owner?.name}'s post
+        </Link>
+        {` has shared ${item?.metaData?.post?.owner?.name}'s post`}
         <Typography
           component='span'
           sx={{
