@@ -29,7 +29,6 @@ const defaultLayoutConfig = {
   content: {
     sx: {
       py: 4,
-      px: { lg: 6, xs: 4 },
     },
   },
 };
