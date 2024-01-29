@@ -1,3 +1,9 @@
+import ACard from "@app/_components/_core/ACard";
+
 export default function Misc() {
-  return <h1>Misc Dashboard</h1>;
+
+  return (
+    <ACard/>
+      
+  );
 }

@@ -1,3 +1,5 @@
+export * from './JumboBackdrop';
+export * from './JumboCard';
 export * from './JumboConfigProvider';
 export * from './JumboLayoutTypes';
 export * from './JumboNavbar';

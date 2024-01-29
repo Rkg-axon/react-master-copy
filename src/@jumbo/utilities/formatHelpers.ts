@@ -1,5 +1,33 @@
 import moment from 'moment';
 
+export const timeSince = (days: number) => {
+  let calcDate = new Date(Date.now() - days * 24 * 3600 * 1000);
+  let seconds = Math.floor((new Date().getTime() - calcDate.getTime()) / 1000);
+
+  let interval = seconds / 31536000;
+
+  if (interval > 1) {
+    return Math.floor(interval) + 'y ago';
+  }
+  interval = seconds / 2592000;
+  if (interval > 1) {
+    return Math.floor(interval) + 'm ago';
+  }
+  interval = seconds / 86400;
+  if (interval > 1) {
+    return Math.floor(interval) + 'd ago';
+  }
+  interval = seconds / 3600;
+  if (interval > 1) {
+    return Math.floor(interval) + 'h ago';
+  }
+  interval = seconds / 60;
+  if (interval > 1) {
+    return Math.floor(interval) + 'm ago';
+  }
+  return Math.floor(seconds) + 's ago';
+};
+
 export const getCustomDateTime = (
   value: number = 0,
   unit: moment.unitOfTime.DurationConstructor = 'days',
