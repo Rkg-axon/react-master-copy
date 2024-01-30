@@ -1,5 +1,5 @@
+import { getDateElements } from '@app/_utilities/helpers';
 import { Span } from '@jumbo/shared';
-import { getDateElements } from '@jumbo/utilities/formatHelpers';
 import CakeOutlinedIcon from '@mui/icons-material/CakeOutlined';
 import {
   Avatar,

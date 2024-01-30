@@ -1,6 +1,6 @@
 'use client';
 import { Div } from '@jumbo/shared';
-import { JumboThemeOptions, MenuItems, NavbarGroup } from '@jumbo/types';
+import { MenuItems, NavbarGroup } from '@jumbo/types';
 import { getNavChildren } from '@jumbo/utilities/helpers';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
@@ -13,21 +13,20 @@ import {
 } from '@mui/material';
 import { useTranslations } from 'next-intl';
 import React from 'react';
-import { useJumboNavGroupSx } from '../../hooks';
+import { useJumboNavGroupSx, useJumboNavbar } from '../../hooks';
 import { SubMenusCollapsible } from './components/SubMenusCollapsible';
 import { SubMenusPopover } from './components/SubMenusPopover';
 
 type JumboNavGroupProps = {
   item: NavbarGroup | undefined;
-  miniAndClosed: boolean;
-  theme: JumboThemeOptions;
 };
 
-function JumboNavGroup({ item, miniAndClosed, theme }: JumboNavGroupProps) {
+function JumboNavGroup({ item }: JumboNavGroupProps) {
   const [open, setOpen] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState<HTMLLIElement | null>(null);
+  const { miniAndClosed, groupBehaviour } = useJumboNavbar();
 
-  const navGroupSx: SxProps<Theme> = useJumboNavGroupSx(miniAndClosed, theme);
+  const navGroupSx: SxProps<Theme> = useJumboNavGroupSx();
 
   const handlePopoverOpen = React.useCallback(
     (event: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
@@ -98,14 +97,14 @@ function JumboNavGroup({ item, miniAndClosed, theme }: JumboNavGroupProps) {
       >
         {renderItem(item)}
       </ListItemButton>
-      {subMenus !== undefined && !miniAndClosed && (
+      {subMenus && groupBehaviour === 'collapsible' && (
         <SubMenusCollapsible
           items={subMenus}
           open={open}
           miniAndClosed={miniAndClosed}
         />
       )}
-      {subMenus && miniAndClosed && (
+      {subMenus && groupBehaviour === 'popover' && (
         <SubMenusPopover
           items={subMenus}
           anchorEl={anchorEl}

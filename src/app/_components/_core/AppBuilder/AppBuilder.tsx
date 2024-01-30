@@ -8,13 +8,13 @@ import {
 } from '@jumbo/components';
 import { NextIntlClientProvider, useMessages } from 'next-intl';
 import React from 'react';
-import { NextIntlLink } from '../Link';
+import { Link } from '../Link';
 
 function AppBuilder({ children }: { children: React.ReactNode }) {
   const messages = useMessages();
   return (
     <NextIntlClientProvider messages={messages}>
-      <JumboConfigProvider LinkComponent={NextIntlLink}>
+      <JumboConfigProvider LinkComponent={Link}>
         <JumboTheme init={CONFIG.THEME}>
           <JumboLayoutProvider layoutConfig={defaultLayoutConfig}>
             {children}

@@ -1,8 +1,8 @@
 'use client';
+import { Link as MuiLink } from '@mui/material';
 import { createLocalizedPathnamesNavigation } from 'next-intl/navigation';
 import { localePrefix, locales, pathnames } from './locale-config';
-
-export const {
+const {
   Link: NextIntlLink,
   redirect,
   usePathname,
@@ -12,3 +12,9 @@ export const {
   pathnames,
   localePrefix,
 });
+
+function Link(props: any) {
+  return <MuiLink component={NextIntlLink} {...props} />;
+}
+
+export { Link, redirect, usePathname, useRouter };

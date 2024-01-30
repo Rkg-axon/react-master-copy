@@ -4,37 +4,32 @@ import { JumboNavGroup, JumboNavItem } from '..';
 import { JumboNavSection } from '../JumboNavSection';
 
 type JumboNavIdentifierProps = {
-  item: NavbarGroup | NavbarItem;
-  miniAndClosed: boolean;
-  isNested?: boolean;
-  theme: JumboThemeOptions;
+  item: NavbarGroup | NavbarItem;  
+  isNested?: boolean;  
 };
 
 function JumboNavIdentifier({
   item,
-  isNested = false,
-  miniAndClosed,
-  theme,
+  isNested = false,  
 }: JumboNavIdentifierProps) {
+  
   if (isNavGroup(item)) {
     return (
-      <JumboNavGroup item={item} miniAndClosed={miniAndClosed} theme={theme} />
+      <JumboNavGroup
+        item={item}        
+      />
     );
   } else if (isNavSection(item)) {
     return (
       <JumboNavSection
-        item={item}
-        miniAndClosed={miniAndClosed}
-        theme={theme}
+        item={item}        
       />
     );
   } else if (isNavItem(item)) {
     return (
       <JumboNavItem
-        item={item}
-        miniAndClosed={miniAndClosed}
-        isNested={isNested}
-        theme={theme}
+        item={item}       
+        isNested={isNested}       
       />
     );
   }

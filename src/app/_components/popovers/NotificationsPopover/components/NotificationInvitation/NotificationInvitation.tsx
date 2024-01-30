@@ -1,5 +1,6 @@
 import { Span } from '@jumbo/shared';
-import { getDateElements } from '@jumbo/utilities/formatHelpers';
+
+import { getDateElements } from '@app/_utilities/helpers';
 import MarkEmailUnreadOutlinedIcon from '@mui/icons-material/MarkEmailUnreadOutlined';
 import {
   Avatar,

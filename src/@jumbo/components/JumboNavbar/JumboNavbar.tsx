@@ -1,16 +1,15 @@
 'use client';
-import { JumboThemeOptions, MenuItems } from '@jumbo/types';
-import { List } from '@mui/material';
+import { MenuItems } from '@jumbo/types';
+import { Theme } from '@mui/material';
 
-import { useJumboTheme } from '../JumboTheme/hooks';
-import { JumboNavIdentifier } from './components';
+import { JumboNavbarProvider } from './components';
 
 type JumboNavbarProps = {
   items: MenuItems;
-  groupBehaviour: 'collapsible' | 'popover';
+  groupBehaviour?: 'collapsible' | 'popover';
   mini?: boolean;
   open?: boolean;
-  theme?: JumboThemeOptions;
+  theme?: Theme;
 };
 
 function JumboNavbar(
@@ -21,28 +20,7 @@ function JumboNavbar(
     open: true,
   }
 ) {
-  const miniAndClosed: boolean = !!props.mini && !props.open;
-  const { theme: jumboTheme } = useJumboTheme();
-  const activeTheme = props.theme || jumboTheme;
-
-  return (
-    <List
-      disablePadding
-      sx={{
-        mr: miniAndClosed ? 0 : 2,
-        pb: 2,
-      }}
-    >
-      {props.items.map((item, index) => (
-        <JumboNavIdentifier
-          item={item}
-          miniAndClosed={miniAndClosed}
-          key={index}
-          theme={activeTheme}
-        />
-      ))}
-    </List>
-  );
+  return <JumboNavbarProvider {...props} />;
 }
 
 export { JumboNavbar };
