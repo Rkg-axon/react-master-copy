@@ -1,11 +1,6 @@
-'use client';
 import { JumboCardProps } from '@jumbo/types';
-import {
-  getBgColorStyle,
-  getBgImageStyle,
-} from '@jumbo/utilities/styleHelpers';
+import { getBgStyle } from '@jumbo/utilities/styleHelpers';
 import { Card, CardContent } from '@mui/material';
-import React from 'react';
 import { JumboBackdrop } from '../JumboBackdrop';
 import { JumboHeader } from './components/JumboHeader';
 
@@ -27,14 +22,11 @@ function JumboCard({
   sx,
   children,
 }: JumboCardProps) {
-  const [bgStyle] = React.useState(
-    bgImage
-      ? getBgImageStyle(bgImage)
-      : bgColor
-        ? getBgColorStyle({ colors: bgColor, gradientDir: bgGradientDir })
-        : {}
-  );
-
+  const bgStyle = getBgStyle({
+    bgColor: bgColor,
+    bgGradientDir: bgGradientDir,
+    bgImage: bgImage,
+  });
   return (
     <Card sx={{ ...bgStyle, position: 'relative', ...sx }}>
       <JumboBackdrop

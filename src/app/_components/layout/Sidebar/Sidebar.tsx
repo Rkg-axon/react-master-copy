@@ -12,6 +12,8 @@ type SidebarProps = {
 };
 
 function Sidebar({ menus }: SidebarProps) {
+  
+  console.log('menus:',menus);
   const { sidebarTheme } = useJumboSidebarTheme();
   return (
     <React.Fragment>

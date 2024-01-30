@@ -1,6 +1,17 @@
 import { JumboHeaderProps } from '@jumbo/types';
-import { CardHeader } from '@mui/material';
+import { CardHeader, Typography } from '@mui/material';
+import React from 'react';
 
+const renderTitle = (title: string | React.ReactNode) => {
+  if (typeof title === 'string') {
+    return (
+      <Typography component={'h4'} color={'#fff'}>
+        {title}
+      </Typography>
+    );
+  }
+  return title;
+};
 const JumboHeader = ({
   action,
   title,
@@ -12,7 +23,7 @@ const JumboHeader = ({
   if (!reverse) {
     return (
       <CardHeader
-        title={title}
+        title={renderTitle(title)}
         subheader={subheader}
         action={action}
         avatar={avatar}

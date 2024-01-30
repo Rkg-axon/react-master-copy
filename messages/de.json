@@ -5,11 +5,14 @@
   "sidebar": {
     "menu": {
       "home": "G Home",
+      "card":"G Card",
       "extensions": "G Extensions"
     },
     "menuItem": {
       "misc": "G Misc",
       "crypto": "G Crypto",
+      "widgets":"G Widgets",
+      "metrics":"G Metrics",
       "editor": "G Editor"
     }
   }

@@ -1,5 +1,16 @@
 import { SxProps, Theme } from '@mui/material';
 
+type BgStyleProps = {
+  bgColor?: string | string[];
+  bgImage?: string;
+  bgGradientDir?: string;
+};
+type BackdropProps = {
+  backdrop?: boolean;
+  backdropColor?: string;
+  backdropOpacity?: string | number;
+};
+
 type JumboHeaderProps = {
   title?: React.ReactNode;
   subheader?: React.ReactNode;
@@ -9,18 +20,25 @@ type JumboHeaderProps = {
   reverse?: boolean;
 };
 
-type JumboCardProps = JumboHeaderProps & {
-  bgColor?: string | string[];
-  bgImage?: string;
-  bgGradientDir?: string;
-  noWrapper?: boolean;
-  wrapperSx?: SxProps<Theme>;
-  backdrop?: boolean;
-  backdropSx?: SxProps<Theme>;
-  backdropColor?: string;
-  backdropOpacity?: string | number;
-  sx?: SxProps<Theme>;
-  children?: React.ReactNode;
-};
+type JumboContentProps = BgStyleProps &
+  BackdropProps & {
+    sx?: SxProps<Theme>;
+    children?: React.ReactNode;
+  };
 
-export { type JumboCardProps, type JumboHeaderProps };
+type JumboCardProps = JumboHeaderProps &
+  BgStyleProps &
+  BackdropProps & {
+    noWrapper?: boolean;
+    wrapperSx?: SxProps<Theme>;
+    sx?: SxProps<Theme>;
+    children?: React.ReactNode;
+  };
+
+export {
+  type BackdropProps,
+  type BgStyleProps,
+  type JumboCardProps,
+  type JumboHeaderProps,
+  type JumboContentProps
+};

@@ -17,6 +17,21 @@ const menus: MenuItems = [
     ],
   },
   {
+    label: 'sidebar.menu.card',
+    children: [
+      {
+        path: '/widgets',
+        label: 'sidebar.menuItem.widgets',
+        icon: 'widget',
+      },
+      {
+        path: '/metrics',
+        label: 'sidebar.menuItem.metrics',
+        icon: 'metric',
+      },
+    ],
+  },
+  {
     label: 'sidebar.menu.extensions',
     children: [
       {
