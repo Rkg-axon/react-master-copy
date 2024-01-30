@@ -1,9 +1,5 @@
-import ACard from "@app/_components/_core/ACard";
 
 export default function Misc() {
 
-  return (
-    <ACard/>
-      
-  );
+  return <h1>Misc Item</h1>;
 }
