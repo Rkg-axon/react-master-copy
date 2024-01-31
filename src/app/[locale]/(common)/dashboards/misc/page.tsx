@@ -5,9 +5,10 @@ export default function Misc() {
   return (
     <JumboCard sx={{ width: '400px'}} noWrapper>
       <JumboContent
-        backdrop
-        backdropOpacity={0.5}
-        bgImage='/assets/images/avatar/alex-dolgove.png'
+        // backdrop
+        // backdropOpacity={0.5}
+        // bgImage='/assets/images/avatar/alex-dolgove.png'
+        bgColor={['red','blue']}
       >
         {`Hello and welcome to the design patternsand TypeScript course by
         PacktPublishing.I am Dimitris Loukas and I will beguiding you through

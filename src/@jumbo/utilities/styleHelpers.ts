@@ -63,11 +63,8 @@ export const getBgImageStyle = (imgSrc: string) => {
   };
 };
 
-export const getBgStyle = ({
-  bgImage,
-  bgColor,
-  bgGradientDir,
-}: BgStyleProps) => {
+export const getBgStyle = (props: BgStyleProps) => {
+  const { bgImage, bgColor, bgGradientDir } = props;
   if (bgImage) {
     return getBgImageStyle(bgImage);
   } else if (bgColor) {

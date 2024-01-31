@@ -22,11 +22,7 @@ function JumboCard({
   sx,
   children,
 }: JumboCardProps) {
-  const bgStyle = getBgStyle({
-    bgColor: bgColor,
-    bgGradientDir: bgGradientDir,
-    bgImage: bgImage,
-  });
+  const bgStyle = getBgStyle({bgColor,bgImage,bgGradientDir});
   return (
     <Card sx={{ ...bgStyle, position: 'relative', ...sx }}>
       <JumboBackdrop

@@ -13,11 +13,7 @@ function JumboContent({
   sx,
   children,
 }: JumboContentProps) {
-  const bgStyle = getBgStyle({
-    bgColor: bgColor,
-    bgImage: bgImage,
-    bgGradientDir: bgGradientDir,
-  });
+  const bgStyle = getBgStyle({bgImage,bgGradientDir,bgColor});
   return (
     <Div sx={{ ...sx, position: 'relative', ...bgStyle }}>
       <JumboBackdrop
