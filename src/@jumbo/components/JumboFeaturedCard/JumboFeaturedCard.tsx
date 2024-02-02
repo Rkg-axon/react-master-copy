@@ -1,28 +1,10 @@
 import { Div } from '@jumbo/shared';
-import { BackdropProps, BgStyleProps } from '@jumbo/types';
+import { JumboFeaturedProps } from '@jumbo/types';
 import { getBgStyle } from '@jumbo/utilities/styleHelpers';
-import { Card, Stack, SxProps, Theme } from '@mui/material';
+import { Card, Stack } from '@mui/material';
 import Image from 'next/image';
-import React from 'react';
 import { JumboBackdrop } from '../JumboBackdrop';
 
-type JumboFeaturedProps = BgStyleProps &
-  BackdropProps & {
-    tick?: React.ReactNode;
-    tickSx?: SxProps<Theme>;
-    direction: 'column' | 'column-reverse' | 'row' | 'row-reverse';
-    spacing?: number | string | number[] | string[];
-    showTick?: boolean;
-    imgSrc?: string;
-    imgAlt?: string;
-    imgSx?: SxProps<Theme>;
-    imgFit?: boolean;
-    sx?: SxProps<Theme>;
-    stackSx?: SxProps<Theme>;
-    children?: React.ReactNode;
-    imgHeight?: number | undefined;
-    imgWidth?: number | undefined;
-  };
 function JumboFeaturedCard({
   tick,
   tickSx,
@@ -103,13 +85,6 @@ function JumboFeaturedCard({
               height={imgHeight}
               fill={!(imgWidth && imgHeight) && true}
             />
-            {/* <Image
-              imgSrc={imgSrc}
-              imgHeight={imgHeight!}
-              imgWidth={imgWidth!}
-              imgAlt={imgAlt ?? 'Picture of the author'}
-              imgQuality={1}
-            /> */}
           </Div>
         )}
       </Stack>
