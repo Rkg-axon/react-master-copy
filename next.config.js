@@ -2,7 +2,7 @@
 const withNextIntl = require('next-intl/plugin')();
 const nextConfig = withNextIntl({
     env: {
-        REACT_APP_IMAGES_PATH: 'assets/images',
+        REACT_APP_IMAGES_PATH: '/assets/images',
       },
 });
 
