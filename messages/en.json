@@ -5,12 +5,15 @@
   "sidebar": {
     "menu": {
       "home": "Home",
+      "card":"Card",
       "extensions": "Extensions",
       "editor": "Editor"
     },
     "menuItem": {
       "misc": "Misc",
       "crypto": "Crypto",
+      "widgets":"Widgets",
+      "metrics":"Metrics",
       "editor": "Editor",
       "wysiwygEditor": "Wyswyg Editor",
       "ckEditor": "CK Editor"

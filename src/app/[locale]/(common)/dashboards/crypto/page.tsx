@@ -1,3 +1,3 @@
 export default function Crypto() {
-  return <h1>Crypto Dashboard</h1>;
-}
+    return <h1>Crypto Page...</h1>
+};

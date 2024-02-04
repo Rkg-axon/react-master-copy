@@ -1,6 +1,5 @@
 import { Box, Button, SxProps, Theme } from '@mui/material';
 import { useTranslations } from 'next-intl';
-
 const sxProps: SxProps<Theme> = {
   width: 500,
   bgcolor: 'red',

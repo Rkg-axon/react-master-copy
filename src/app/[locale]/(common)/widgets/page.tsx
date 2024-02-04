@@ -1,5 +1,12 @@
-function Widgets() {
-  return <div>Here widgets will go</div>;
-}
+import { Grid } from '@mui/material';
+import { PortfolioBalance } from './components';
 
-export default Widgets;
+export default function Widgets() {
+  return (
+    <Grid container spacing={3.75}>
+      <Grid item xs={12} lg={6}>
+        <PortfolioBalance />
+      </Grid>
+    </Grid>
+  );
+}
