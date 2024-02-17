@@ -1,5 +1,5 @@
 import { JumboCard } from '@jumbo/components';
-import { JumboContent } from '@jumbo/components/JumboCard/components/JumboContent';
+import { JumboContent } from '@jumbo/components/JumboCard/components/JumboCardContent';
 import { JumboDdMenu } from '@jumbo/components/JumboDdMenu';
 import { AddTask } from '@mui/icons-material';
 
@@ -31,7 +31,11 @@ export default function Misc() {
     //       imgHeight={200}
     //     />
     // </JumboCard>
-    <JumboCard sx={{ width: '400px' }} action={<JumboDdMenu icon={<AddTask/>} />} noWrapper>
+    <JumboCard
+      sx={{ width: '400px' }}
+      action={<JumboDdMenu icon={<AddTask />} />}
+      noWrapper
+    >
       <JumboContent
         // backdrop
         // backdropOpacity={0.5}

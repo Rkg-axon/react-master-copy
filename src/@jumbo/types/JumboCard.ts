@@ -1,11 +1,12 @@
 import { SxProps, Theme } from '@mui/material';
 
-type BgStyleProps = {
+type JumboBgStyleProps = {
   bgColor?: string | string[];
   bgImage?: string;
   bgGradientDir?: string;
 };
-type BackdropProps = {
+
+type JumboBackdropProps = {
   backdrop?: boolean;
   backdropColor?: string;
   backdropOpacity?: string | number;
@@ -20,15 +21,15 @@ type JumboHeaderProps = {
   reverse?: boolean;
 };
 
-type JumboContentProps = BgStyleProps &
-  BackdropProps & {
+type JumboContentProps = JumboBgStyleProps &
+  JumboBackdropProps & {
     sx?: SxProps<Theme>;
     children?: React.ReactNode;
   };
 
 type JumboCardProps = JumboHeaderProps &
-  BgStyleProps &
-  BackdropProps & {
+  JumboBgStyleProps &
+  JumboBackdropProps & {
     noWrapper?: boolean;
     wrapperSx?: SxProps<Theme>;
     sx?: SxProps<Theme>;
@@ -36,9 +37,9 @@ type JumboCardProps = JumboHeaderProps &
   };
 
 export {
-  type BackdropProps,
-  type BgStyleProps,
+  type JumboBackdropProps,
+  type JumboBgStyleProps,
   type JumboCardProps,
+  type JumboContentProps,
   type JumboHeaderProps,
-  type JumboContentProps
 };

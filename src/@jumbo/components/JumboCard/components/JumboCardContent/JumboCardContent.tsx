@@ -3,7 +3,7 @@ import { Div } from '@jumbo/shared';
 import { JumboContentProps } from '@jumbo/types';
 import { getBgStyle } from '@jumbo/utilities/styleHelpers';
 
-function JumboContent({
+function JumboCardContent({
   backdrop,
   backdropColor,
   backdropOpacity,
@@ -13,7 +13,7 @@ function JumboContent({
   sx,
   children,
 }: JumboContentProps) {
-  const bgStyle = getBgStyle({bgImage,bgGradientDir,bgColor});
+  const bgStyle = getBgStyle({ bgImage, bgGradientDir, bgColor });
   return (
     <Div sx={{ ...sx, position: 'relative', ...bgStyle }}>
       <JumboBackdrop
@@ -26,4 +26,4 @@ function JumboContent({
   );
 }
 
-export { JumboContent };
+export { JumboCardContent };

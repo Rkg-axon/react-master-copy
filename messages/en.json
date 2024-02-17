@@ -5,18 +5,23 @@
   "sidebar": {
     "menu": {
       "home": "Home",
-      "card":"Card",
+      "card": "Card",
       "extensions": "Extensions",
       "editor": "Editor"
     },
     "menuItem": {
       "misc": "Misc",
       "crypto": "Crypto",
-      "widgets":"Widgets",
-      "metrics":"Metrics",
+      "widgets": "Widgets",
+      "metrics": "Metrics",
       "editor": "Editor",
       "wysiwygEditor": "Wyswyg Editor",
       "ckEditor": "CK Editor"
+    }
+  },
+  "widgets": {
+    "title": {
+      "cryptoPortfolio": "Crypto portfolio balance"
     }
   }
 }

@@ -2,12 +2,12 @@
 import { getAssetPath } from '@app/utilities/appHelpers';
 import { ASSET_AVATARS } from '@app/utilities/constants/paths';
 import { JumboCard } from '@jumbo/components';
-import { JumboContent } from '@jumbo/components/JumboCard/components/JumboContent';
+import { JumboContent } from '@jumbo/components/JumboCard/components/JumboCardContent';
 import { Avatar, Typography } from '@mui/material';
 
 const UserProfileCard1 = () => {
   return (
-    <JumboCard noWrapper action={'Smile'} headerSx={{backgroundColor:'red'}}>
+    <JumboCard noWrapper action={'Smile'} headerSx={{ backgroundColor: 'red' }}>
       <JumboContent
         sx={{
           p: (theme) => theme.spacing(0, 3, 3),
