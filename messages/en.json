@@ -22,7 +22,8 @@
   "widgets": {
     "title": {
       "cryptoPortfolio": "Crypto portfolio balance",
-      "salesOverview": "Sales Overview"
+      "salesOverview": "Sales Overview",
+      "orders": "Orders"
     }
   }
 }
