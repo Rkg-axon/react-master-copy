@@ -9,13 +9,13 @@ type FeaturedCard1Props = {
   bgcolor?: string[];
 };
 
+//TODO: need to handle the bgcolor (degree identification)
 function FeaturedCard1({
   bgcolor = ['135deg', '#38B8F2', '#843CF6'],
   icon,
   title,
   subheader,
 }: FeaturedCard1Props) {
-  console.log('typeof title is: ', typeof title);
   return (
     <Card
       sx={{

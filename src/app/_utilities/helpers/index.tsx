@@ -1,3 +1,4 @@
+import { USE_IMAGE_PLACEHOLDERS } from '@app/utilities/constants/paths';
 import moment from 'moment';
 
 export const getCustomDateTime = (
@@ -28,4 +29,40 @@ export const getDateElements = (date: string) => {
       year: datePart[2],
     },
   };
+};
+
+export const getAssetPath = (url: string, size: string) => {
+  if (USE_IMAGE_PLACEHOLDERS) {
+    return `https://via.placeholder.com/${size}.png`;
+  }
+
+  return url;
+};
+
+export const timeSince = (days: number) => {
+  let calcDate = new Date(Date.now() - days * 24 * 3600 * 1000);
+  let seconds = Math.floor((new Date().getTime() - calcDate.getTime()) / 1000);
+
+  let interval = seconds / 31536000;
+
+  if (interval > 1) {
+    return Math.floor(interval) + 'y ago';
+  }
+  interval = seconds / 2592000;
+  if (interval > 1) {
+    return Math.floor(interval) + 'm ago';
+  }
+  interval = seconds / 86400;
+  if (interval > 1) {
+    return Math.floor(interval) + 'd ago';
+  }
+  interval = seconds / 3600;
+  if (interval > 1) {
+    return Math.floor(interval) + 'h ago';
+  }
+  interval = seconds / 60;
+  if (interval > 1) {
+    return Math.floor(interval) + 'm ago';
+  }
+  return Math.floor(seconds) + 's ago';
 };

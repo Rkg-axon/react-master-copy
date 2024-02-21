@@ -23,7 +23,13 @@
     "title": {
       "cryptoPortfolio": "Crypto portfolio balance",
       "salesOverview": "Sales Overview",
-      "orders": "Orders"
+      "orders": "Orders",
+      "userSummary": "Chris Morris",
+      "latestNotifications": "Latest Notifications",
+      "dailyFeed": "Your Daily Feed"
+    },
+    "subheader": {
+      "userSummary": "Director"
     }
   }
 }

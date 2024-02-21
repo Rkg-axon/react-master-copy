@@ -1,5 +1,11 @@
 import { FeaturedCard1 } from '@app/_components/cards';
-import { Orders, SalesOverview, UserSummary } from '@app/_components/widgets';
+import {
+  DailyFeed,
+  LatestNotifications,
+  Orders,
+  SalesOverview,
+  UserSummary,
+} from '@app/_components/widgets';
 import { EmojiObjectsOutlined, FolderOpen } from '@mui/icons-material';
 import { Grid } from '@mui/material';
 
@@ -37,6 +43,12 @@ export default function Misc() {
             <UserSummary />
           </Grid>
         </Grid>
+      </Grid>
+      <Grid item xs={12} md={6} lg={4}>
+        <LatestNotifications />
+      </Grid>
+      <Grid item xs={12} md={6} lg={4}>
+        <DailyFeed />
       </Grid>
     </Grid>
   );
