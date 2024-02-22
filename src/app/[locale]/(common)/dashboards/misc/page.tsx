@@ -2,8 +2,10 @@ import { FeaturedCard1 } from '@app/_components/cards';
 import {
   DailyFeed,
   LatestNotifications,
+  NewConnections,
   Orders,
   SalesOverview,
+  UserProfileCard,
   UserSummary,
 } from '@app/_components/widgets';
 import { ScheduleCard } from '@app/_components/widgets/ScheduleCard';
@@ -53,6 +55,12 @@ export default function Misc() {
       </Grid>
       <Grid item xs={12} md={6} lg={3}>
         <ScheduleCard />
+      </Grid>
+      <Grid item xs={12} md={6} lg={3}>
+        <UserProfileCard />
+      </Grid>
+      <Grid item xs={12} md={6} lg={4}>
+        <NewConnections />
       </Grid>
     </Grid>
   );

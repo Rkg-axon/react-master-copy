@@ -26,10 +26,12 @@
       "orders": "Orders",
       "userSummary": "Chris Morris",
       "latestNotifications": "Latest Notifications",
-      "dailyFeed": "Your Daily Feed"
+      "dailyFeed": "Your Daily Feed",
+      "newConnection": "New Connections"
     },
     "subheader": {
-      "userSummary": "Director"
+      "userSummary": "Director",
+      "newConnection": "3 new this week"
     }
   }
 }

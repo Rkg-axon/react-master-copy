@@ -6,7 +6,7 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { ScheduleList } from './components';
 
-const ScheduleCard = () => {
+function ScheduleCard() {
   return (
     <Card>
       <Div
@@ -54,6 +54,6 @@ const ScheduleCard = () => {
       </Div>
     </Card>
   );
-};
+}
 
 export { ScheduleCard };
