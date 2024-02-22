@@ -6,6 +6,7 @@ import {
   SalesOverview,
   UserSummary,
 } from '@app/_components/widgets';
+import { ScheduleCard } from '@app/_components/widgets/ScheduleCard';
 import { EmojiObjectsOutlined, FolderOpen } from '@mui/icons-material';
 import { Grid } from '@mui/material';
 
@@ -47,8 +48,11 @@ export default function Misc() {
       <Grid item xs={12} md={6} lg={4}>
         <LatestNotifications />
       </Grid>
-      <Grid item xs={12} md={6} lg={4}>
+      <Grid item xs={12} md={6} lg={5}>
         <DailyFeed />
+      </Grid>
+      <Grid item xs={12} md={6} lg={3}>
+        <ScheduleCard />
       </Grid>
     </Grid>
   );
