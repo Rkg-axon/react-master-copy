@@ -27,11 +27,19 @@
       "userSummary": "Chris Morris",
       "latestNotifications": "Latest Notifications",
       "dailyFeed": "Your Daily Feed",
-      "newConnection": "New Connections"
+      "newConnection": "New Connections",
+      "recentActivities": "Recent Activities",
+      "salesReport1": "This year sales report",
+      "appUsers": "App Users"
     },
     "subheader": {
       "userSummary": "Director",
-      "newConnection": "3 new this week"
+      "newConnection": "3 new this week",
+      "latestMonthSales": "Daily traffic",
+      "onlineSignups": "Online signups",
+      "newVisitors": "New visitors",
+      "totalRevenueYear": "Revenue this year",
+      "appUsers": "Last updated 30 min ago"
     }
   }
 }

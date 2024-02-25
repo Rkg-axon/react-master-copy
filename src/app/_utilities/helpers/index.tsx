@@ -66,3 +66,46 @@ export const timeSince = (days: number) => {
   }
   return Math.floor(seconds) + 's ago';
 };
+
+function isColorCode(value: string) {
+  return (
+    typeof value === 'string' &&
+    value[0] === '#' &&
+    (value.length === 4 || value.length === 7)
+  );
+}
+
+function isDegree(value: string) {
+  const degArray = value.split('deg');
+  return degArray.length === 2 && !Number.isNaN(parseInt(degArray[0]));
+}
+
+export function getBackgroundColorStyle(colors?: string[]) {
+  if (!colors) return {};
+
+  const foundColors: string[] = [];
+  let gradientDegree;
+  let gradientType = 'linear-gradient';
+
+  colors.forEach((color) => {
+    if (isColorCode(color)) {
+      foundColors.push(color);
+    } else if (isDegree(color)) {
+      gradientDegree = color;
+    }
+  });
+
+  if (foundColors.length <= 0) return {};
+
+  if (foundColors.length === 1)
+    return {
+      backgroundColor: foundColors[0],
+    };
+
+  const gradientValue = gradientDegree
+    ? `${gradientDegree}, ${foundColors.toString()}`
+    : foundColors.toString();
+  return {
+    backgroundImage: `${gradientType}(${gradientValue})`,
+  };
+}

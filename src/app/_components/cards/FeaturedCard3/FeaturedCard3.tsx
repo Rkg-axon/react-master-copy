@@ -1,4 +1,5 @@
 'use client';
+import { getBackgroundColorStyle } from '@app/_utilities/helpers';
 import { Div } from '@jumbo/shared';
 import { Card, CardContent, SxProps, Theme, Typography } from '@mui/material';
 
@@ -10,6 +11,9 @@ type FeaturedCard3Props = {
   sx?: SxProps<Theme>;
   children?: React.ReactNode;
   contentSx?: SxProps<Theme>;
+  bgcolor?: string[];
+  textColor?: string;
+  headHeight?: number | string;
 };
 
 function FeaturedCard3({
@@ -20,54 +24,74 @@ function FeaturedCard3({
   sx = {},
   children,
   contentSx,
+  bgcolor,
+  textColor,
+  headHeight = 250,
 }: FeaturedCard3Props) {
+  const bgColorStyle = getBackgroundColorStyle(bgcolor);
+  const colorStyle = textColor ? { color: textColor } : {};
   return (
     <Card>
-      <Div
-        sx={{
-          ...sx,
-        }}
-      >
+      <Div sx={{ ...bgColorStyle, ...colorStyle, ...sx }}>
         {header}
-        <CardContent sx={{ textAlign: 'center' }}>
-          {avatar}
-          {renderTitle(title)}
-          {renderSubheader(subheader)}
-        </CardContent>
         <CardContent
           sx={{
             textAlign: 'center',
-            bgcolor: (theme) => theme.palette.action.hover,
-            ...contentSx,
+
+            ...(headHeight ? { headHeight } : {}),
           }}
         >
-          {children}
+          {avatar}
+          {renderTitle(title, textColor)}
+          {renderSubheader(subheader, textColor)}
         </CardContent>
+        {children && (
+          <CardContent
+            sx={{
+              textAlign: 'center',
+              bgcolor: (theme) => theme.palette.action.hover,
+              ...contentSx,
+            }}
+          >
+            {children}
+          </CardContent>
+        )}
       </Div>
     </Card>
   );
 }
 
-function renderTitle(title?: string | React.ReactNode) {
+function renderTitle(title?: string | React.ReactNode, textColor?: string) {
   if (!title) {
     return null;
   }
 
   if (typeof title === 'string') {
-    return <Typography variant={'h5'}>{title}</Typography>;
+    return (
+      <Typography variant={'h5'} {...(textColor && { color: textColor })}>
+        {title}
+      </Typography>
+    );
   }
 
   return title;
 }
 
-function renderSubheader(subheader?: string | React.ReactNode) {
+function renderSubheader(
+  subheader?: string | React.ReactNode,
+  textColor?: string
+) {
   if (!subheader) {
     return null;
   }
 
   if (typeof subheader === 'string') {
     return (
-      <Typography variant={'h6'} color='text.secondary' mb={2}>
+      <Typography
+        variant={'h6'}
+        {...(textColor ? { color: textColor } : { color: 'text.secondary' })}
+        mb={2}
+      >
         {subheader}
       </Typography>
     );

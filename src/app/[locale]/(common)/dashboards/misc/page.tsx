@@ -1,13 +1,23 @@
+'use client';
 import { FeaturedCard1 } from '@app/_components/cards';
 import {
+  AppUsers,
   DailyFeed,
+  LastMonthSales,
   LatestNotifications,
   NewConnections,
+  NewVisitorsThisMonth,
+  OnlineSignupsFilled,
   Orders,
+  RecentActivities,
   SalesOverview,
+  SalesReport1,
+  TotalRevenueThisYear,
+  UpgradePlan,
   UserProfileCard,
   UserSummary,
 } from '@app/_components/widgets';
+
 import { ScheduleCard } from '@app/_components/widgets/ScheduleCard';
 import { EmojiObjectsOutlined, FolderOpen } from '@mui/icons-material';
 import { Grid } from '@mui/material';
@@ -61,6 +71,30 @@ export default function Misc() {
       </Grid>
       <Grid item xs={12} md={6} lg={4}>
         <NewConnections />
+      </Grid>
+      <Grid item xs={12} md={6} lg={4}>
+        <RecentActivities />
+      </Grid>
+      <Grid item xs={12} md={6} lg={3}>
+        <LastMonthSales />
+      </Grid>
+      <Grid item xs={12} md={6} lg={3}>
+        <OnlineSignupsFilled />
+      </Grid>
+      <Grid item xs={12} md={6} lg={3}>
+        <NewVisitorsThisMonth />
+      </Grid>
+      <Grid item xs={12} md={6} lg={3}>
+        <TotalRevenueThisYear />
+      </Grid>
+      <Grid item xs={12} md={6} lg={3}>
+        <UpgradePlan />
+      </Grid>
+      <Grid item xs={12} md={6} lg={6}>
+        <SalesReport1 />
+      </Grid>
+      <Grid item xs={12} md={6} lg={3}>
+        <AppUsers />
       </Grid>
     </Grid>
   );

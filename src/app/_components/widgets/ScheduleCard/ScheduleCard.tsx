@@ -1,21 +1,15 @@
+import { FeaturedCard3 } from '@app/_components/cards';
 import { JumboDdMenu } from '@jumbo/components/JumboDdMenu';
-import { Div } from '@jumbo/shared';
-import { Card, CardHeader } from '@mui/material';
+import { CardHeader, Stack } from '@mui/material';
 import Avatar from '@mui/material/Avatar';
-import Stack from '@mui/material/Stack';
-import Typography from '@mui/material/Typography';
 import { ScheduleList } from './components';
 
 function ScheduleCard() {
   return (
-    <Card>
-      <Div
-        sx={{
-          height: 260,
-          backgroundImage: `linear-gradient(135deg, #843CF6, #38B8F2)`,
-          color: 'common.white',
-        }}
-      >
+    <FeaturedCard3
+      bgcolor={['135deg', '#843CF6', '#38B8F2']}
+      textColor='common.white'
+      header={
         <CardHeader
           action={
             <JumboDdMenu
@@ -26,7 +20,9 @@ function ScheduleCard() {
             />
           }
         />
-        <Stack alignItems={'center'} mt={-2}>
+      }
+      avatar={
+        <Stack alignItems={'center'}>
           <Avatar
             sx={{
               bgcolor: 'common.white',
@@ -40,19 +36,13 @@ function ScheduleCard() {
           >
             28
           </Avatar>
-          <Typography variant={'h4'} color={'common.white'}>
-            Monday
-          </Typography>
-          <Typography variant={'body1'} mb={1}>
-            December 2021
-          </Typography>
         </Stack>
-      </Div>
-
-      <Div sx={{ p: 3 }}>
-        <ScheduleList />
-      </Div>
-    </Card>
+      }
+      title='Monday'
+      subheader='December 2023'
+    >
+      <ScheduleList />
+    </FeaturedCard3>
   );
 }
 
