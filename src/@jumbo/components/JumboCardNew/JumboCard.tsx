@@ -21,6 +21,12 @@ type StatsCard1Props = {
   contentSx?: SxProps<Theme>;
 };
 
+//TODO: make this a common card for the quick implementation with following features:
+//Directly pass title, subheader and action
+//handle bgcolor, textColor and background image
+//handle reverse action
+//handle spacing and padding
+
 function JumboCard({
   title,
   subheader,

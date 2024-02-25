@@ -1,6 +1,6 @@
 import { SxProps, Theme } from '@mui/material';
 type JumboBackdropProps = {
-  color?: string;
+  color?: string | ((theme: Theme) => string);
   opacity: string | number | undefined;
   open: boolean | undefined;
   sx?: SxProps<Theme>;

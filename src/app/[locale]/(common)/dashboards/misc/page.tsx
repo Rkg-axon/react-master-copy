@@ -2,7 +2,9 @@
 import { FeaturedCard1 } from '@app/_components/cards';
 import {
   AppUsers,
+  CafeStore1,
   DailyFeed,
+  ExplorePlaceCard,
   LastMonthSales,
   LatestNotifications,
   NewConnections,
@@ -11,6 +13,8 @@ import {
   Orders,
   OurOffice1,
   PopularProducts,
+  ProductImage,
+  ProjectsListCard,
   RecentActivities,
   SalesOverview,
   SalesReport1,
@@ -111,6 +115,18 @@ export default function Misc() {
       </Grid>
       <Grid item xs={12} lg={8}>
         <PopularProducts />
+      </Grid>
+      <Grid item xs={12} md={6} lg={4}>
+        <ProjectsListCard />
+      </Grid>
+      <Grid item xs={12} md={6} lg={4}>
+        <ProductImage height={370} />
+      </Grid>
+      <Grid item xs={12} md={6} lg={4}>
+        <CafeStore1 />
+      </Grid>
+      <Grid item xs={12} md={6} lg={4}>
+        <ExplorePlaceCard height={450} />
       </Grid>
     </Grid>
   );
