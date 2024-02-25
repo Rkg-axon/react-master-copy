@@ -9,6 +9,7 @@ import {
   NewVisitorsThisMonth,
   OnlineSignupsFilled,
   Orders,
+  OurOffice1,
   RecentActivities,
   SalesOverview,
   SalesReport1,
@@ -16,6 +17,7 @@ import {
   UpgradePlan,
   UserProfileCard,
   UserSummary,
+  WordOfTheDay,
 } from '@app/_components/widgets';
 
 import { ScheduleCard } from '@app/_components/widgets/ScheduleCard';
@@ -95,6 +97,12 @@ export default function Misc() {
       </Grid>
       <Grid item xs={12} md={6} lg={3}>
         <AppUsers />
+      </Grid>
+      <Grid item xs={12} md={6} lg={3}>
+        <WordOfTheDay />
+      </Grid>
+      <Grid item xs={12} md={6} lg={4}>
+        <OurOffice1 />
       </Grid>
     </Grid>
   );

@@ -1,0 +1,47 @@
+import { JumboCardNew } from '@jumbo/components';
+import SyncOutlinedIcon from '@mui/icons-material/SyncOutlined';
+import VolumeUpOutlinedIcon from '@mui/icons-material/VolumeUpOutlined';
+import { Typography } from '@mui/material';
+import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
+import { useTranslations } from 'next-intl';
+
+const WordOfTheDay = () => {
+  const t = useTranslations();
+  return (
+    <JumboCardNew
+      sx={{
+        '& .MuiCardHeader-action': {
+          my: '-4px',
+          mr: -1,
+        },
+      }}
+      title={t('widgets.title.wordOfTheDay')}
+      action={
+        <IconButton>
+          <SyncOutlinedIcon />
+        </IconButton>
+      }
+      contentSx={{
+        pt: 0,
+      }}
+    >
+      <Typography variant={'h3'}>be-nev-o-lent</Typography>
+      <Typography variant={'body1'} color={'text.secondary'} mb={2}>
+        adjective
+      </Typography>
+      <Typography variant={'body1'} color={'text.secondary'} mb={4}>
+        The definition of benevolent is enjoying helping others or someone whose
+        characteristic is being friendly.
+      </Typography>
+      <Button
+        variant={'contained'}
+        sx={{ minWidth: 24, p: (theme) => theme.spacing(0.75, 1.25) }}
+      >
+        <VolumeUpOutlinedIcon sx={{ fontSize: 22 }} />
+      </Button>
+    </JumboCardNew>
+  );
+};
+
+export { WordOfTheDay };

@@ -30,7 +30,9 @@
       "newConnection": "New Connections",
       "recentActivities": "Recent Activities",
       "salesReport1": "This year sales report",
-      "appUsers": "App Users"
+      "appUsers": "App Users",
+      "wordOfTheDay": "Word of the day",
+      "ourOffice1": "Our Office"
     },
     "subheader": {
       "userSummary": "Director",
