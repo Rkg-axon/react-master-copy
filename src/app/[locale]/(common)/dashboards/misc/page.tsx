@@ -10,11 +10,13 @@ import {
   OnlineSignupsFilled,
   Orders,
   OurOffice1,
+  PopularProducts,
   RecentActivities,
   SalesOverview,
   SalesReport1,
   TotalRevenueThisYear,
   UpgradePlan,
+  UserProfileAction,
   UserProfileCard,
   UserSummary,
   WordOfTheDay,
@@ -103,6 +105,12 @@ export default function Misc() {
       </Grid>
       <Grid item xs={12} md={6} lg={4}>
         <OurOffice1 />
+      </Grid>
+      <Grid item xs={12} md={6} lg={5}>
+        <UserProfileAction height={282} />
+      </Grid>
+      <Grid item xs={12} lg={8}>
+        <PopularProducts />
       </Grid>
     </Grid>
   );

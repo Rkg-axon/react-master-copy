@@ -32,7 +32,8 @@
       "salesReport1": "This year sales report",
       "appUsers": "App Users",
       "wordOfTheDay": "Word of the day",
-      "ourOffice1": "Our Office"
+      "ourOffice1": "Our Office",
+      "popularProducts": "Popular Products"
     },
     "subheader": {
       "userSummary": "Director",
@@ -41,7 +42,8 @@
       "onlineSignups": "Online signups",
       "newVisitors": "New visitors",
       "totalRevenueYear": "Revenue this year",
-      "appUsers": "Last updated 30 min ago"
+      "appUsers": "Last updated 30 min ago",
+      "popularProducts": "Checkout what other people are liking the most"
     }
   }
 }

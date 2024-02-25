@@ -1,3 +1,4 @@
+'use client';
 import { JumboCardNew } from '@jumbo/components';
 import SyncOutlinedIcon from '@mui/icons-material/SyncOutlined';
 import VolumeUpOutlinedIcon from '@mui/icons-material/VolumeUpOutlined';
