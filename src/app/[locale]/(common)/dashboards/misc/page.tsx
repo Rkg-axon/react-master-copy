@@ -1,5 +1,6 @@
 'use client';
 import { FeaturedCard1 } from '@app/_components/cards';
+import { MarkerClustererMap } from '@app/_components/maps';
 import {
   AppUsers,
   CafeStore1,
@@ -25,9 +26,9 @@ import {
   UserSummary,
   WordOfTheDay,
 } from '@app/_components/widgets';
-
 import { ScheduleCard } from '@app/_components/widgets/ScheduleCard';
 import { EmojiObjectsOutlined, FolderOpen } from '@mui/icons-material';
+
 import { Grid } from '@mui/material';
 
 export default function Misc() {
@@ -127,6 +128,9 @@ export default function Misc() {
       </Grid>
       <Grid item xs={12} md={6} lg={4}>
         <ExplorePlaceCard height={450} />
+      </Grid>
+      <Grid item xs={12}>
+        <MarkerClustererMap />
       </Grid>
     </Grid>
   );

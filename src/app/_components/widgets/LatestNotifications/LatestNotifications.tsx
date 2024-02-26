@@ -1,15 +1,8 @@
 'use client';
+import { JumboCard } from '@jumbo/components';
 import { JumboScrollbar } from '@jumbo/components/JumboScrollbar';
 import { TabContext, TabList, TabPanel } from '@mui/lab';
-import {
-  Card,
-  CardActions,
-  CardHeader,
-  Chip,
-  Divider,
-  Link,
-  Tab,
-} from '@mui/material';
+import { CardActions, Chip, Divider, Link, Tab } from '@mui/material';
 import { useTranslations } from 'next-intl';
 import React from 'react';
 import { FeedsList, InvitationsList, MessagesList } from './components';
@@ -25,11 +18,10 @@ function LatestNotifications() {
   const t = useTranslations();
   const [value, setValue] = React.useState('notification');
   return (
-    <Card>
-      <CardHeader
-        title={t('widgets.title.latestNotifications')}
-        action={<Chip size={'small'} label={'2 New'} color={'secondary'} />}
-      />
+    <JumboCard
+      title={t('widgets.title.latestNotifications')}
+      action={<Chip size={'small'} label={'2 New'} color={'secondary'} />}
+    >
       <TabContext value={value}>
         <TabList
           sx={{ borderBottom: 1, borderColor: 'divider' }}
@@ -74,7 +66,7 @@ function LatestNotifications() {
           Learn More
         </Link>
       </CardActions>
-    </Card>
+    </JumboCard>
   );
 }
 

@@ -1,9 +1,10 @@
 'use client';
-import { Card, CardActions, CardHeader, Typography } from '@mui/material';
+import { CardActions, Typography } from '@mui/material';
 import Chip from '@mui/material/Chip';
 import Divider from '@mui/material/Divider';
 import List from '@mui/material/List';
 
+import { JumboCard } from '@jumbo/components';
 import { JumboScrollbar } from '@jumbo/components/JumboScrollbar';
 import { useTranslations } from 'next-intl';
 import { FeedItem } from './components';
@@ -12,13 +13,10 @@ import { dailyFeed } from './data';
 const DailyFeed = ({ scrollHeight }: { scrollHeight?: number }) => {
   const t = useTranslations();
   return (
-    <Card>
-      <CardHeader
-        title={t('widgets.title.dailyFeed')}
-        action={
-          <Chip label={'23 New Feeds'} size={'small'} color={'warning'} />
-        }
-      />
+    <JumboCard
+      title={t('widgets.title.dailyFeed')}
+      action={<Chip label={'23 New Feeds'} size={'small'} color={'warning'} />}
+    >
       <JumboScrollbar height={scrollHeight ? scrollHeight : 498}>
         <List disablePadding>
           {dailyFeed.map((feed, index) => (
@@ -32,7 +30,7 @@ const DailyFeed = ({ scrollHeight }: { scrollHeight?: number }) => {
           {'Last Updated 30 min ago'}
         </Typography>
       </CardActions>
-    </Card>
+    </JumboCard>
   );
 };
 

@@ -109,3 +109,12 @@ export function getBackgroundColorStyle(colors?: string[]) {
     backgroundImage: `${gradientType}(${gradientValue})`,
   };
 }
+
+export function getBackgroundImageStyle(src?: string) {
+  if (!src) return {};
+
+  return {
+    background: `url(${src}) no-repeat center`,
+    backgroundSize: 'cover',
+  };
+}

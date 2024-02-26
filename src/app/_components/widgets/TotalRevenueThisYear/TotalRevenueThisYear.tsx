@@ -1,13 +1,14 @@
 'use client';
 import { OnlineSignupChart } from '@app/_components/charts';
-import { JumboCardNew } from '@jumbo/components';
+import { JumboCard } from '@jumbo/components';
+import { Div } from '@jumbo/shared';
 import { Chip } from '@mui/material';
 import { useTranslations } from 'next-intl';
 
 function TotalRevenueThisYear() {
   const t = useTranslations();
   return (
-    <JumboCardNew
+    <JumboCard
       title={'$235,659'}
       subheader={t('widgets.subheader.totalRevenueYear')}
       action={
@@ -21,10 +22,11 @@ function TotalRevenueThisYear() {
       textColor='common.white'
       sx={{ borderTop: '4px solid #E73145' }}
       bgcolor={['#f4a3ac', '#e73145']}
-      contentSx={{ pb: 0 }}
     >
-      <OnlineSignupChart />
-    </JumboCardNew>
+      <Div sx={{ p: 3, pb: 0 }}>
+        <OnlineSignupChart />
+      </Div>
+    </JumboCard>
   );
 }
 

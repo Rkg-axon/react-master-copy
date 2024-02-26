@@ -2,9 +2,10 @@
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import PhoneIcon from '@mui/icons-material/Phone';
-import { Card, CardHeader, List, Typography } from '@mui/material';
+import { List } from '@mui/material';
 
 import { IconLabelListItem } from '@app/_components/_core';
+import { JumboCard } from '@jumbo/components';
 import { Div } from '@jumbo/shared';
 import { useTranslations } from 'next-intl';
 import { SocialMediaButtons } from './components';
@@ -14,14 +15,7 @@ const OurOffice1 = () => {
   const t = useTranslations();
   const activeBranch = branches[0];
   return (
-    <Card sx={{ pb: 0 }}>
-      <CardHeader
-        title={
-          <Typography fontWeight={'500'} variant={'h3'}>
-            {t('widgets.title.ourOffice1')}
-          </Typography>
-        }
-      />
+    <JumboCard title={t('widgets.title.ourOffice1')}>
       <Div>
         <List disablePadding>
           <IconLabelListItem
@@ -37,7 +31,7 @@ const OurOffice1 = () => {
         </List>
         <SocialMediaButtons />
       </Div>
-    </Card>
+    </JumboCard>
   );
 };
 

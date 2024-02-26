@@ -1,5 +1,6 @@
 'use client';
-import { JumboCardNew } from '@jumbo/components';
+import { JumboCard } from '@jumbo/components';
+import { Div } from '@jumbo/shared';
 import SyncOutlinedIcon from '@mui/icons-material/SyncOutlined';
 import VolumeUpOutlinedIcon from '@mui/icons-material/VolumeUpOutlined';
 import { Typography } from '@mui/material';
@@ -10,7 +11,7 @@ import { useTranslations } from 'next-intl';
 const WordOfTheDay = () => {
   const t = useTranslations();
   return (
-    <JumboCardNew
+    <JumboCard
       sx={{
         '& .MuiCardHeader-action': {
           my: '-4px',
@@ -23,25 +24,24 @@ const WordOfTheDay = () => {
           <SyncOutlinedIcon />
         </IconButton>
       }
-      contentSx={{
-        pt: 0,
-      }}
     >
-      <Typography variant={'h3'}>be-nev-o-lent</Typography>
-      <Typography variant={'body1'} color={'text.secondary'} mb={2}>
-        adjective
-      </Typography>
-      <Typography variant={'body1'} color={'text.secondary'} mb={4}>
-        The definition of benevolent is enjoying helping others or someone whose
-        characteristic is being friendly.
-      </Typography>
-      <Button
-        variant={'contained'}
-        sx={{ minWidth: 24, p: (theme) => theme.spacing(0.75, 1.25) }}
-      >
-        <VolumeUpOutlinedIcon sx={{ fontSize: 22 }} />
-      </Button>
-    </JumboCardNew>
+      <Div sx={{ p: 3, pt: 0 }}>
+        <Typography variant={'h3'}>be-nev-o-lent</Typography>
+        <Typography variant={'body1'} color={'text.secondary'} mb={2}>
+          adjective
+        </Typography>
+        <Typography variant={'body1'} color={'text.secondary'} mb={4}>
+          The definition of benevolent is enjoying helping others or someone
+          whose characteristic is being friendly.
+        </Typography>
+        <Button
+          variant={'contained'}
+          sx={{ minWidth: 24, p: (theme) => theme.spacing(0.75, 1.25) }}
+        >
+          <VolumeUpOutlinedIcon sx={{ fontSize: 22 }} />
+        </Button>
+      </Div>
+    </JumboCard>
   );
 };
 

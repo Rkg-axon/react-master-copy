@@ -1,5 +1,6 @@
 import { RevenueChart } from '@app/_components/charts';
-import { JumboCardNew } from '@jumbo/components';
+import { JumboCard } from '@jumbo/components';
+import { Div } from '@jumbo/shared';
 import { TrendingUp } from '@mui/icons-material';
 import { Typography } from '@mui/material';
 import { useTranslations } from 'next-intl';
@@ -7,7 +8,7 @@ import { useTranslations } from 'next-intl';
 function OnlineSignupsFilled() {
   const t = useTranslations();
   return (
-    <JumboCardNew
+    <JumboCard
       title={'10,241'}
       subheader={t('widgets.subheader.onlineSignups')}
       action={
@@ -22,10 +23,11 @@ function OnlineSignupsFilled() {
       textColor='common.white'
       sx={{ borderTop: '4px solid #3BD2A2' }}
       bgcolor={['#a3ead3', '#3bd2a2']}
-      contentSx={{ pb: 0 }}
     >
-      <RevenueChart />
-    </JumboCardNew>
+      <Div sx={{ p: 3, pb: 0 }}>
+        <RevenueChart />
+      </Div>
+    </JumboCard>
   );
 }
 

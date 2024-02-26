@@ -1,4 +1,3 @@
-'use client';
 import { Div } from '@jumbo/shared';
 import { SxProps, Theme } from '@mui/material';
 import React from 'react';
