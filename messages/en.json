@@ -44,7 +44,8 @@
       "newVisitors": "New visitors",
       "totalRevenueYear": "Revenue this year",
       "appUsers": "Last updated 30 min ago",
-      "popularProducts": "Checkout what other people are liking the most"
+      "popularProducts": "Checkout what other people are liking the most",
+      "bitcoinPrice": "Bitcoin Price"
     }
   }
 }
