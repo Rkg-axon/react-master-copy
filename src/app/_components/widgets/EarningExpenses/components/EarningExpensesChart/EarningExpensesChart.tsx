@@ -1,3 +1,4 @@
+'use client';
 import { Area, AreaChart, ResponsiveContainer, Tooltip, XAxis } from 'recharts';
 import { data } from './data';
 

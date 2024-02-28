@@ -1,6 +1,7 @@
 'use client';
-import { getBackgroundColorStyle } from '@app/_utilities/helpers';
+
 import { Div } from '@jumbo/shared';
+import { getBackgroundColorStyle } from '@jumbo/utilities/helpers';
 import { Card, CardContent, SxProps, Theme, Typography } from '@mui/material';
 
 type FeaturedCard3Props = {

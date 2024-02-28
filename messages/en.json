@@ -34,7 +34,10 @@
       "wordOfTheDay": "Word of the day",
       "ourOffice1": "Our Office",
       "popularProducts": "Popular Products",
-      "projectsList": "Projects and teams"
+      "projectsList": "Projects and teams",
+      "currencyCal": "Currency Calculator",
+      "latestPosts": "Latest Posts",
+      "marketingCampaign": "Marketing Campaign"
     },
     "subheader": {
       "userSummary": "Director",
@@ -45,7 +48,12 @@
       "totalRevenueYear": "Revenue this year",
       "appUsers": "Last updated 30 min ago",
       "popularProducts": "Checkout what other people are liking the most",
-      "bitcoinPrice": "Bitcoin Price"
+      "bitcoinPrice": "Bitcoin Price",
+      "ripplePrice": "Ripple Price",
+      "ethereumPrice": "Ethereum Price",
+      "litcoinPrice": "Litcoin Price",
+      "latestPosts": "Recently written articles",
+      "marketingCampaign": "Past 6 days result"
     }
   }
 }

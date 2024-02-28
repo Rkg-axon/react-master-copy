@@ -1,3 +1,4 @@
+'use client';
 import styled from '@emotion/styled';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import { ListItem, ListItemIcon, ListItemText } from '@mui/material';

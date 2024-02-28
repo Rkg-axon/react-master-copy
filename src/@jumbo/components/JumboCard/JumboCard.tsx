@@ -1,7 +1,7 @@
 import {
   getBackgroundColorStyle,
   getBackgroundImageStyle,
-} from '@app/_utilities/helpers';
+} from '@jumbo/utilities/helpers';
 import {
   Card,
   CardContent,

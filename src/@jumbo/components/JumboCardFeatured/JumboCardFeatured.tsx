@@ -1,6 +1,6 @@
 import { Div } from '@jumbo/shared';
 import { JumboCardFeaturedProps } from '@jumbo/types/JumboCardFeatured';
-import { getBgStyle } from '@jumbo/utilities/styleHelpers';
+import { getBackgroundColorStyle } from '@jumbo/utilities/helpers';
 import { Card, Stack } from '@mui/material';
 import { JumboBackdrop } from '../JumboBackdrop';
 
@@ -9,7 +9,7 @@ function JumboCardFeatured({
   separator = true,
   separatorSx = {},
   spacing = 1,
-  background,
+  bgcolor,
   backdrop,
   children,
   sx = {},
@@ -18,14 +18,14 @@ function JumboCardFeatured({
   imageWrapperSx = {},
   fitToWidth = true,
 }: JumboCardFeaturedProps) {
-  const bgStyle = getBgStyle(background);
+  const bgcolorStyle = getBackgroundColorStyle(bgcolor);
 
   const tickAlign = ['column', 'column-reverse'].includes(direction)
     ? { m: '0 auto 16px' }
     : {};
 
   return (
-    <Card sx={{ ...bgStyle, position: 'relative', ...sx }}>
+    <Card sx={{ ...bgcolorStyle, position: 'relative', ...sx }}>
       <JumboBackdrop
         color={backdrop?.color}
         opacity={backdrop?.opacity}

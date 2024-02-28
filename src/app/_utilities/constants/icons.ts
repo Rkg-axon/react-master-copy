@@ -1,3 +1,10 @@
+import {
+  FacebookOutlined,
+  Instagram,
+  LinkedIn,
+  Twitter,
+  YouTube,
+} from '@mui/icons-material';
 import CurrencyExchangeOutlinedIcon from '@mui/icons-material/CurrencyExchangeOutlined';
 import GraphicEqIcon from '@mui/icons-material/GraphicEq';
 import LeaderboardOutlinedIcon from '@mui/icons-material/LeaderboardOutlined';
@@ -28,6 +35,36 @@ const APP_ICONS: Icon[] = [
   {
     name: 'metric',
     Component: LeaderboardOutlinedIcon,
+    props: { sx: { fontSize: 20 } },
+  },
+  {
+    name: 'facebook-outlined',
+    Component: FacebookOutlined,
+    props: { sx: { fontSize: 20 } },
+  },
+  {
+    name: 'twitter',
+    Component: Twitter,
+    props: { sx: { fontSize: 20 } },
+  },
+  {
+    name: 'instagram',
+    Component: Instagram,
+    props: { sx: { fontSize: 20 } },
+  },
+  {
+    name: 'google',
+    Component: Instagram,
+    props: { sx: { fontSize: 20 } },
+  },
+  {
+    name: 'youtube',
+    Component: YouTube,
+    props: { sx: { fontSize: 20 } },
+  },
+  {
+    name: 'linkedin',
+    Component: LinkedIn,
     props: { sx: { fontSize: 20 } },
   },
 ];

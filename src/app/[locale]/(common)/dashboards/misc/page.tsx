@@ -1,32 +1,30 @@
 'use client';
 import { FeaturedCard1 } from '@app/_components/cards';
-import { MarkerClustererMap } from '@app/_components/maps';
-import {
-  AppUsers,
-  CafeStore1,
-  DailyFeed,
-  ExplorePlaceCard,
-  LastMonthSales,
-  LatestNotifications,
-  NewConnections,
-  NewVisitorsThisMonth,
-  OnlineSignupsFilled,
-  Orders,
-  OurOffice1,
-  PopularProducts,
-  ProductImage,
-  ProjectsListCard,
-  RecentActivities,
-  SalesOverview,
-  SalesReport1,
-  TotalRevenueThisYear,
-  UpgradePlan,
-  UserProfileAction,
-  UserProfileCard,
-  UserSummary,
-  WordOfTheDay,
-} from '@app/_components/widgets';
+import { AppUsers } from '@app/_components/widgets/AppUsers';
+import { CafeStore1 } from '@app/_components/widgets/CafeStore1';
+import { DailyFeed } from '@app/_components/widgets/DailyFeed';
+import { ExplorePlaceCard } from '@app/_components/widgets/ExplorePlaceCard';
+import { LastMonthSales } from '@app/_components/widgets/LastMonthSales';
+import { LatestNotifications } from '@app/_components/widgets/LatestNotifications';
+import { NewConnections } from '@app/_components/widgets/NewConnections';
+import { NewVisitorsThisMonth } from '@app/_components/widgets/NewVisitorsThisMonth';
+import { OnlineSignupsFilled } from '@app/_components/widgets/OnlineSignupsFilled';
+import { Orders } from '@app/_components/widgets/Orders';
+import { OurOffice1 } from '@app/_components/widgets/OurOffice1';
+import { PopularProducts } from '@app/_components/widgets/PopularProducts';
+import { ProductImage } from '@app/_components/widgets/ProductImage';
+import { ProjectsListCard } from '@app/_components/widgets/ProjectsListCard';
+import { RecentActivities } from '@app/_components/widgets/RecentActivities';
+import { SalesOverview } from '@app/_components/widgets/SalesOverview';
+import { SalesReport1 } from '@app/_components/widgets/SalesReport1';
+
 import { ScheduleCard } from '@app/_components/widgets/ScheduleCard';
+import { TotalRevenueThisYear } from '@app/_components/widgets/TotalRevenueThisYear';
+import { UpgradePlan } from '@app/_components/widgets/UpgradePlan';
+import { UserProfileAction } from '@app/_components/widgets/UserProfileAction';
+import { UserProfileCard } from '@app/_components/widgets/UserProfileCard';
+import { UserSummary } from '@app/_components/widgets/UserSummary';
+import { WordOfTheDay } from '@app/_components/widgets/WordOfTheDay';
 import { EmojiObjectsOutlined, FolderOpen } from '@mui/icons-material';
 
 import { Grid } from '@mui/material';
@@ -129,9 +127,12 @@ export default function Misc() {
       <Grid item xs={12} md={6} lg={4}>
         <ExplorePlaceCard height={450} />
       </Grid>
+
+      {/* TODO: taking a lot of time 
       <Grid item xs={12}>
         <MarkerClustererMap />
-      </Grid>
+      </Grid> 
+      */}
     </Grid>
   );
 }

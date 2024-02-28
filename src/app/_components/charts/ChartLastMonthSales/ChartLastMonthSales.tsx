@@ -1,3 +1,4 @@
+'use client';
 import { Div } from '@jumbo/shared';
 import {
   Area,

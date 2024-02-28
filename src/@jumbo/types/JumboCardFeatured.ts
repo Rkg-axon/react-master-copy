@@ -7,7 +7,7 @@ type JumboCardFeaturedProps = CardProps & {
   separatorSx?: SxProps<Theme>;
   spacing?: number;
   fitToWidth?: boolean;
-  background?: string | string[];
+  bgcolor?: string[];
   backdrop?: JumboBackdropProps;
   children: React.ReactNode;
   sx?: SxProps<Theme>;

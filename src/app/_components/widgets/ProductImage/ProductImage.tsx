@@ -1,3 +1,4 @@
+'use client';
 import { ASSET_IMAGES } from '@app/_utilities/constants/paths';
 import { Share } from '@mui/icons-material';
 import DeleteSweepIcon from '@mui/icons-material/DeleteSweep';

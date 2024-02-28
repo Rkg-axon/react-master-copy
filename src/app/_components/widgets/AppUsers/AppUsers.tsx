@@ -1,3 +1,4 @@
+'use client';
 import { FeaturedCard3 } from '@app/_components/cards';
 import { ChartAppUsers } from '@app/_components/charts';
 import { useTranslations } from 'next-intl';
