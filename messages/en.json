@@ -37,7 +37,19 @@
       "projectsList": "Projects and teams",
       "currencyCal": "Currency Calculator",
       "latestPosts": "Latest Posts",
-      "marketingCampaign": "Marketing Campaign"
+      "marketingCampaign": "Marketing Campaign",
+      "cryptoNews": "Crypto News",
+      "cities": "Cities",
+      "properties": "Properties",
+      "onlineVisits": "Online Visits",
+      "onlineQueries": "Online Queries",
+      "popularAgents": "Popular Agents",
+      "yourCurrentPlan": "Your Current Plan",
+      "dealsClosed": "927 Deals Closed",
+      "intranet": "Intranet",
+      "visits": "Visits",
+      "orders1": "Orders",
+      "pageViews": "Page Views"
     },
     "subheader": {
       "userSummary": "Director",
@@ -53,7 +65,8 @@
       "ethereumPrice": "Ethereum Price",
       "litcoinPrice": "Litcoin Price",
       "latestPosts": "Recently written articles",
-      "marketingCampaign": "Past 6 days result"
+      "marketingCampaign": "Past 6 days result",
+      "dealsClosed": "This year"
     }
   }
 }

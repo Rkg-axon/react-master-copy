@@ -24,6 +24,7 @@ type JumboCardProps = {
   reverse?: boolean;
   contentWrapper?: boolean;
   contentSx?: SxProps<Theme>;
+  headerDivider?: boolean;
 };
 
 function JumboCard({
@@ -38,6 +39,7 @@ function JumboCard({
   reverse = false,
   contentWrapper = false,
   contentSx = {},
+  headerDivider = false,
 }: JumboCardProps) {
   const backgroundColorStyle = getBackgroundColorStyle(bgcolor);
   const colorStyle = textColor ? { color: textColor } : {};
@@ -64,6 +66,10 @@ function JumboCard({
           title={renderTitle(title, textColor)}
           subheader={renderSubheader(subheader, textColor)}
           action={action}
+          {...(headerDivider && {
+            borderBottom: 1,
+            borderBottomColor: 'divider',
+          })}
         />
       )}
 

@@ -2,6 +2,8 @@ import {
   FacebookOutlined,
   Instagram,
   LinkedIn,
+  Refresh,
+  Settings,
   Twitter,
   YouTube,
 } from '@mui/icons-material';
@@ -65,6 +67,16 @@ const APP_ICONS: Icon[] = [
   {
     name: 'linkedin',
     Component: LinkedIn,
+    props: { sx: { fontSize: 20 } },
+  },
+  {
+    name: 'refresh',
+    Component: Refresh,
+    props: { sx: { fontSize: 20 } },
+  },
+  {
+    name: 'settings',
+    Component: Settings,
     props: { sx: { fontSize: 20 } },
   },
 ];

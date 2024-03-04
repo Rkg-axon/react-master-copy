@@ -1,10 +1,8 @@
 import { SxProps, Theme } from '@mui/material';
-type JumboBackdropProps = {
+export type JumboBackdropProps = {
   color?: string | ((theme: Theme) => string);
-  opacity: string | number | undefined;
-  open: boolean | undefined;
+  opacity?: string | number;
+  open?: boolean;
   sx?: SxProps<Theme>;
   children?: React.ReactNode;
 };
-
-export { type JumboBackdropProps };

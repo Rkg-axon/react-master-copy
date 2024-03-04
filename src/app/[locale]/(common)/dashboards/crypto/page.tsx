@@ -4,6 +4,7 @@ import {
   LitcoinPrice,
   RipplePrice,
 } from '@app/_components/metrics';
+import { CryptoNews } from '@app/_components/widgets/CryptoNews';
 import { CurrencyCalculator } from '@app/_components/widgets/CurrencyCalculator';
 import { EarnRewardCard } from '@app/_components/widgets/EarnRewardCard';
 import { EarningExpenses } from '@app/_components/widgets/EarningExpenses';
@@ -49,6 +50,9 @@ export default function Crypto() {
       </Grid>
       <Grid item xs={12} lg={6}>
         <MarketingCampaign />
+      </Grid>
+      <Grid item xs={12}>
+        <CryptoNews />
       </Grid>
     </Grid>
   );

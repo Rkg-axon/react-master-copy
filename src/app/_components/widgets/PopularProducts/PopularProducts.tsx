@@ -1,3 +1,4 @@
+'use client';
 import { CardActions, List } from '@mui/material';
 import Button from '@mui/material/Button';
 

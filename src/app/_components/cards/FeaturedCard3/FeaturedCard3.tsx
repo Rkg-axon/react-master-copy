@@ -3,6 +3,7 @@
 import { Div } from '@jumbo/shared';
 import { getBackgroundColorStyle } from '@jumbo/utilities/helpers';
 import { Card, CardContent, SxProps, Theme, Typography } from '@mui/material';
+import React from 'react';
 
 type FeaturedCard3Props = {
   header?: React.ReactNode;
@@ -12,9 +13,11 @@ type FeaturedCard3Props = {
   sx?: SxProps<Theme>;
   children?: React.ReactNode;
   contentSx?: SxProps<Theme>;
+  contentWrapper?: boolean;
   bgcolor?: string[];
   textColor?: string;
   headHeight?: number | string;
+  backdrop?: React.ReactNode;
 };
 
 function FeaturedCard3({
@@ -25,28 +28,35 @@ function FeaturedCard3({
   sx = {},
   children,
   contentSx,
+  contentWrapper = true,
   bgcolor,
   textColor,
   headHeight = 250,
+  backdrop,
 }: FeaturedCard3Props) {
   const bgColorStyle = getBackgroundColorStyle(bgcolor);
   const colorStyle = textColor ? { color: textColor } : {};
   return (
     <Card>
-      <Div sx={{ ...bgColorStyle, ...colorStyle, ...sx }}>
-        {header}
-        <CardContent
-          sx={{
-            textAlign: 'center',
-
-            ...(headHeight ? { headHeight } : {}),
-          }}
-        >
-          {avatar}
-          {renderTitle(title, textColor)}
-          {renderSubheader(subheader, textColor)}
-        </CardContent>
-        {children && (
+      <Div sx={{ ...bgColorStyle, ...sx }}>
+        <Div sx={{ position: 'relative', padding: 6, ...colorStyle }}>
+          {header}
+          {backdrop}
+          <CardContent
+            sx={{
+              textAlign: 'center',
+              ...(headHeight ? { headHeight } : {}),
+              zIndex: 2,
+            }}
+          >
+            {avatar}
+            {renderTitle(title, textColor)}
+            {renderSubheader(subheader, textColor)}
+          </CardContent>
+        </Div>
+        {children && !contentWrapper ? (
+          <Div sx={{ ...contentSx }}>{children}</Div>
+        ) : (
           <CardContent
             sx={{
               textAlign: 'center',
