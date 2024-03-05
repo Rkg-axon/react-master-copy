@@ -41,7 +41,7 @@ function JumboScrollbar({
   const calculatedSx: SxProps<Theme> = {
     ...sx,
     height: calcHeight,
-    overflowY: showScrollbar ? 'scroll' : 'visible',
+    overflowY: showScrollbar ? 'scroll' : 'auto',
   };
 
   function handleScrollbarVisibility(value: boolean) {

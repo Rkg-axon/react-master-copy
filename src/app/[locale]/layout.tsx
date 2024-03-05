@@ -6,12 +6,11 @@ import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 import type { Metadata } from 'next';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import { Params } from 'next/dist/shared/lib/router/utils/route-matcher';
-import { Lexend } from 'next/font/google';
 import { Header, Sidebar,Footer } from '../_components/layout';
 import { CONFIG } from '../_config';
 import '../_utilities/style/scrollbar.css';
+import "../_themes/assets/fonts/noir-pro/styles.css";
 
-const lexend = Lexend({ subsets: ['latin'] });
 
 export function generateStaticParams() {
   return CONFIG.LOCALES.map((locale) => ({ locale }));
@@ -33,8 +32,8 @@ export default async function RootLayout({
   const menus: MenuItems = await getMenus();
 
   return (
-    <html lang={locale}>
-      <body className={lexend.className}>
+    <html lang={locale}>      
+      <body>
         <AppRouterCacheProvider>
           <AppBuilder>
             <JumboLayout
