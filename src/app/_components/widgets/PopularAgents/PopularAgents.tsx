@@ -22,7 +22,7 @@ const PopularAgents = () => {
                   alt={agent.name}
                   src={agent.avatar}
                   sx={{
-                    boxShadow: 26,
+                    boxShadow: 24,
                     width: 60,
                     height: 60,
                     mb: 2,

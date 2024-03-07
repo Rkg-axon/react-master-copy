@@ -21,7 +21,7 @@ export const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: 'inherit',
   display: 'flex',
   borderRadius: 24,
-  boxShadow: theme.shadows[24],
+  boxShadow: theme.shadows[23],
 
   '& .MuiInputBase-input': {
     padding: theme.spacing(1, 1, 1, 0),

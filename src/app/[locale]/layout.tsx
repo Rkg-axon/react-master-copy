@@ -6,11 +6,11 @@ import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 import type { Metadata } from 'next';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import { Params } from 'next/dist/shared/lib/router/utils/route-matcher';
-import { Header, Sidebar,Footer } from '../_components/layout';
+import { Footer, Header, Sidebar } from '../_components/layout';
 import { CONFIG } from '../_config';
+import '../_themes/assets/fonts/noir-pro/styles.css';
 import '../_utilities/style/scrollbar.css';
-import "../_themes/assets/fonts/noir-pro/styles.css";
-
+import '../_utilities/style/style.css';
 
 export function generateStaticParams() {
   return CONFIG.LOCALES.map((locale) => ({ locale }));
@@ -32,13 +32,13 @@ export default async function RootLayout({
   const menus: MenuItems = await getMenus();
 
   return (
-    <html lang={locale}>      
+    <html lang={locale}>
       <body>
         <AppRouterCacheProvider>
           <AppBuilder>
             <JumboLayout
               header={<Header />}
-              footer={<Footer/>}
+              footer={<Footer />}
               sidebar={<Sidebar menus={menus} />}
             >
               {children}

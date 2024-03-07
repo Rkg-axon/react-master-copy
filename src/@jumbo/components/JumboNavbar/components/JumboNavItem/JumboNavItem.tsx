@@ -42,7 +42,7 @@ function JumboNavItem({ item, isNested }: JumboNavItemProps) {
           p: (theme: ThemeOptions) =>
             !miniAndClosed
               ? typeof theme.spacing === 'function'
-                ? theme.spacing(1)
+                ? theme.spacing(1, 3.5)
                 : 0
               : 0,
           ...(miniAndClosed ? { justifyContent: 'center' } : {}),

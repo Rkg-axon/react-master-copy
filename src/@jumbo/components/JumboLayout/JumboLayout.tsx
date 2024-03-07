@@ -1,7 +1,8 @@
 'use client';
 import { LayoutProps } from '@jumbo/types';
-import { Box, CssBaseline, Toolbar } from '@mui/material';
+import { CssBaseline, Toolbar } from '@mui/material';
 
+import { Div } from '@jumbo/shared';
 import { SIDEBAR_STYLES } from '@jumbo/utilities/constants';
 import {
   JumboLayoutFooter,
@@ -17,7 +18,7 @@ function JumboLayout(props: LayoutProps) {
   const headerSpaceSx = useHeaderSpaceSx();
   const contentMargin = useHeaderMargin();
   return (
-    <Box
+    <Div
       sx={{
         display: 'flex',
         flex: 1,
@@ -33,7 +34,7 @@ function JumboLayout(props: LayoutProps) {
         <JumboLayoutHeader>{props.header}</JumboLayoutHeader>
       )}
 
-      <Box
+      <Div
         sx={{
           display: 'flex',
           flex: 1,
@@ -45,7 +46,7 @@ function JumboLayout(props: LayoutProps) {
         {props.sidebar && (
           <JumboLayoutSidebar>{props.sidebar}</JumboLayoutSidebar>
         )}
-        <Box
+        <Div
           sx={{
             display: 'flex',
             minWidth: 0,
@@ -65,7 +66,7 @@ function JumboLayout(props: LayoutProps) {
           {!headerOptions.hide && headerOptions.fixed && (
             <Toolbar sx={{ ...headerSpaceSx }} />
           )}
-          <Box
+          <Div
             sx={{
               display: 'flex',
               minWidth: 0,
@@ -78,11 +79,11 @@ function JumboLayout(props: LayoutProps) {
             className='CmtLayout-content'
           >
             {props.children}
-          </Box>
+          </Div>
           <JumboLayoutFooter>{props.footer}</JumboLayoutFooter>
-        </Box>
-      </Box>
-    </Box>
+        </Div>
+      </Div>
+    </Div>
   );
 }
 

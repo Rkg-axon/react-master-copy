@@ -1,5 +1,6 @@
-import { EarningExpenses, PortfolioBalance } from '@app/_components/widgets';
 import AyurvedaCard from '@app/_components/widgets/AyurvedaCard/AyurvedaCard';
+import { EarningExpenses } from '@app/_components/widgets/EarningExpenses';
+import { PortfolioBalance } from '@app/_components/widgets/PortfolioBalance';
 import { Grid } from '@mui/material';
 
 export default function Widgets() {

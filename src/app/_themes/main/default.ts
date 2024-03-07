@@ -162,7 +162,7 @@ export const mainTheme: JumboThemeOptions = {
       styleOverrides: {
         root: {
           borderRadius: 12,
-          boxShadow: `0 0.5rem 1.25rem rgb(73, 52, C7, 0.175)`,
+          boxShadow: `0 0.5rem 1.25rem rgba(115, 82, 199, 0.175)`,
         },
       },
     },

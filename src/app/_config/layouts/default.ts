@@ -16,12 +16,15 @@ const defaultLayoutConfig: LayoutOptions = {
     view: SIDEBAR_VIEWS.FULL,
     scrollType: SIDEBAR_SCROLL_TYPES.FIXED,
     anchor: SIDEBAR_ANCHOR_POSITIONS.LEFT,
-    width: 250,
+    width: 240,
     minWidth: 80,
   },
   header: {
     hide: false,
     fixed: true,
+    sx: {
+      height: 80
+    }
   },
   footer: {
     hide: false,
