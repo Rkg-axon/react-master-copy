@@ -49,7 +49,11 @@
       "intranet": "Intranet",
       "visits": "Visits",
       "orders1": "Orders",
-      "pageViews": "Page Views"
+      "pageViews": "Page Views",
+      "popularArticles": "Popular Articles",
+      "currentProjects": "Current Projects",
+      "taskListExpandable": "Tasks",
+      "weeklySales": "Weekly Sales"
     },
     "subheader": {
       "userSummary": "Director",
@@ -66,7 +70,10 @@
       "litcoinPrice": "Litcoin Price",
       "latestPosts": "Recently written articles",
       "marketingCampaign": "Past 6 days result",
-      "dealsClosed": "This year"
+      "dealsClosed": "This year",
+      "currentProjects": "Recently updated projects",
+      "taskListExpandable": "Complete todo list",
+      "weeklySales": "Past two weeks"
     }
   }
 }
