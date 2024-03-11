@@ -18,7 +18,7 @@ const UserProfileAction = ({ height }: { height?: number | string }) => {
         alt=''
       />
 
-      <Stack direction={'row'} spacing={1}>
+      <Stack direction={'row'}>
         <Avatar
           sx={{
             width: 60,

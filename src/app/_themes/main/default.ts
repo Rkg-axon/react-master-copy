@@ -25,8 +25,8 @@ const shadows: Shadows = [
   '0px 10px 13px -6px rgba(0,0,0,0.2),0px 20px 31px 3px rgba(0,0,0,0.14),0px 8px 38px 7px rgba(0,0,0,0.12)',
   '0px 10px 13px -6px rgba(0,0,0,0.2),0px 21px 33px 3px rgba(0,0,0,0.14),0px 8px 40px 7px rgba(0,0,0,0.12)',
   '0px 10px 14px -6px rgba(0,0,0,0.2),0px 22px 35px 3px rgba(0,0,0,0.14),0px 8px 42px 7px rgba(0,0,0,0.12)',
-  '0px 11px 14px -7px rgba(0,0,0,0.2),0px 23px 36px 3px rgba(0,0,0,0.14),0px 9px 44px 8px rgba(0,0,0,0.12)',
-  '0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12)',
+  '0 5px 10px rgba(0, 0, 0, 0.085)',
+  '0 5px 10px rgba(0, 0, 0, 0.175)',
 ];
 
 export const mainTheme: JumboThemeOptions = {
@@ -95,7 +95,7 @@ export const mainTheme: JumboThemeOptions = {
   },
   shadows: shadows,
   typography: {
-    fontFamily: 'Lexend, Arial',
+    fontFamily: 'NoirPro, Arial',
     fontSize: 14,
     h1: {
       fontSize: '1.5rem',
@@ -162,7 +162,7 @@ export const mainTheme: JumboThemeOptions = {
       styleOverrides: {
         root: {
           borderRadius: 12,
-          boxShadow: `0 0.5rem 1.25rem rgb(73, 52, C7, 0.175)`,
+          boxShadow: `0 0.5rem 1.25rem rgba(115, 82, 199, 0.175)`,
         },
       },
     },

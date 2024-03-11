@@ -1,47 +1,75 @@
-import { FeaturedCard3 } from '@app/_components/cards/FeaturedCard3';
-import { ASSET_AVATARS, ASSET_IMAGES } from '@app/_utilities/constants/paths';
-import { JumboBackdrop } from '@jumbo/components';
-import { JumboDdMenu } from '@jumbo/components/JumboDdMenu';
-import { Avatar, CardContent, CardHeader, Typography } from '@mui/material';
+'use client';
+
+import { ASSET_AVATARS } from '@app/_utilities/constants/paths';
+import { JumboBackdrop, JumboCard } from '@jumbo/components';
+import { Div } from '@jumbo/shared';
+import { MoreHoriz } from '@mui/icons-material';
+import {
+  Avatar,
+  CardContent,
+  CardHeader,
+  IconButton,
+  LinearProgress,
+  Stack,
+  Typography,
+} from '@mui/material';
 import { ProfileStats } from './components';
-import { data } from './data';
 
 function UserProfileCard1() {
   return (
-    <FeaturedCard3
-      header={
+    <JumboCard>
+      <Div
+        // bgimage={`${ASSET_IMAGES}/event2.jpg`}
+        sx={{
+          height: 256,
+        }}
+      >
+        <JumboBackdrop />
         <CardHeader
           action={
-            <JumboDdMenu
-              menuItems={[{ title: 'Profile' }, { title: 'Friends' }]}
-            />
+            <IconButton sx={{ color: 'common.white' }}>
+              <MoreHoriz />
+            </IconButton>
           }
         />
-      }
-      avatar={
-        <Avatar
-          sx={{ width: 90, height: 90, boxShadow: 2, m: '0 auto 20px' }}
-          src={`${ASSET_AVATARS}/avatar8.jpg`}
-        />
-      }
-      title={'Gramy Sobbers'}
-      subheader={`Graphic Designer`}
-      contentWrapper={false}
-      backdrop={
-        <JumboBackdrop
-          color={'#000000'}
-          open={true}
-          opacity={0.9}
-          sx={{
-            background: `url(${ASSET_IMAGES}/event2.jpg) no-repeat center`,
-            backgroundSize: 'cover',
-            zIndex: -999,
-          }}
-        />
-      }
-      textColor='#ffffff'
-    >
-      <ProfileStats data={data} />
+        <Div sx={{ zIndex: 2, position: 'relative' }}>
+          <Stack
+            alignItems={'center'}
+            sx={{ p: (theme) => theme.spacing(0, 2), mt: -2 }}
+          >
+            <Avatar
+              sx={{ width: 72, height: 72, mb: 2 }}
+              alt={'Chelsea Ray'}
+              src={`${ASSET_AVATARS}/avatar5.jpg`}
+            />
+            <Typography variant={'h5'} color={'common.white'}>
+              Chelsea Ray
+            </Typography>
+            <Typography variant={'h6'} color={'common.white'}>
+              @sofia.halfway
+            </Typography>
+          </Stack>
+          <Div sx={{ width: '75%', m: '16px auto 0' }}>
+            <LinearProgress
+              variant={'determinate'}
+              color={'success'}
+              value={80}
+              sx={{
+                borderRadius: 4,
+                height: 5,
+                backgroundColor: '#E9EEEF',
+              }}
+            />
+          </Div>
+        </Div>
+      </Div>
+      <ProfileStats
+        data={[
+          { count: 457, label: 'Followers' },
+          { count: 689, label: 'Friends' },
+          { count: 283, label: 'Following' },
+        ]}
+      />
       <CardContent>
         <Typography variant={'h4'}>About Chelsea</Typography>
         <Typography>
@@ -49,7 +77,7 @@ function UserProfileCard1() {
           actress gained super stardom with the role of Amily.
         </Typography>
       </CardContent>
-    </FeaturedCard3>
+    </JumboCard>
   );
 }
 

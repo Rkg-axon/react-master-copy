@@ -52,7 +52,7 @@ function useSidebarDrawerSx() {
   const sx: SxProps<Theme> = {
     '& .MuiDrawer-paper': {
       border: 'none',
-      boxShadow: 25,
+      boxShadow: 23,
       transition: (theme) => theme.transitions.create(['width']),
       width:
         sidebarOptions?.view === SIDEBAR_VIEWS.MINI && !sidebarOptions.open
