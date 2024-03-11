@@ -10,6 +10,7 @@ import { PopularArticles } from '@app/_components/widgets/PopularArticles';
 import { PopularProducts } from '@app/_components/widgets/PopularProducts';
 import { RecentActivities } from '@app/_components/widgets/RecentActivities';
 import { TaskListExpandable } from '@app/_components/widgets/TaskListExpandable';
+import { UserPhotos } from '@app/_components/widgets/UserPhotos';
 import { UserProfileCard1 } from '@app/_components/widgets/UserProfileCard1';
 import { WeeklySales } from '@app/_components/widgets/WeeklySales';
 import { Grid } from '@mui/material';
@@ -65,10 +66,10 @@ const Intranet = () => {
       <Grid item xs={12} md={6}>
         <WeeklySales />
       </Grid>
-      {/* <Grid item xs={12} md={6}>
+      <Grid item xs={12} md={6}>
         <UserPhotos />
       </Grid>
-      <Grid item xs={12}>
+      {/* <Grid item xs={12}>
         <MarkerClustererMap />
       </Grid> */}
       <Grid item xs={12}>
