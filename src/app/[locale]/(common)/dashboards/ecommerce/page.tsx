@@ -1,4 +1,14 @@
+import { AppUsers } from '@app/_components/widgets/AppUsers';
+import { LatestNotifications } from '@app/_components/widgets/LatestNotifications';
+import { MarketingCampaign } from '@app/_components/widgets/MarketingCampaign';
+import { OnlineVisitors } from '@app/_components/widgets/OnlineVisitors';
+import { OrdersReport } from '@app/_components/widgets/OrdersReport';
+import { PopularProducts } from '@app/_components/widgets/PopularProducts';
+import { SalesReport } from '@app/_components/widgets/SalesReport';
 import { SalesStatistics } from '@app/_components/widgets/SalesStatistics';
+import { SiteVisitors } from '@app/_components/widgets/SiteVisitors';
+import { WebsiteTraffic } from '@app/_components/widgets/WebsiteTraffic';
+import { YearlyProfileReport } from '@app/_components/widgets/YearlyProfileReport';
 import { Grid } from '@mui/material';
 
 export default function ecommerce() {
@@ -7,7 +17,7 @@ export default function ecommerce() {
       <Grid item xs={12}>
         <SalesStatistics />
       </Grid>
-      {/* <Grid item xs={12} md={6}>
+      <Grid item xs={12} md={6}>
         <SalesReport />
       </Grid>
       <Grid item xs={12} md={6}>
@@ -31,13 +41,14 @@ export default function ecommerce() {
       <Grid item xs={12} md={6}>
         <MarketingCampaign scrollHeight={428} />
       </Grid>
+
       <Grid item xs={12} md={6}>
-        <LatestAlerts scrollHeight={385} />
+        <LatestNotifications />
       </Grid>
       <Grid item xs={12}>
         <SiteVisitors />
       </Grid>
-      <Grid item xs={12} sm={6} lg={3}>
+      {/*<Grid item xs={12} sm={6} lg={3}>
         <LastMonthSales />
       </Grid>
       <Grid item xs={12} sm={6} lg={3}>
