@@ -1,6 +1,6 @@
-import { Icon } from '@app/_components/_core/Icon';
 import { Theme } from '@emotion/react';
 import { Link } from '@jumbo/shared';
+import { Icon } from '@jumbo/shared/components/Icon';
 import { NavbarItem } from '@jumbo/types';
 import CircleIcon from '@mui/icons-material/Circle';
 import {
@@ -42,7 +42,7 @@ function JumboNavItem({ item, isNested }: JumboNavItemProps) {
           p: (theme: ThemeOptions) =>
             !miniAndClosed
               ? typeof theme.spacing === 'function'
-                ? theme.spacing(1, 3.5)
+                ? theme.spacing(1)
                 : 0
               : 0,
           ...(miniAndClosed ? { justifyContent: 'center' } : {}),
