@@ -7,8 +7,39 @@ import {
   Twitter,
   YouTube,
 } from '@mui/icons-material';
+import BackupOutlinedIcon from '@mui/icons-material/BackupOutlined';
 import CurrencyExchangeOutlinedIcon from '@mui/icons-material/CurrencyExchangeOutlined';
+import DragIndicatorIcon from '@mui/icons-material/DragIndicator';
+import EventNoteIcon from '@mui/icons-material/EventNote';
 import GraphicEqIcon from '@mui/icons-material/GraphicEq';
+import InsertChartOutlinedIcon from '@mui/icons-material/InsertChartOutlined';
+import ListAltOutlinedIcon from '@mui/icons-material/ListAltOutlined';
+import ModeEditOutlinedIcon from '@mui/icons-material/ModeEditOutlined';
+import MyLocationIcon from '@mui/icons-material/MyLocation';
+import NewspaperIcon from '@mui/icons-material/Newspaper';
+import PieChartOutlineOutlinedIcon from '@mui/icons-material/PieChartOutlineOutlined';
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import SupportAgentOutlinedIcon from '@mui/icons-material/SupportAgentOutlined';
+import WarningAmberIcon from '@mui/icons-material/WarningAmber';
+
+import AccountBoxOutlinedIcon from '@mui/icons-material/AccountBoxOutlined';
+import CallEndIcon from '@mui/icons-material/CallEnd';
+import ContactPageOutlinedIcon from '@mui/icons-material/ContactPageOutlined';
+import CreditCardIcon from '@mui/icons-material/CreditCard';
+import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
+import Grid3x3OutlinedIcon from '@mui/icons-material/Grid3x3Outlined';
+import GridViewIcon from '@mui/icons-material/GridView';
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
+import ListIcon from '@mui/icons-material/List';
+import LockResetIcon from '@mui/icons-material/LockReset';
+import LoginIcon from '@mui/icons-material/Login';
+import PasswordOutlinedIcon from '@mui/icons-material/PasswordOutlined';
+import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
+import RunningWithErrorsOutlinedIcon from '@mui/icons-material/RunningWithErrorsOutlined';
+import ScreenLockRotationIcon from '@mui/icons-material/ScreenLockRotation';
+import StreamOutlinedIcon from '@mui/icons-material/StreamOutlined';
+import ViewListOutlinedIcon from '@mui/icons-material/ViewListOutlined';
+
 import LeaderboardOutlinedIcon from '@mui/icons-material/LeaderboardOutlined';
 import WidgetsOutlinedIcon from '@mui/icons-material/WidgetsOutlined';
 import { SvgIconTypeMap, SxProps, Theme } from '@mui/material';
@@ -23,12 +54,35 @@ type Icon = {
 };
 
 const APP_ICONS: Icon[] = [
+  /** dashboards menu */
   { name: 'misc', Component: GraphicEqIcon, props: { sx: { fontSize: 20 } } },
   {
     name: 'crypto',
     Component: CurrencyExchangeOutlinedIcon,
     props: { sx: { fontSize: 20 } },
   },
+  {
+    name: 'listing',
+    Component: ListAltOutlinedIcon,
+    props: { sx: { fontSize: 20 } },
+  },
+  {
+    name: 'crm',
+    Component: SupportAgentOutlinedIcon,
+    props: { sx: { fontSize: 20 } },
+  },
+  {
+    name: 'intranet',
+    Component: PieChartOutlineOutlinedIcon,
+    props: { sx: { fontSize: 20 } },
+  },
+  {
+    name: 'ecommerce',
+    Component: ShoppingCartOutlinedIcon,
+    props: { sx: { fontSize: 20 } },
+  },
+  { name: 'news', Component: NewspaperIcon, props: { sx: { fontSize: 20 } } },
+  /** cards menu */
   {
     name: 'widget',
     Component: WidgetsOutlinedIcon,
@@ -39,6 +93,118 @@ const APP_ICONS: Icon[] = [
     Component: LeaderboardOutlinedIcon,
     props: { sx: { fontSize: 20 } },
   },
+  /** extensions menu */
+  {
+    name: 'editor',
+    Component: ModeEditOutlinedIcon,
+    props: { sx: { fontSize: 20 } },
+  },
+  {
+    name: 'dnd',
+    Component: DragIndicatorIcon,
+    props: { sx: { fontSize: 20 } },
+  },
+  {
+    name: 'dropzone',
+    Component: BackupOutlinedIcon,
+    props: { sx: { fontSize: 20 } },
+  },
+  {
+    name: 'sweet-alert',
+    Component: WarningAmberIcon,
+    props: { sx: { fontSize: 20 } },
+  },
+  /** modules menu */
+  {
+    name: 'calendar',
+    Component: EventNoteIcon,
+    props: { sx: { fontSize: 20 } },
+  },
+  {
+    name: 'chart',
+    Component: InsertChartOutlinedIcon,
+    props: { sx: { fontSize: 20 } },
+  },
+  { name: 'map', Component: MyLocationIcon, props: { sx: { fontSize: 20 } } },
+  /** auth-pages menu */
+  { name: 'login', Component: LoginIcon, props: { sx: { fontSize: 20 } } },
+  {
+    name: 'signup',
+    Component: PersonAddAltIcon,
+    props: { sx: { fontSize: 20 } },
+  },
+  {
+    name: 'forgot-password',
+    Component: PasswordOutlinedIcon,
+    props: { sx: { fontSize: 20 } },
+  },
+  {
+    name: 'reset-password',
+    Component: LockResetIcon,
+    props: { sx: { fontSize: 20 } },
+  },
+  /** extra-pages menu */
+  {
+    name: 'about-us',
+    Component: InfoOutlinedIcon,
+    props: { sx: { fontSize: 20 } },
+  },
+  {
+    name: 'contact-us',
+    Component: ContactPageOutlinedIcon,
+    props: { sx: { fontSize: 20 } },
+  },
+  {
+    name: 'call-outs',
+    Component: CallEndIcon,
+    props: { sx: { fontSize: 20 } },
+  },
+  {
+    name: 'pricing-plan',
+    Component: CreditCardIcon,
+    props: { sx: { fontSize: 20 } },
+  },
+  { name: '404', Component: ErrorOutlineIcon, props: { sx: { fontSize: 20 } } },
+  {
+    name: '500',
+    Component: RunningWithErrorsOutlinedIcon,
+    props: { sx: { fontSize: 20 } },
+  },
+  {
+    name: 'lock-screen',
+    Component: ScreenLockRotationIcon,
+    props: { sx: { fontSize: 20 } },
+  },
+  /** user menu */
+  {
+    name: 'profile',
+    Component: AccountBoxOutlinedIcon,
+    props: { sx: { fontSize: 20 } },
+  },
+  {
+    name: 'social-wall',
+    Component: StreamOutlinedIcon,
+    props: { sx: { fontSize: 20 } },
+  },
+  /** list-view menu */
+  {
+    name: 'projects-list',
+    Component: ViewListOutlinedIcon,
+    props: { sx: { fontSize: 20 } },
+  },
+  { name: 'users-list', Component: ListIcon, props: { sx: { fontSize: 20 } } },
+  /** grid-view menu */
+  {
+    name: 'projects-grid',
+    Component: GridViewIcon,
+    props: { sx: { fontSize: 20 } },
+  },
+  {
+    name: 'users-grid',
+    Component: Grid3x3OutlinedIcon,
+    props: { sx: { fontSize: 20 } },
+  },
+
   {
     name: 'facebook-outlined',
     Component: FacebookOutlined,
