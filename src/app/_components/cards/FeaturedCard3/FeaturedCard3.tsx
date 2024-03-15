@@ -39,7 +39,7 @@ function FeaturedCard3({
           sx={{
             textAlign: 'center',
 
-            ...(headHeight ? { headHeight } : {}),
+            ...(headHeight ? { height: headHeight } : {}),
           }}
         >
           {avatar}

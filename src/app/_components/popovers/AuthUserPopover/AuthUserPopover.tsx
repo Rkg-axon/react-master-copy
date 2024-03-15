@@ -33,7 +33,7 @@ const AuthUserPopover = () => {
           <Avatar
             src={authUser?.profile_pic}
             sizes={'small'}
-            sx={{ boxShadow: 25, cursor: 'pointer' }}
+            sx={{ boxShadow: 23, cursor: 'pointer' }}
           />
         }
       >
@@ -93,4 +93,4 @@ const AuthUserPopover = () => {
   );
 };
 
-export {AuthUserPopover};
+export { AuthUserPopover };

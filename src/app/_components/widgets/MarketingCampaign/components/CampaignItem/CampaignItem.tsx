@@ -1,4 +1,4 @@
-import { Icon } from '@app/_components/_core/Icon';
+import { Icon } from '@jumbo/shared/components/Icon';
 import TrendingDownIcon from '@mui/icons-material/TrendingDown';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import {

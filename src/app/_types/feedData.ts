@@ -1,3 +1,30 @@
+export interface ProjectInviteType {
+  project: {
+    id: number;
+    name: string;
+  }
+};
+
+export interface PostSharedType {
+  post: {
+    title: string;
+  },
+  likes: number;
+  shares: number;
+};
+
+export interface PhotoType {
+  id: number;
+  photo_url: string;
+  caption: string;
+};
+
+export interface PhotosUploadType {
+  photos: PhotoType[];
+  group: string;
+  count: number;
+};
+
 export interface Feed {
   type: 'PROJECT_INVITATION' | 'PHOTOS_UPLOADED' | 'SHARED_POST';
   id: number;
@@ -6,7 +33,7 @@ export interface Feed {
     name: string;
     profile_pic: string;
   };
-  metaData: any;
+  metaData: PhotosUploadType | ProjectInviteType | PostSharedType;
   timeRange: string;
   createdAt: string;
 }

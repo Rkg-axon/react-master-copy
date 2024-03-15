@@ -35,7 +35,7 @@ function LatestNotifications() {
           <Tab label={'Feeds'} value={'feed'} sx={{ flex: '1 1 auto' }} />
         </TabList>
         <TabPanel value='notification' sx={{ p: 0 }}>
-          <JumboScrollbar height={200}>
+          <JumboScrollbar height={452}>
             {latestNotifications.map((notificationGroupType, index) => {
               const GroupTypeComponent =
                 NotificationListComponents[`${notificationGroupType.type}`];

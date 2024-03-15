@@ -79,7 +79,7 @@ export default function Misc() {
       <Grid item xs={12} md={6} lg={4}>
         <NewConnections />
       </Grid>
-      <Grid item xs={12} md={6} lg={4}>
+      <Grid item xs={12} md={6} lg={5}>
         <RecentActivities />
       </Grid>
       <Grid item xs={12} md={6} lg={3}>

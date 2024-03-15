@@ -1,3 +1,4 @@
+'use client';
 import { OnlineSignupChart } from '@app/_components/charts';
 import { JumboCard } from '@jumbo/components';
 import { Div } from '@jumbo/shared';

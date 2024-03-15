@@ -14,7 +14,7 @@ function SearchIconButtonOnSmallScreen({
   if (!smallScreen) return null;
 
   return (
-    <JumboIconButton elevation={25} onClick={() => onClick(true)}>
+    <JumboIconButton elevation={23} onClick={() => onClick(true)}>
       <SearchIcon fontSize={'small'} />
     </JumboIconButton>
   );

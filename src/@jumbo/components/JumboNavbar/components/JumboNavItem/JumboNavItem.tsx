@@ -1,6 +1,6 @@
-import { Icon } from '@app/_components/_core/Icon';
 import { Theme } from '@emotion/react';
 import { Link } from '@jumbo/shared';
+import { Icon } from '@jumbo/shared/components/Icon';
 import { NavbarItem } from '@jumbo/types';
 import CircleIcon from '@mui/icons-material/Circle';
 import {

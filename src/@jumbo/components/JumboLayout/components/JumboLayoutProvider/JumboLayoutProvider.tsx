@@ -81,7 +81,7 @@ function JumboLayoutProvider({
       sidebarOptions: layoutOptions.sidebar,
       footerOptions: layoutOptions.footer,
       contentOptions: layoutOptions.content,
-      rootOptions: layoutOptions.content,
+      rootOptions: layoutOptions.root,
       setHeaderOptions,
       setSidebarOptions,
       setFooterOptions,
@@ -102,7 +102,7 @@ function JumboLayoutProvider({
 
   return (
     <JumboLayoutContext.Provider value={layoutContext}>
-      <div>{children}</div>
+      <div id='root'>{children}</div>
     </JumboLayoutContext.Provider>
   );
 }
