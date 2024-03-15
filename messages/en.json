@@ -139,5 +139,13 @@
       "taskListExpandable": "Complete todo list",
       "weeklySales": "Past two weeks"
     }
+  },
+  "extraPages":{
+    "title":{
+      "abouts":"Abouts",
+      "contactUs":"Contact Us",
+      "callOuts":"CallOuts",
+      "pricePlan":"Price Plan"
+    }
   }
 }

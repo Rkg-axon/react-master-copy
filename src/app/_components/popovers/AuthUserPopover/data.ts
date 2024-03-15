@@ -1,5 +1,5 @@
-import { getAssetPath } from "@app/utilities/appHelpers";
-import { ASSET_AVATARS } from "@app/utilities/constants/paths";
+import { ASSET_AVATARS } from '@app/_utilities/constants/paths';
+import { getAssetPath } from '@app/_utilities/helpers';
 
 type AuthUserProps = {
   email: string;
