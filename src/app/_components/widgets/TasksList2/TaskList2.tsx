@@ -35,7 +35,7 @@ const TasksList2 = ({ scrollHeight }: { scrollHeight?: number }) => {
   const visibleTasks = tasks.filter((item) => {
     if (!filterOptions.id) return true;
 
-    return item.id === filterOptions.id;
+    return item.user.id === filterOptions.id;
   });
 
   return (
