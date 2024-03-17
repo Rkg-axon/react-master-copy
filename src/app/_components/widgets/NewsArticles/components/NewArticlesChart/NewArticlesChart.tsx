@@ -1,3 +1,4 @@
+'use client';
 import { Area, AreaChart, ResponsiveContainer, XAxis } from 'recharts';
 import { newsArticles } from '../../data';
 

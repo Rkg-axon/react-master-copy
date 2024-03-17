@@ -12,7 +12,7 @@ const NewSubscribers = () => {
       bgcolor={['#E44A77']}
       sx={{ color: 'common.white' }}
       contentWrapper
-      contentSx={{ pt: 0.5 }}
+      contentSx={{ px: 3, pt: 0.5 }}
     >
       <Grid container columnSpacing={2} alignItems={'flex-end'}>
         <Grid item xs={6}>

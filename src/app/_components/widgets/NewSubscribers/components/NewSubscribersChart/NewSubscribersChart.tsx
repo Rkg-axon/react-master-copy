@@ -1,3 +1,4 @@
+'use client';
 import { Div } from '@jumbo/shared';
 import { Bar, BarChart, ResponsiveContainer, Tooltip, XAxis } from 'recharts';
 import { newSubscribers } from '../../data';

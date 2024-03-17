@@ -13,7 +13,7 @@ const NewAuthors = () => {
       bgcolor={['#20c997']}
       sx={{ color: 'common.white' }}
       contentWrapper
-      contentSx={{ pt: 0 }}
+      contentSx={{ px: 3, pt: 0 }}
     >
       <Grid container columnSpacing={2} alignItems={'flex-end'}>
         <Grid item xs={5}>
