@@ -1,3 +1,4 @@
+'use client';
 import { CardHeaderWithExtras } from '@app/_components/_core';
 import { JumboCard, JumboScrollbar, JumboTabs } from '@jumbo/components';
 import { JumboDdMenu } from '@jumbo/components/JumboDdMenu';
@@ -36,17 +37,18 @@ const TasksList2 = ({ scrollHeight }: { scrollHeight?: number }) => {
 
     return item.id === filterOptions.id;
   });
+
   return (
     <JumboCard>
       <CardHeaderWithExtras
-        title={t('widgets.title.cryptoNews')}
+        title={t('widgets.title.taskList')}
         count={20}
         extras={
           <JumboTabs
             items={filterTabs}
             onChange={handleTabChange}
-            primaryKey='slug'
-            labelKey='name'
+            primaryKey='value'
+            labelKey='label'
             defaultValue={filterTabs[0]}
           />
         }
