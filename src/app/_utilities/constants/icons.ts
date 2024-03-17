@@ -2,8 +2,13 @@ import {
   FacebookOutlined,
   Instagram,
   LinkedIn,
+  Mail,
+  MessageOutlined,
+  NotificationsActiveRounded,
   Refresh,
   Settings,
+  SvgIconComponent,
+  TaskAltOutlined,
   Twitter,
   YouTube,
 } from '@mui/icons-material';
@@ -47,14 +52,13 @@ import { OverridableComponent } from '@mui/material/OverridableComponent';
 
 type Icon = {
   name: string;
-  Component: OverridableComponent<SvgIconTypeMap>;
-  props: {
+  Component: SvgIconComponent;
+  props?: {
     sx?: SxProps<Theme>;
   };
 };
 
 const APP_ICONS: Icon[] = [
-  /** dashboards menu */
   { name: 'misc', Component: GraphicEqIcon, props: { sx: { fontSize: 20 } } },
   {
     name: 'crypto',
@@ -245,6 +249,22 @@ const APP_ICONS: Icon[] = [
     Component: Settings,
     props: { sx: { fontSize: 20 } },
   },
+  {
+    name: "message-outlined",
+    Component: MessageOutlined,
+  },
+  {
+    name: "mail",        
+    Component: Mail
+  },
+  {
+    name: "task-alt-outlined",
+    Component: TaskAltOutlined
+  },
+  {
+    name: "notifications-active-rounded",
+    Component: NotificationsActiveRounded
+  }
 ];
 
 export { APP_ICONS, type Icon };

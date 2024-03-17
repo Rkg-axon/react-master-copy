@@ -1,7 +1,12 @@
 import { APP_ICONS } from '@app/_utilities/constants/icons';
+import { SvgIconProps } from '@mui/material';
 import React from 'react';
 
-function Icon({ name }: { name: string | undefined }): React.ReactNode {
+type CustomIconProps = SvgIconProps & {
+  name?: string;
+};
+
+function Icon({ name, ...props }: CustomIconProps): React.ReactNode {
   if (!name) return '';
 
   const appIcon = APP_ICONS.find((icon) => {
@@ -12,7 +17,7 @@ function Icon({ name }: { name: string | undefined }): React.ReactNode {
     return name ?? '';
   }
 
-  const { Component, props } = appIcon;
+  const { Component } = appIcon;
 
   return <Component {...props} />;
 }
