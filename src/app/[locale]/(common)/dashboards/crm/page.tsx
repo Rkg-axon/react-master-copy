@@ -1,5 +1,11 @@
+import { FilesCounterCard } from '@app/_components/widgets/FilesCounterCard/FilesCounterCard';
+import { Growth } from '@app/_components/widgets/Growth';
 import NewCustomers from '@app/_components/widgets/NewCustomers/NewCustomers';
+import { ProjectCounterCard } from '@app/_components/widgets/ProjectCounterCard';
 import { RevenueHistory } from '@app/_components/widgets/RevenueHistory';
+import { TasksCounterCard } from '@app/_components/widgets/TaskCounterCard';
+import { TasksList2 } from '@app/_components/widgets/TasksList2';
+import { TeamsCounterCard } from '@app/_components/widgets/TeamsCounterCard';
 import { WelcomeSummary } from '@app/_components/widgets/WelcomSummary';
 import { Grid } from '@mui/material';
 
@@ -15,7 +21,7 @@ const Crm = () => {
       <Grid item xs={12} sm={6} lg={4}>
         <NewCustomers />
       </Grid>
-      {/*<Grid item xs={12} lg={4}>
+      <Grid item xs={12} lg={4}>
         <Growth />
       </Grid>
       <Grid item xs={12} sm={6} lg={3}>
@@ -33,7 +39,7 @@ const Crm = () => {
       <Grid item xs={12} md={6}>
         <TasksList2 scrollHeight={373} />
       </Grid>
-      <Grid item xs={12} md={6}>
+      {/*<Grid item xs={12} md={6}>
         <CurrentProjectList />
       </Grid>
       <Grid item xs={12} md={7} lg={8}>
