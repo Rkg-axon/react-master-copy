@@ -5,6 +5,7 @@ import { MarketingCampaign } from '@app/_components/widgets/MarketingCampaign';
 import { NewAuthors } from '@app/_components/widgets/NewAuthors';
 import { NewSubscribers } from '@app/_components/widgets/NewSubscribers';
 import { NewArticles } from '@app/_components/widgets/NewsArticles';
+import { PopularAuthors } from '@app/_components/widgets/PopularAuthors';
 import { Grid } from '@mui/material';
 
 const News = () => {
@@ -22,10 +23,10 @@ const News = () => {
       <Grid item xs={12} sm={6} lg={3}>
         <AvgDailyTraffic />
       </Grid>
-      {/* <Grid item xs={12} lg={5}>
+      <Grid item xs={12} lg={5}>
         <PopularAuthors />
       </Grid>
-      <Grid item xs={12} lg={7}>
+      {/*  <Grid item xs={12} lg={7}>
         <PopularArticles />
       </Grid> */}
       <Grid item xs={12} md={6}>
