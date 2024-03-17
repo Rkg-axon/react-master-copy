@@ -44,11 +44,7 @@ const CommentItem = ({ item }: { item: CommentType }) => {
             </Typography>
           </Typography>
         }
-        secondary={
-          <Typography variant={'body1'} sx={{ color: 'text.secondary' }}>
-            {item.comment}
-          </Typography>
-        }
+        secondary={item.comment}
       />
       <ListItemText sx={{ ml: 2, flexShrink: 0, mt: 1 }}>
         <Typography variant={'body1'} color={'text.secondary'} fontSize={12}>
