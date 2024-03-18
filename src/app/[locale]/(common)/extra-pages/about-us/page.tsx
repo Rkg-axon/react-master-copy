@@ -20,27 +20,29 @@ export default function AboutUs() {
           </Typography>
         }
         subheader={
-          <Typography component={'h2'} variant='h1'>
+          <Typography component={'h2'} variant={'h1'}>
             A biggest digital marketing agency in the world
           </Typography>
         }
+        contentWrapper
+        contentSx={{ p: 3 }}
       >
         <Grid container spacing={3.75}>
           <Grid item xs={12} md={6}>
             <CardMedia
-              component='img'
+              component={'img'}
               sx={{ borderRadius: 2 }}
               image={getAssetPath(
                 `${ASSET_IMAGES}/pages/cherrydeck.jpg`,
                 '640x820'
               )}
-              alt='About Us'
+              alt={'About Us'}
             />
           </Grid>
           <Grid item xs={12} md={6}>
             <Button
               disableRipple
-              variant='text'
+              variant={'text'}
               sx={{
                 px: 0,
                 ml: '-5px',
@@ -56,10 +58,10 @@ export default function AboutUs() {
             >
               <PlayCircleIcon sx={{ fontSize: '3rem', mr: 1 }} /> Watch Intro
             </Button>
-            <Typography variant='h2' color='text.primary'>
+            <Typography variant={'h2'} color={'text.primary'}>
               Our Mission
             </Typography>
-            <Typography variant='body1' color='text.secondary' mb={3}>
+            <Typography variant={'body1'} color={'text.secondary'} mb={3}>
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
               ever since the 1500s, when an unknown printer took a galley of
@@ -71,10 +73,10 @@ export default function AboutUs() {
               publishing software like Aldus PageMaker including versions of
               Lorem Ipsum.
             </Typography>
-            <Typography variant='h2' color='text.primary'>
+            <Typography variant={'h2'} color={'text.primary'}>
               Our Vision
             </Typography>
-            <Typography variant='body1' color='text.secondary'>
+            <Typography variant={'body1'} color={'text.secondary'}>
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
               ever since the 1500s, when an unknown printer took a galley of
