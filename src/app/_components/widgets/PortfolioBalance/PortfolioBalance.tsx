@@ -47,6 +47,7 @@ const PortfolioBalance = () => {
               variant='determinate'
               color='warning'
               value={40}
+              sx={{ mb: 0 }}
             />
           </Grid>
         </Stack>

@@ -52,7 +52,7 @@ const UpgradePlan = () => {
               Yearly
             </Button>
           </Stack>
-          <Div sx={{ pb: 1 }}>
+          <Div sx={{ mb: 3 }}>
             <Image
               src={`${ASSET_IMAGES}/pet-insurance.png`}
               alt={'Pet Insurance'}
