@@ -21,7 +21,8 @@ const RevenueProgress = () => {
             <LinearProgress
               variant={'determinate'}
               value={item.value}
-              sx={{ color: item.color, height: 6, borderRadius: 5, flex: 1 }}
+              color={item.color}
+              sx={{ height: 6, borderRadius: 5, flex: 1 }}
             />
             <Typography variant={'body1'} color={'text.secondary'} ml={1}>
               {`${item.value}%`}

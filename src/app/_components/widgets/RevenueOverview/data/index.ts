@@ -1,7 +1,7 @@
 export type RevenueType = {
   label: string;
   value: number;
-  color: string;
+  color: 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning';
 };
 export const revenueList: RevenueType[] = [
   { label: 'Male', value: 89, color: 'warning' },
