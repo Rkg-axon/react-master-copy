@@ -147,5 +147,11 @@
       "callOuts":"CallOuts",
       "pricePlan":"Price Plan"
     }
+  },
+  "views":{
+    "title":{
+      "projects":"Projects",
+      "users":"Users"
+    }
   }
 }
