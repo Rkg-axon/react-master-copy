@@ -4,7 +4,7 @@ import { Chip } from '@mui/material';
 import { useTranslations } from 'next-intl';
 import { ProjectsList } from './components/ProjectsList';
 
-const CurrentProjectsList = ({ scrollHeight }: { scrollHeight: number }) => {
+const CurrentProjectsList = ({ scrollHeight }: { scrollHeight?: number }) => {
   const t = useTranslations();
   return (
     <JumboCard

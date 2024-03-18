@@ -1,11 +1,17 @@
+import { CurrencyCalculator } from '@app/_components/widgets/CurrencyCalculator';
+import { CurrentProjectsList } from '@app/_components/widgets/CurrentProjectsList';
 import { FilesCounterCard } from '@app/_components/widgets/FilesCounterCard/FilesCounterCard';
 import { Growth } from '@app/_components/widgets/Growth';
 import NewCustomers from '@app/_components/widgets/NewCustomers/NewCustomers';
 import { ProjectCounterCard } from '@app/_components/widgets/ProjectCounterCard';
+import { RecentActivities1 } from '@app/_components/widgets/RecentActivities1';
+import { RecentTickets } from '@app/_components/widgets/RecentTickets';
 import { RevenueHistory } from '@app/_components/widgets/RevenueHistory';
+import { RevenueOverview } from '@app/_components/widgets/RevenueOverview';
 import { TasksCounterCard } from '@app/_components/widgets/TaskCounterCard';
 import { TasksList2 } from '@app/_components/widgets/TasksList2';
 import { TeamsCounterCard } from '@app/_components/widgets/TeamsCounterCard';
+import { TicketsStatus } from '@app/_components/widgets/TicketsStatus';
 import { WelcomeSummary } from '@app/_components/widgets/WelcomSummary';
 import { Grid } from '@mui/material';
 
@@ -39,8 +45,8 @@ const Crm = () => {
       <Grid item xs={12} md={6}>
         <TasksList2 scrollHeight={373} />
       </Grid>
-      {/*<Grid item xs={12} md={6}>
-        <CurrentProjectList />
+      <Grid item xs={12} md={6}>
+        <CurrentProjectsList />
       </Grid>
       <Grid item xs={12} md={7} lg={8}>
         <RecentTickets />
@@ -56,7 +62,7 @@ const Crm = () => {
       </Grid>
       <Grid item xs={12} md={6}>
         <CurrencyCalculator />
-      </Grid> */}
+      </Grid>
     </Grid>
   );
 };
