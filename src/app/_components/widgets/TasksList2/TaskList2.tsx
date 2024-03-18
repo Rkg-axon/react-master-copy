@@ -64,7 +64,7 @@ const TasksList2 = ({ scrollHeight }: { scrollHeight?: number }) => {
       />
       <JumboScrollbar height={360}>
         {visibleTasks.map((task) => (
-          <TaskItem item={task} />
+          <TaskItem key={task.id} item={task} />
         ))}
       </JumboScrollbar>
     </JumboCard>

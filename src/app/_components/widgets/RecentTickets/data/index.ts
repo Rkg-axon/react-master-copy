@@ -13,7 +13,14 @@ export type TicketType = {
     id: number;
     label: string;
     slug: string;
-    color: string;
+    color:
+      | 'default'
+      | 'primary'
+      | 'secondary'
+      | 'info'
+      | 'error'
+      | 'success'
+      | 'warning';
   };
 };
 

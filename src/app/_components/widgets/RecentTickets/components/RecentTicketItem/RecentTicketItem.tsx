@@ -58,12 +58,12 @@ const RecentTicketItem = ({ item }: RecentTicketItemProps) => {
         size={'small'}
         label={item.priority.label}
         className={'MuiChip-animation'}
+        color={item.priority.color}
         sx={{
           width: 8,
           height: 8,
           fontSize: 0,
           transition: 'all 0.2s',
-          color: item.priority.color,
         }}
       />
     </ListItemButton>
