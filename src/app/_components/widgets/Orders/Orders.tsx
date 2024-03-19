@@ -21,6 +21,7 @@ function Orders() {
           293
         </Typography>
       }
+      headerSx={{ pb: 0 }}
     >
       <Div sx={{ mt: -2.5 }}>
         <ChartOrders data={orders} />
