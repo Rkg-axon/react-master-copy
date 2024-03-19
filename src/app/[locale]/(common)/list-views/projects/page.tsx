@@ -1,21 +1,27 @@
-import React from 'react';
-import {Typography} from "@mui/material";
-import { projectsListData } from '@app/_components/listViews/Projects/data';
-import { ProjectListItem } from '@app/_components/listViews/Projects/components/ProjectListItem';
+import { View } from '@app/_components/_core/View';
+import {
+  ProjectItem,
+  ProjectType,
+  projects,
+} from '@app/_components/views/list/Projects';
+import { Typography } from '@mui/material';
 import { useTranslations } from 'next-intl';
+import React from 'react';
 
-const ProjectsListView = () => {
-    const t = useTranslations();
-    return (
-        <React.Fragment>
-            <Typography variant={'h2'} mb={3}>{t("views.title.projects")}</Typography>
-            {
-                projectsListData.map((project, index) => (
-                    <ProjectListItem item={project} key={index}/>
-                ))
-            }
-        </React.Fragment>
-    );
+const ProjectsList = () => {
+  const t = useTranslations();
+  return (
+    <React.Fragment>
+      <Typography variant={'h2'} mb={3}>
+        {t('views.title.projects')}
+      </Typography>
+      <View<ProjectType>
+        variant='list'
+        dataSource={projects}
+        renderItem={ProjectItem}
+      />
+    </React.Fragment>
+  );
 };
 
-export default ProjectsListView;
+export default ProjectsList;

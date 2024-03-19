@@ -1,21 +1,19 @@
-import React from 'react';
-import {Typography} from "@mui/material";
+import { View } from '@app/_components/_core/View';
+import { UserItem, UserProps, users } from '@app/_components/views/list/Users';
+import { Typography } from '@mui/material';
 import { useTranslations } from 'next-intl';
-import { usersListData } from '@app/_components/listViews/Users/data';
-import { UserListItem } from '@app/_components/listViews/Users/components/UserListItem';
+import React from 'react';
 
-const UsersListView = () => {
-    const t = useTranslations();
-    return (
-        <React.Fragment>
-            <Typography variant={'h2'} mb={3}>{t("views.title.users")}</Typography>
-            {
-                usersListData?.map((user, index) => (
-                    <UserListItem user={user} key={index}/>
-                ))
-            }
-        </React.Fragment>
-    );
+const UsersList = () => {
+  const t = useTranslations();
+  return (
+    <React.Fragment>
+      <Typography variant={'h2'} mb={3}>
+        {t('views.title.users')}
+      </Typography>
+      <View<UserProps> variant='list' dataSource={users} renderItem={UserItem} />
+    </React.Fragment>
+  );
 };
 
-export default UsersListView;
+export default UsersList;
