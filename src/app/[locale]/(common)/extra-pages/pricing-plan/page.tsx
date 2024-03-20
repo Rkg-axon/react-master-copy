@@ -1,7 +1,7 @@
 'use client';
 import { PricePlan } from '@app/_components/extraPages/PricingPlan/components/PricePlan';
 import { Span } from '@jumbo/shared';
-import { Button, Grid, Theme, Typography } from '@mui/material';
+import { Button, Grid, Typography } from '@mui/material';
 import { useTranslations } from 'next-intl';
 import React from 'react';
 
@@ -78,7 +78,7 @@ const PricingPlan = () => {
               borderRadius: '50%',
               height: 224,
               width: 224,
-              margin: (theme: Theme) => theme.spacing(5, 'auto', 0),
+              margin: (theme) => theme.spacing(5, 'auto', 0),
             }}
           >
             <Button
@@ -102,7 +102,7 @@ const PricingPlan = () => {
               borderRadius: '50%',
               height: 224,
               width: 224,
-              margin: (theme: Theme) => theme.spacing(5, 'auto', 0),
+              margin: (theme) => theme.spacing(5, 'auto', 0),
             }}
             sx={{
               color: 'common.white',
@@ -132,7 +132,7 @@ const PricingPlan = () => {
               borderRadius: '50%',
               height: 224,
               width: 224,
-              margin: (theme: Theme) => theme.spacing(5, 'auto', 0),
+              margin: (theme) => theme.spacing(5, 'auto', 0),
             }}
           >
             <Button
@@ -161,7 +161,7 @@ const PricingPlan = () => {
             }}
             sx={{
               borderRadius: 0,
-              bgcolor: (theme: Theme) => theme.palette.grey[100],
+              bgcolor: (theme) => theme.palette.grey[100],
             }}
           >
             <Button
@@ -290,7 +290,7 @@ const PricingPlan = () => {
                 Business
               </Typography>
             }
-            subTitle={
+            subheader={
               <Typography
                 variant={'h2'}
                 fontSize={52}
@@ -341,7 +341,7 @@ const PricingPlan = () => {
                 Professional
               </Typography>
             }
-            subTitle={
+            subheader={
               <Typography
                 variant={'h2'}
                 fontSize={52}

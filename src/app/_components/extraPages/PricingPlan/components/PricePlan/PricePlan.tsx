@@ -37,27 +37,35 @@ const PricePlan = ({
     >
       <CardHeader
         title={
-          <Typography
-            variant={'h2'}
-            fontSize={36}
-            fontWeight={500}
-            color='inherit'
-          >
-            {title}
-          </Typography>
+          typeof title === 'string' ? (
+            <Typography
+              variant={'h2'}
+              fontSize={36}
+              fontWeight={500}
+              color='inherit'
+            >
+              {title}
+            </Typography>
+          ) : (
+            title
+          )
         }
         subheader={
-          <Typography
-            variant={'h5'}
-            color='inherit'
-            sx={{
-              textTransform: 'uppercase',
-              letterSpacing: 3,
-              mb: 0,
-            }}
-          >
-            {subheader}
-          </Typography>
+          typeof subheader === 'string' ? (
+            <Typography
+              variant={'h5'}
+              color='inherit'
+              sx={{
+                textTransform: 'uppercase',
+                letterSpacing: 3,
+                mb: 0,
+              }}
+            >
+              {subheader}
+            </Typography>
+          ) : (
+            subheader
+          )
         }
         sx={{
           py: 5,
