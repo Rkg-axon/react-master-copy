@@ -24,14 +24,15 @@ function CardHeaderWithExtras({
     <CardHeader
       title={
         <React.Fragment>
-          {title} <Chip size={'small'} label={count} color='primary' />
+          {title}{' '}
+          {count && <Chip size={'small'} label={count} color='primary' />}
         </React.Fragment>
       }
       subheader={subheader}
       action={
-        <Stack spacing={spacing} direction={'row'} alignContent={'center'}>
+        <Stack spacing={spacing} direction={'row'} alignItems={'center'}>
           <Div>{extras}</Div>
-          <Div>{action}</Div>
+          <Div style={{ marginBlock: '-6px' }}>{action}</Div>
         </Stack>
       }
       {...restProps}

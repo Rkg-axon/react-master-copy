@@ -5,7 +5,6 @@ import { Card, CardActions, CardContent, Typography } from '@mui/material';
 import Button from '@mui/material/Button';
 import CardHeader from '@mui/material/CardHeader';
 import Grid from '@mui/material/Grid';
-import Stack from '@mui/material/Stack';
 import { useTranslations } from 'next-intl';
 import { BalanceSummary } from './components';
 
@@ -15,7 +14,7 @@ const PortfolioBalance = () => {
     <Card>
       <CardHeader title={t('widgets.title.cryptoPortfolio')} />
       <CardContent sx={{ pt: 2 }}>
-        <Stack direction={'row'} spacing={3}>
+        <Grid container spacing={3}>
           <Grid item xs={6}>
             <BalanceSummary
               amount={'$179,626'}
@@ -51,7 +50,7 @@ const PortfolioBalance = () => {
               sx={{ mb: 0 }}
             />
           </Grid>
-        </Stack>
+        </Grid>
       </CardContent>
       <CardActions sx={{ pt: 0.5, pb: 2 }}>
         <Button startIcon={<AddIcon />} size='small'>

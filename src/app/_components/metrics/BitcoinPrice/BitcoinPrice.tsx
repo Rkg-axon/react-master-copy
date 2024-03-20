@@ -28,6 +28,7 @@ const BitcoinPrice = () => {
           />
         </Typography>
       }
+      headerSx={{ pb: 0 }}
       sx={{ color: 'common.white' }}
       bgcolor={['#6f42c1']}
     >

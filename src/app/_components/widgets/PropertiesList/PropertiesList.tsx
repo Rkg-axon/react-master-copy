@@ -35,8 +35,7 @@ const PropertiesList = () => {
   return (
     <JumboCard>
       <CardHeaderWithExtras
-        title={t('widgets.title.cryptoNews')}
-        count={20}
+        title={t('widgets.title.properties')}
         extras={
           <JumboTabs
             items={propertyCategories}
@@ -55,12 +54,14 @@ const PropertiesList = () => {
           />
         }
         spacing={3}
+        sx={{
+          borderBottom: 1,
+          borderBottomColor: 'divider',
+        }}
       />
       <CardContent
         sx={{
-          '&:last-child': {
-            pb: 2,
-          },
+          p: 0,
           '& .MuiCollapse-entered:last-child': {
             '& .MuiListItemButton-root': {
               borderBottom: 0,

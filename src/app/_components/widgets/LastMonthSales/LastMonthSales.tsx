@@ -11,11 +11,20 @@ function LastMonthSales() {
     <JumboCard
       title='756+'
       subheader={t('widgets.subheader.latestMonthSales')}
+      action={<Timeline />}
       bgcolor={['#c1b2e6', '#7352c7']}
       textColor='common.white'
-      action={<Timeline />}
       reverse={true}
-      sx={{ borderTop: '4px solid #7352C7' }}
+      sx={{
+        borderTop: '4px solid #7352C7',
+        '.MuiCardHeader-title': {
+          color: 'inherit',
+          fontSize: '1.25rem',
+        },
+        '.MuiCardHeader-subheader': {
+          color: 'inherit',
+        },
+      }}
     >
       <Div sx={{ p: 3, pb: 0 }}>
         <OnlineSignupChart />

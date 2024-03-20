@@ -17,13 +17,14 @@ const EarnRewardCard = () => {
           width={300}
         />
       }
+      imageWrapperSx={{ height: 210 }}
       fitToWidth
     >
-      <Stack alignItems={'center'} spacing={3} textAlign={'center'}>
+      <Stack alignItems={'center'} textAlign={'center'}>
         <Typography variant={'h3'} color={'common.white'} mb={2}>
           {`earn from $10 to $200 from your friend's payment`}
         </Typography>
-        <Button variant={'contained'} color={'warning'} sx={{ mb: 0.5 }}>
+        <Button variant={'contained'} color={'warning'}>
           Learn More
         </Button>
       </Stack>

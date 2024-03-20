@@ -10,7 +10,7 @@ const RipplePrice = () => {
   return (
     <JumboCard
       title={
-        <Typography variant={'h3'} color={'common.white'}>
+        <Typography variant={'h2'} color={'common.white'}>
           $9,626
         </Typography>
       }
@@ -30,7 +30,7 @@ const RipplePrice = () => {
       sx={{ color: 'common.white' }}
       bgcolor={['#E44A77']}
       contentWrapper={true}
-      contentSx={{ p: 3 }}
+      contentSx={{ pt: 0 }}
     >
       <OnlineSignupChartFilled color={'#fff'} shadowColor={'#000000'} />
     </JumboCard>

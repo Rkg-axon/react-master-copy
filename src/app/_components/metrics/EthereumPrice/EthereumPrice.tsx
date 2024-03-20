@@ -27,8 +27,9 @@ const EthereumPrice = () => {
           />
         </Typography>
       }
-      bgcolor={['#E73145']}
+      headerSx={{ pb: 0 }}
       sx={{ color: 'common.white' }}
+      bgcolor={['#E73145']}
     >
       <ChartNewVisitors />
     </JumboCard>

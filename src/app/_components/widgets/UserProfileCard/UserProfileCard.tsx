@@ -2,7 +2,7 @@ import { FeaturedCard3 } from '@app/_components/cards/FeaturedCard3';
 import { ASSET_AVATARS } from '@app/_utilities/constants/paths';
 import { getAssetPath } from '@app/_utilities/helpers';
 import { JumboDdMenu } from '@jumbo/components/JumboDdMenu';
-import { Avatar } from '@mui/material';
+import { Avatar, Typography } from '@mui/material';
 
 function UserProfileCard() {
   return (
@@ -18,9 +18,12 @@ function UserProfileCard() {
       }
       title={'Gramy Sobbers'}
       subheader={'Graphic Designer'}
+      headerSx={{ pt: 0 }}
     >
-      Cenas in erat accusman, hendrerit vel, pulvinar adio. Quisque eu conva
-      tend
+      <Typography variant='body1'>
+        Cenas in erat accusman, hendrerit vel, pulvinar adio. Quisque eu conva
+        tend
+      </Typography>
     </FeaturedCard3>
   );
 }

@@ -20,10 +20,19 @@ function OnlineSignupsFilled() {
           />
         </Typography>
       }
-      reverse
       textColor='common.white'
-      sx={{ borderTop: '4px solid #3BD2A2' }}
       bgcolor={['#a3ead3', '#3bd2a2']}
+      reverse
+      sx={{
+        borderTop: '4px solid #3BD2A2',
+        '.MuiCardHeader-title': {
+          color: 'inherit',
+          fontSize: '1.25rem',
+        },
+        '.MuiCardHeader-subheader': {
+          color: 'inherit',
+        },
+      }}
     >
       <Div sx={{ p: 3, pb: 0 }}>
         <RevenueChart />

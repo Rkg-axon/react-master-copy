@@ -29,7 +29,7 @@ const LatestPosts = ({ scrollHeight }: { scrollHeight?: number }) => {
         />
       }
       contentWrapper={true}
-      contentSx={{ pb: 3 }}
+      contentSx={{ p: 0 }}
     >
       <JumboScrollbar
         autoHeight
