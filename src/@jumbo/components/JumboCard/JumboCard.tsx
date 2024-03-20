@@ -2,14 +2,7 @@ import {
   getBackgroundColorStyle,
   getBackgroundImageStyle,
 } from '@jumbo/utilities/helpers';
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  SxProps,
-  Theme,
-  Typography,
-} from '@mui/material';
+import { Card, CardContent, CardHeader, SxProps, Theme } from '@mui/material';
 import React from 'react';
 
 type JumboCardProps = {
@@ -41,7 +34,6 @@ function JumboCard({
   contentWrapper = false,
   contentSx = {},
   headerSx = {},
-  headerDivider = false,
 }: JumboCardProps) {
   const backgroundColorStyle = getBackgroundColorStyle(bgcolor);
   const colorStyle = textColor ? { color: textColor } : {};
@@ -58,71 +50,28 @@ function JumboCard({
     >
       {reverse &&
         (contentWrapper ? (
-          <CardContent sx={{ px: 0, ...contentSx }}>{children}</CardContent>
+          <CardContent sx={contentSx}>{children}</CardContent>
         ) : (
           children
         ))}
 
       {(title || subheader || action) && (
         <CardHeader
-          title={renderTitle(title, textColor)}
-          subheader={renderSubheader(subheader, textColor)}
+          title={title}
+          subheader={subheader}
           action={action}
-          {...(headerDivider && {
-            borderBottom: 1,
-            borderBottomColor: 'divider',
-          })}
-          sx={{ ...headerSx }}
+          sx={headerSx}
         />
       )}
 
       {!reverse &&
         (contentWrapper ? (
-          <CardContent sx={{ pt: 0, px: 0, ...contentSx }}>
-            {children}
-          </CardContent>
+          <CardContent sx={contentSx}>{children}</CardContent>
         ) : (
           children
         ))}
     </Card>
   );
-}
-
-function renderTitle(title?: string | React.ReactNode, textColor?: string) {
-  if (!title) return null;
-
-  if (typeof title === 'string')
-    return (
-      <Typography
-        fontWeight={'500'}
-        variant={'h3'}
-        {...(textColor && { color: textColor })}
-      >
-        {title}
-      </Typography>
-    );
-
-  return title;
-}
-
-function renderSubheader(
-  subheader?: string | React.ReactNode,
-  textColor?: string
-) {
-  if (!subheader) return null;
-
-  if (typeof subheader === 'string')
-    return (
-      <Typography
-        variant={'h6'}
-        {...(textColor && { color: textColor })}
-        mb={0}
-      >
-        {subheader}
-      </Typography>
-    );
-
-  return subheader;
 }
 
 export { JumboCard };

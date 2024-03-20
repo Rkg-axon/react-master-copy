@@ -20,7 +20,7 @@ function UserSummary() {
       }
       title={t('widgets.title.userSummary')}
       subheader={t('widgets.subheader.userSummary')}
-      bgcolor={['135deg', '#00C4B4']}
+      bgcolor={['#00C4B4']}
     />
   );
 }

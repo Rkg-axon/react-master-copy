@@ -2,19 +2,13 @@ import { FeaturedCard3 } from '@app/_components/cards/FeaturedCard3';
 import { ASSET_AVATARS } from '@app/_utilities/constants/paths';
 import { getAssetPath } from '@app/_utilities/helpers';
 import { JumboDdMenu } from '@jumbo/components/JumboDdMenu';
-import { Avatar, CardHeader } from '@mui/material';
+import { Avatar } from '@mui/material';
 
 function UserProfileCard() {
   return (
     <FeaturedCard3
-      header={
-        <CardHeader
-          action={
-            <JumboDdMenu
-              menuItems={[{ title: 'Profile' }, { title: 'Friends' }]}
-            />
-          }
-        />
+      action={
+        <JumboDdMenu menuItems={[{ title: 'Profile' }, { title: 'Friends' }]} />
       }
       avatar={
         <Avatar

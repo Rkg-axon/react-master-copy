@@ -7,7 +7,7 @@ const ProjectsListCard = ({ scrollHeight }: { scrollHeight?: number }) => {
   const t = useTranslations();
   return (
     <JumboCard title={t('widgets.title.projectsList')} contentWrapper>
-      <JumboScrollbar height={scrollHeight ?? 392}>
+      <JumboScrollbar autoHeight autoHeightMin={392}>
         <ProjectList data={projects} />
       </JumboScrollbar>
     </JumboCard>

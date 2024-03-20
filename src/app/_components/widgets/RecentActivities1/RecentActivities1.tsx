@@ -6,7 +6,10 @@ const RecentActivities1 = ({ scrollHeight }: { scrollHeight?: number }) => {
   const t = useTranslations();
   return (
     <JumboCard title={t('widgets.title.recentActivities')}>
-      <JumboScrollbar height={scrollHeight ? scrollHeight : 480}>
+      <JumboScrollbar
+        autoHeight
+        autoHeightMin={scrollHeight ? scrollHeight : 480}
+      >
         <RecentActivitiesList />
       </JumboScrollbar>
     </JumboCard>

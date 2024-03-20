@@ -14,7 +14,7 @@ const NotificationListComponents = {
   INVITATIONS: InvitationsList,
 };
 
-function LatestNotifications() {
+function LatestNotifications({ scrollHeight }: { scrollHeight?: number }) {
   const t = useTranslations();
   const [value, setValue] = React.useState('notification');
   return (
@@ -35,7 +35,10 @@ function LatestNotifications() {
           <Tab label={'Feeds'} value={'feed'} sx={{ flex: '1 1 auto' }} />
         </TabList>
         <TabPanel value='notification' sx={{ p: 0 }}>
-          <JumboScrollbar height={452}>
+          <JumboScrollbar
+            autoHeight
+            autoHeightMin={scrollHeight ? scrollHeight : 448}
+          >
             {latestNotifications.map((notificationGroupType, index) => {
               const GroupTypeComponent =
                 NotificationListComponents[`${notificationGroupType.type}`];
@@ -51,7 +54,10 @@ function LatestNotifications() {
           </JumboScrollbar>
         </TabPanel>
         <TabPanel value='feed' sx={{ p: 0 }}>
-          <JumboScrollbar height={452}>
+          <JumboScrollbar
+            autoHeight
+            autoHeightMin={scrollHeight ? scrollHeight : 452}
+          >
             <FeedsList
               notifications={latestNotifications[2].records}
               count={latestNotifications[2].total}

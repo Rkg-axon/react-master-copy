@@ -26,7 +26,11 @@ type ProductSalesListProps = {
 const ProductSalesList = ({ products }: ProductSalesListProps) => {
   const { theme } = useJumboTheme();
   return (
-    <JumboScrollbar>
+    <JumboScrollbar
+      autoHeight={true}
+      autoHeightMin={274}
+      hideTracksWhenNotNeeded
+    >
       <Table>
         <TableHead>
           <TableRow>

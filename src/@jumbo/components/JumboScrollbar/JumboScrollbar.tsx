@@ -1,61 +1,91 @@
 'use client';
-import { Div } from '@jumbo/shared';
-import { SxProps, Theme } from '@mui/material';
-import React from 'react';
+import Scrollbars, { ScrollbarProps } from 'react-custom-scrollbars-2';
+import { useJumboTheme } from '../JumboTheme/hooks';
 
-type NumberFunction = () => number;
-
-type JumboScrollbarProps = {
+type JumboScrollbarProps = ScrollbarProps & {
   direction?: 'horizontal' | 'vertical';
   disable?: boolean;
-  height?: number | 'auto' | NumberFunction;
-  width?: number | 'auto' | NumberFunction;
-  children: React.ReactNode;
-  sx?: SxProps<Theme>;
 };
 
-function JumboScrollbar({
-  disable = false,
-  height = 'auto',
-  children,
-  sx = {},
-}: JumboScrollbarProps) {
-  const [showScrollbar, setShowScrollbar] = React.useState(false);
+function JumboScrollbar(props: JumboScrollbarProps) {
+  const { theme } = useJumboTheme();
+  const {
+    direction,
+    renderTrackVertical,
+    renderTrackHorizontal,
+    disable = false,
+    children,
+    ...restProps
+  } = props;
 
-  if (disable) {
-    return children;
+  const scrollbarDirection = direction ?? 'vertical';
+  const scrollbarDisable = disable ?? false;
+
+  if (scrollbarDisable) {
+    return children ?? null;
   }
 
-  let calcHeight: string;
-
-  if (typeof height === 'number') {
-    calcHeight = `${height}px`;
-  } else if (typeof height === 'function') {
-    calcHeight = `${height()}px`;
-  } else if (height === 'auto') {
-    calcHeight = '100px';
-  } else {
-    calcHeight = height;
-  }
-
-  const calculatedSx: SxProps<Theme> = {
-    ...sx,
-    height: calcHeight,
-    overflowY: showScrollbar ? 'scroll' : 'auto',
-  };
-
-  function handleScrollbarVisibility(value: boolean) {
-    setShowScrollbar(value);
-  }
+  const renderTrackProp =
+    scrollbarDirection === 'vertical'
+      ? {
+          renderTrackVertical: (props: any) => {
+            return (
+              <div
+                style={{
+                  ...props.style,
+                  top: '2px',
+                  bottom: '2px',
+                  right: '2px',
+                  borderRadius: '3px',
+                  ...(theme.direction === 'rtl'
+                    ? { right: 'auto', left: '2px' }
+                    : {}),
+                }}
+                {...props}
+              />
+            );
+          },
+        }
+      : {
+          renderTrackHorizontal: (props: any) => {
+            return (
+              <div
+                {...props}
+                style={{
+                  ...props.style,
+                  left: '50%',
+                  width: '100px',
+                  top: 0,
+                  transform: 'translateX(-50%)',
+                }}
+              />
+            );
+          },
+        };
 
   return (
-    <Div
-      onMouseEnter={() => handleScrollbarVisibility(true)}
-      onMouseLeave={() => handleScrollbarVisibility(false)}
-      sx={{ ...calculatedSx }}
+    <Scrollbars
+      universal
+      autoHide
+      autoHideTimeout={2000}
+      renderView={(props) => (
+        <div
+          {...props}
+          style={
+            theme.direction === 'rtl'
+              ? {
+                  ...props?.style,
+                  marginLeft: '-17px',
+                  marginRight: 0,
+                }
+              : { ...props?.style }
+          }
+        />
+      )}
+      {...restProps}
     >
       {children}
-    </Div>
+    </Scrollbars>
   );
 }
 

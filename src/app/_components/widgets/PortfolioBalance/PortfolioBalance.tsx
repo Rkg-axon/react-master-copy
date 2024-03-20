@@ -20,6 +20,7 @@ const PortfolioBalance = () => {
             <BalanceSummary
               amount={'$179,626'}
               trend={{ percentage: 13, direction: 'up' }}
+              label='Overall Balance'
             />
             <ButtonStack>
               <Button variant={'contained'} color={'secondary'}>
@@ -47,6 +48,7 @@ const PortfolioBalance = () => {
               variant='determinate'
               color='warning'
               value={40}
+              sx={{ mb: 0 }}
             />
           </Grid>
         </Stack>

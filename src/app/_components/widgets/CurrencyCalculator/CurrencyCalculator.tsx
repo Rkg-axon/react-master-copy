@@ -1,5 +1,4 @@
 'use client';
-import { getCustomDateTime } from '@app/_utilities/helpers';
 import { JumboCard } from '@jumbo/components';
 import {
   InputLabel,
@@ -49,7 +48,7 @@ const CurrencyCalculator = () => {
   return (
     <JumboCard
       title={t('widgets.title.currencyCal')}
-      subheader={getCustomDateTime()}
+      subheader={'05:58 am | March 20, 2024'}
       contentWrapper={true}
       contentSx={{ p: 3 }}
     >

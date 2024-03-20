@@ -21,6 +21,7 @@ const VisitorsOnMap = () => {
           height: '100%',
           width: '100%',
         },
+        m: 3,
       }}
     >
       <VectorMap

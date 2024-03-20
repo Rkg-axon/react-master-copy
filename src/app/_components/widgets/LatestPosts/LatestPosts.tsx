@@ -6,7 +6,7 @@ import { Article, Refresh } from '@mui/icons-material';
 import { useTranslations } from 'next-intl';
 import { PostsList } from './components';
 
-const LatestPosts = ({ scrollHeight }: { scrollHeight: number }) => {
+const LatestPosts = ({ scrollHeight }: { scrollHeight?: number }) => {
   const t = useTranslations();
   return (
     <JumboCard
@@ -31,7 +31,10 @@ const LatestPosts = ({ scrollHeight }: { scrollHeight: number }) => {
       contentWrapper={true}
       contentSx={{ pb: 3 }}
     >
-      <JumboScrollbar height={scrollHeight ? scrollHeight : 334}>
+      <JumboScrollbar
+        autoHeight
+        autoHeightMin={scrollHeight ? scrollHeight : 334}
+      >
         <PostsList />
       </JumboScrollbar>
     </JumboCard>

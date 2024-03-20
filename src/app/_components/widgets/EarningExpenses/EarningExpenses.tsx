@@ -52,6 +52,7 @@ function EarningExpenses() {
             </Button>
           </ButtonStack>
         }
+        sx={{ py: 3 }}
       />
       <EarningExpensesChart activeChart={activeChart} />
     </Card>

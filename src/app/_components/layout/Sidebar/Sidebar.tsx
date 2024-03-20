@@ -16,7 +16,7 @@ function Sidebar({ menus }: SidebarProps) {
   return (
     <React.Fragment>
       <SidebarHeader />
-      <JumboScrollbar height={800}>
+      <JumboScrollbar>
         <Suspense
           fallback={
             <Div

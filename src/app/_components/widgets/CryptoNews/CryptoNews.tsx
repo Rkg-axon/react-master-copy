@@ -55,9 +55,14 @@ const CryptoNews = () => {
           />
         }
         spacing={3}
+        sx={{
+          borderBottom: 1,
+          borderBottomColor: 'divider',
+        }}
       />
       <CardContent
         sx={{
+          p: 0,
           '&:last-child': {
             pb: 2,
           },
@@ -69,7 +74,7 @@ const CryptoNews = () => {
           },
         }}
       >
-        <JumboScrollbar height={585}>
+        <JumboScrollbar autoHeight autoHeightMin={585}>
           <CryptoNewsList items={visibleNewsItems} />
         </JumboScrollbar>
       </CardContent>

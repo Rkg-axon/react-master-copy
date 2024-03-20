@@ -1,3 +1,4 @@
+import { getBackgroundColorStyle } from '@jumbo/utilities/helpers';
 import { Card, CardHeader, Typography } from '@mui/material';
 import React from 'react';
 
@@ -14,6 +15,7 @@ function FeaturedCard2({
   avatar,
   bgcolor,
 }: FeaturedCard2Props) {
+  const bgColorStyle = getBackgroundColorStyle(bgcolor);
   return (
     <Card
       sx={{
@@ -32,8 +34,8 @@ function FeaturedCard2({
             left: '-55px',
             width: 185,
             height: 185,
-            backgroundImage: `linear-gradient(${bgcolor?.toString()})`,
             borderRadius: '50%',
+            ...bgColorStyle,
           },
         },
       }}
@@ -50,6 +52,7 @@ function FeaturedCard2({
           )
         }
         subheader={subheader}
+        sx={{ position: 'relative' }}
       />
     </Card>
   );

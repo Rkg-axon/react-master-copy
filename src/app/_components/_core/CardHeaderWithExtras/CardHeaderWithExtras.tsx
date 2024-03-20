@@ -7,6 +7,7 @@ export type CardHeaderWithExtrasProps = CardHeaderProps & {
   count?: number | string;
   extras?: React.ReactNode;
   spacing?: number;
+  divider?: boolean;
 };
 
 function CardHeaderWithExtras({
@@ -16,6 +17,7 @@ function CardHeaderWithExtras({
   count,
   extras,
   spacing = 3,
+  ...restProps
 }: CardHeaderWithExtrasProps) {
   const { theme } = useJumboTheme();
   return (
@@ -32,6 +34,7 @@ function CardHeaderWithExtras({
           <Div>{action}</Div>
         </Stack>
       }
+      {...restProps}
     />
   );
 }

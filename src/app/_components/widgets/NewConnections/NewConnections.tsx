@@ -3,7 +3,7 @@ import { Button } from '@mui/material';
 import { useTranslations } from 'next-intl';
 import { ConnectionsList } from './components';
 
-function NewConnections() {
+function NewConnections({ scrollHeight }: { scrollHeight?: number }) {
   const t = useTranslations();
   return (
     <JumboCard
@@ -16,7 +16,10 @@ function NewConnections() {
       }
       contentWrapper
     >
-      <JumboScrollbar height={278}>
+      <JumboScrollbar
+        autoHeight
+        autoHeightMin={scrollHeight ? scrollHeight : 278}
+      >
         <ConnectionsList />
       </JumboScrollbar>
     </JumboCard>

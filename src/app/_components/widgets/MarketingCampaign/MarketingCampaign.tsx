@@ -32,8 +32,13 @@ const MarketingCampaign = ({ scrollHeight }: { scrollHeight?: number }) => {
           />
         </React.Fragment>
       }
+      contentWrapper={true}
+      contentSx={{ pb: 3 }}
     >
-      <JumboScrollbar height={scrollHeight ? scrollHeight : 356}>
+      <JumboScrollbar
+        autoHeight
+        autoHeightMin={scrollHeight ? scrollHeight : 356}
+      >
         <CampaignsList />
       </JumboScrollbar>
     </JumboCard>

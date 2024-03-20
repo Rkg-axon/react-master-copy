@@ -6,7 +6,6 @@ import {
   ListItemText,
   Typography,
 } from '@mui/material';
-import Divider from '@mui/material/Divider';
 import Stack from '@mui/material/Stack';
 import { ArticleType } from '../../data';
 
@@ -15,10 +14,7 @@ type ArticleItemProps = {
 };
 const ArticleItem = ({ data }: ArticleItemProps) => {
   return (
-    <ListItem
-      alignItems='flex-start'
-      sx={{ p: (theme) => theme.spacing(1, 3) }}
-    >
+    <ListItem alignItems='flex-start' sx={{ p: 1 }}>
       <ListItemAvatar sx={{ mr: 2, overflow: 'hidden', borderRadius: 2 }}>
         <img
           width={'140'}
@@ -42,26 +38,14 @@ const ArticleItem = ({ data }: ArticleItemProps) => {
           </Typography>
         }
         secondary={
-          <Typography component={'div'}>
-            <Stack
-              direction='row'
-              divider={
-                <Divider
-                  orientation='vertical'
-                  flexItem
-                  sx={{ height: 13, alignSelf: 'center' }}
-                />
-              }
-              spacing={1}
-            >
-              <Span sx={{ color: 'text.secondary', fontSize: 12 }}>
-                {data.date}
-              </Span>
-              <Span sx={{ fontSize: 12 }}>
-                {data.views} <Span sx={{ color: 'text.secondary' }}>views</Span>
-              </Span>
-            </Stack>
-          </Typography>
+          <Stack component={'span'} direction='row' spacing={1}>
+            <Span sx={{ color: 'text.secondary', fontSize: 12 }}>
+              {data.date}
+            </Span>
+            <Span sx={{ fontSize: 12 }}>
+              {data.views} <Span sx={{ color: 'text.secondary' }}>views</Span>
+            </Span>
+          </Stack>
         }
       />
     </ListItem>
