@@ -69,7 +69,7 @@ const PropertiesList = () => {
           },
         }}
       >
-        <JumboScrollbar height={585}>
+        <JumboScrollbar autoHeight autoHeightMin={554}>
           <Properties items={visibleItems} />
         </JumboScrollbar>
       </CardContent>

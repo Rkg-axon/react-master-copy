@@ -15,7 +15,10 @@ function RecentActivities({ scrollHeight }: RecentActivitiesProps) {
       action={<Chip color={'warning'} size={'small'} label={'Last 20 days'} />}
       contentWrapper={true}
     >
-      <JumboScrollbar height={scrollHeight ? scrollHeight : 278}>
+      <JumboScrollbar
+        autoHeight
+        autoHeightMin={scrollHeight ? scrollHeight : 278}
+      >
         <ActivitiesList />
       </JumboScrollbar>
     </JumboCard>

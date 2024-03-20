@@ -14,7 +14,10 @@ const CurrentProjectsList = ({ scrollHeight }: { scrollHeight?: number }) => {
       headerSx={{ borderBottom: 1, borderBottomColor: 'divider' }}
       sx={{ p: 0 }}
     >
-      <JumboScrollbar height={scrollHeight ? scrollHeight : 356}>
+      <JumboScrollbar
+        autoHeight
+        autoHeightMin={scrollHeight ? scrollHeight : 356}
+      >
         <ProjectsList />
       </JumboScrollbar>
     </JumboCard>

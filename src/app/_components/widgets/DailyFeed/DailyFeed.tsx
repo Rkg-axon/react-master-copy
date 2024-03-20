@@ -17,7 +17,10 @@ const DailyFeed = ({ scrollHeight }: { scrollHeight?: number }) => {
       title={t('widgets.title.dailyFeed')}
       action={<Chip label={'23 New Feeds'} size={'small'} color={'warning'} />}
     >
-      <JumboScrollbar height={scrollHeight ? scrollHeight : 498}>
+      <JumboScrollbar
+        autoHeight
+        autoHeightMin={scrollHeight ? scrollHeight : 498}
+      >
         <List disablePadding>
           {dailyFeed.map((feed, index) => (
             <FeedItem key={index} feed={feed} />

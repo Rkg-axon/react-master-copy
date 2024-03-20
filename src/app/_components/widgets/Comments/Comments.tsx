@@ -13,7 +13,10 @@ const Comments = ({ scrollHeight }: { scrollHeight?: number }) => {
       }
       headerSx={{ borderBottom: 1, borderBottomColor: 'divider' }}
     >
-      <JumboScrollbar height={scrollHeight ? scrollHeight : 460}>
+      <JumboScrollbar
+        autoHeight
+        autoHeightMin={scrollHeight ? scrollHeight : 460}
+      >
         <CommentsList />
       </JumboScrollbar>
     </JumboCard>

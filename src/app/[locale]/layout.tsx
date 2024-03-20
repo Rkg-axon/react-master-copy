@@ -8,8 +8,8 @@ import { unstable_setRequestLocale } from 'next-intl/server';
 import { Params } from 'next/dist/shared/lib/router/utils/route-matcher';
 import { Footer, Header, Sidebar } from '../_components/layout';
 import { CONFIG } from '../_config';
+
 import '../_themes/assets/fonts/noir-pro/styles.css';
-import '../_utilities/style/scrollbar.css';
 import '../_utilities/style/style.css';
 
 export function generateStaticParams() {

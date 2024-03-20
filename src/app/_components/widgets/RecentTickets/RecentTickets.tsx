@@ -6,7 +6,7 @@ const RecentTickets = () => {
   const t = useTranslations();
   return (
     <JumboCard title={t('widgets.title.recentTicket')}>
-      <JumboScrollbar height={280}>
+      <JumboScrollbar autoHeight autoHeightMin={284}>
         <RecentTicketsList />
       </JumboScrollbar>
     </JumboCard>

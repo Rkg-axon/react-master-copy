@@ -55,7 +55,11 @@ const WeeklySales = () => {
       sx={{ p: 0 }}
     >
       {showChart ? (
-        <JumboScrollbar>
+        <JumboScrollbar
+          autoHeight={true}
+          autoHeightMin={334}
+          hideTracksWhenNotNeeded
+        >
           <ChartReport data={selectedProducts} />
         </JumboScrollbar>
       ) : (

@@ -9,7 +9,7 @@ const UserPhotos = () => {
   const t = useTranslations();
   return (
     <JumboCard title={t('widgets.title.pictures')} sx={{ p: 0 }}>
-      <JumboScrollbar>
+      <JumboScrollbar autoHeight autoHeightMin={358}>
         <Div sx={{ px: 3 }}>
           <ImageList
             cols={3}

@@ -69,7 +69,7 @@ const CryptoNews = () => {
           },
         }}
       >
-        <JumboScrollbar height={585}>
+        <JumboScrollbar autoHeight autoHeightMin={585}>
           <CryptoNewsList items={visibleNewsItems} />
         </JumboScrollbar>
       </CardContent>

@@ -13,7 +13,10 @@ const PopularArticles = ({ scrollHeight }: { scrollHeight?: number }) => {
       contentWrapper
       contentSx={{ px: 3 }}
     >
-      <JumboScrollbar height={scrollHeight ? scrollHeight : 395}>
+      <JumboScrollbar
+        autoHeight
+        autoHeightMin={scrollHeight ? scrollHeight : 395}
+      >
         <ArticlesList />
       </JumboScrollbar>
     </JumboCard>

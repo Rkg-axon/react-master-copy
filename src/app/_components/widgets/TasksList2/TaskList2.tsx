@@ -62,7 +62,10 @@ const TasksList2 = ({ scrollHeight }: { scrollHeight?: number }) => {
         }
         spacing={3}
       />
-      <JumboScrollbar height={360}>
+      <JumboScrollbar
+        autoHeight
+        autoHeightMin={scrollHeight ? scrollHeight : 392}
+      >
         {visibleTasks.map((task) => (
           <TaskItem key={task.id} item={task} />
         ))}

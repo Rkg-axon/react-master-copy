@@ -46,7 +46,10 @@ const TaskListExpandable = ({ scrollHeight }: TaskListExpandableProps) => {
       }}
       sx={{ p: 0 }}
     >
-      <JumboScrollbar height={scrollHeight ? scrollHeight : 392}>
+      <JumboScrollbar
+        autoHeight
+        autoHeightMin={scrollHeight ? scrollHeight : 392}
+      >
         <TaskList tasks={filteredTasks} />
       </JumboScrollbar>
     </JumboCard>
