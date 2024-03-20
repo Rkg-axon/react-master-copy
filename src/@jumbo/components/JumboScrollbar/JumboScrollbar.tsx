@@ -80,12 +80,6 @@ function JumboScrollbar(props: JumboScrollbarProps) {
           }
         />
       )}
-      // renderTrackVertical={(props) => (
-      //   <div {...props} className='track-vertical' />
-      // )}
-      // renderThumbVertical={(props) => (
-      //   <div {...props} className='thumb-vertical' />
-      // )}
       {...restProps}
     >
       {children}
