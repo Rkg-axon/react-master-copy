@@ -94,7 +94,7 @@ function renderTitle(title?: string | React.ReactNode, textColor?: string) {
   if (typeof title === 'string')
     return (
       <Typography
-        fontWeight={'500'}
+        fontWeight={'400'}
         variant={'h3'}
         {...(textColor && { color: textColor })}
       >

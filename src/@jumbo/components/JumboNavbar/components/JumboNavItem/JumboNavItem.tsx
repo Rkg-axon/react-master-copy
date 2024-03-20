@@ -1,4 +1,3 @@
-import { Theme } from '@emotion/react';
 import { Icon } from '@jumbo/components/Icon';
 import { Link } from '@jumbo/shared';
 import { NavbarItem } from '@jumbo/types';
@@ -8,8 +7,9 @@ import {
   ListItemIcon,
   ListItemText,
   SxProps,
-  ThemeOptions,
+  Theme,
 } from '@mui/material';
+import { ThemeOptions } from '@mui/system';
 import { useTranslations } from 'next-intl';
 import { useJumboNavItemSx, useJumboNavbar } from '../../hooks';
 type JumboNavItemProps = {
@@ -42,7 +42,7 @@ function JumboNavItem({ item, isNested }: JumboNavItemProps) {
           p: (theme: ThemeOptions) =>
             !miniAndClosed
               ? typeof theme.spacing === 'function'
-                ? theme.spacing(1)
+                ? theme.spacing(1, 3.75)
                 : 0
               : 0,
           ...(miniAndClosed ? { justifyContent: 'center' } : {}),
@@ -54,7 +54,7 @@ function JumboNavItem({ item, isNested }: JumboNavItemProps) {
           {isNested ? (
             <CircleIcon sx={{ fontSize: 6, ml: 1 }} />
           ) : (
-            <Icon name={item.icon} />
+            <Icon name={item.icon} sx={{ fontSize: 20 }} />
           )}
         </ListItemIcon>
         {!miniAndClosed && (

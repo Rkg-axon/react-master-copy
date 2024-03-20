@@ -27,7 +27,6 @@ function FeaturedCard3({
   contentSx,
   bgcolor,
   textColor,
-  headHeight = 250,
 }: FeaturedCard3Props) {
   const bgColorStyle = getBackgroundColorStyle(bgcolor);
   const colorStyle = textColor ? { color: textColor } : {};
@@ -38,26 +37,24 @@ function FeaturedCard3({
         <CardContent
           sx={{
             textAlign: 'center',
-
-            ...(headHeight ? { height: headHeight } : {}),
           }}
         >
           {avatar}
           {renderTitle(title, textColor)}
           {renderSubheader(subheader, textColor)}
         </CardContent>
-        {children && (
-          <CardContent
-            sx={{
-              textAlign: 'center',
-              bgcolor: (theme) => theme.palette.action.hover,
-              ...contentSx,
-            }}
-          >
-            {children}
-          </CardContent>
-        )}
       </Div>
+      {children && (
+        <CardContent
+          sx={{
+            textAlign: 'center',
+            bgcolor: (theme) => theme.palette.action.hover,
+            ...contentSx,
+          }}
+        >
+          {children}
+        </CardContent>
+      )}
     </Card>
   );
 }

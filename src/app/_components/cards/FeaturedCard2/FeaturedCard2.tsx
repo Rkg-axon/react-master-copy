@@ -50,6 +50,7 @@ function FeaturedCard2({
           )
         }
         subheader={subheader}
+        sx={{ position: 'relative' }}
       />
     </Card>
   );

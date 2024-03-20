@@ -63,7 +63,7 @@ const APP_ICONS: Icon[] = [
   {
     name: 'crypto',
     Component: CurrencyExchangeOutlinedIcon,
-    props: { sx: { fontSize: 20 } },
+    props: { sx: { fontSize: 20, } },
   },
   {
     name: 'listing',
