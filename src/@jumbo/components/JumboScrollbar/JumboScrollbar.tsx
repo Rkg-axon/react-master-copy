@@ -66,6 +66,8 @@ function JumboScrollbar(props: JumboScrollbarProps) {
   return (
     <Scrollbars
       universal
+      autoHide
+      autoHideTimeout={2000}
       renderView={(props) => (
         <div
           {...props}
