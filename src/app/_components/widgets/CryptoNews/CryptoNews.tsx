@@ -33,7 +33,7 @@ const CryptoNews = () => {
     setActiveCategory(item);
   }, []);
   return (
-    <JumboCard headerDivider>
+    <JumboCard>
       <CardHeaderWithExtras
         title={t('widgets.title.cryptoNews')}
         count={20}
@@ -55,6 +55,10 @@ const CryptoNews = () => {
           />
         }
         spacing={3}
+        sx={{
+          borderBottom: 1,
+          borderBottomColor: 'divider',
+        }}
       />
       <CardContent
         sx={{

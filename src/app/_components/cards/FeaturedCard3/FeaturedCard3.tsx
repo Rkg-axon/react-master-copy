@@ -2,15 +2,20 @@
 
 import { Div } from '@jumbo/shared';
 import { getBackgroundColorStyle } from '@jumbo/utilities/helpers';
-import { Card, CardContent, SxProps, Theme, Typography } from '@mui/material';
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardHeaderProps,
+  SxProps,
+  Theme,
+  Typography,
+} from '@mui/material';
+import React from 'react';
 
-type FeaturedCard3Props = {
-  header?: React.ReactNode;
-  avatar?: React.ReactNode;
-  title?: string | React.ReactNode;
-  subheader?: string | React.ReactNode;
-  sx?: SxProps<Theme>;
+type FeaturedCard3Props = CardHeaderProps & {
   children?: React.ReactNode;
+  headerSx?: SxProps<Theme>;
   contentSx?: SxProps<Theme>;
   bgcolor?: string[];
   textColor?: string;
@@ -18,13 +23,14 @@ type FeaturedCard3Props = {
 };
 
 function FeaturedCard3({
-  header,
   avatar,
   title,
   subheader,
+  action,
   sx = {},
   children,
   contentSx,
+  headerSx = {},
   bgcolor,
   textColor,
 }: FeaturedCard3Props) {
@@ -33,10 +39,11 @@ function FeaturedCard3({
   return (
     <Card>
       <Div sx={{ ...bgColorStyle, ...colorStyle, ...sx }}>
-        {header}
+        {action && <CardHeader action={action} />}
         <CardContent
           sx={{
             textAlign: 'center',
+            ...headerSx,
           }}
         >
           {avatar}
