@@ -12,10 +12,19 @@ const NewVisitorsThisMonth = () => {
       title={'24,569'}
       subheader={t('widgets.subheader.newVisitors')}
       action={<TrendingUpIcon fontSize={'small'} />}
-      reverse
-      sx={{ borderTop: '4px solid #F39711' }}
       textColor='common.white'
       bgcolor={['#f9cc8a', '#f39711']}
+      reverse
+      sx={{
+        borderTop: '4px solid #F39711',
+        '.MuiCardHeader-title': {
+          color: 'inherit',
+          fontSize: '1.25rem',
+        },
+        '.MuiCardHeader-subheader': {
+          color: 'inherit',
+        },
+      }}
     >
       <Div sx={{ p: 3, pb: 0 }}>
         <EmailCampaignChart />

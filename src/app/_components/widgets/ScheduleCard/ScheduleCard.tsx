@@ -22,7 +22,7 @@ function ScheduleCard() {
             fontSize: 28,
             color: '#475259',
             boxShadow: 2,
-            mb: 2,
+            margin: '0 auto 16px',
           }}
         >
           28
@@ -30,6 +30,8 @@ function ScheduleCard() {
       }
       title='Monday'
       subheader='December 2023'
+      headerSx={{ pt: 0, mt: -0.5 }}
+      contentSx={{ textAlign: 'left' }}
     >
       <ScheduleList />
     </FeaturedCard3>

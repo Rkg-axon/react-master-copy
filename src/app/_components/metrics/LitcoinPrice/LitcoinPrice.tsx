@@ -10,7 +10,7 @@ const LitcoinPrice = () => {
   return (
     <JumboCard
       title={
-        <Typography variant={'h3'} color={'common.white'}>
+        <Typography variant={'h2'} color={'common.white'}>
           $8,726
         </Typography>
       }
@@ -28,8 +28,8 @@ const LitcoinPrice = () => {
         </Typography>
       }
       bgcolor={['#23BCBA', '#45E994']}
+      contentSx={{ pt: 0 }}
       contentWrapper={true}
-      contentSx={{ p: 3 }}
     >
       <ChartTotalRevenue />
     </JumboCard>

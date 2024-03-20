@@ -14,6 +14,7 @@ function RecentActivities({ scrollHeight }: RecentActivitiesProps) {
       title={t('widgets.title.recentActivities')}
       action={<Chip color={'warning'} size={'small'} label={'Last 20 days'} />}
       contentWrapper={true}
+      contentSx={{ px: 0 }}
     >
       <JumboScrollbar
         autoHeight
