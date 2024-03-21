@@ -30,9 +30,10 @@
     "react-custom-scrollbars-2": "^4.5.0",
     "react-d3-speedometer": "^2.2.1",
     "react-dom": "^18",
-    "react-responsive-carousel": "^3.2.23",
+     "react-responsive-carousel": "^3.2.23",
     "react-scrollbars-custom": "^4.1.1",
     "recharts": "^2.12.3"
+    
   },
   "devDependencies": {
     "@types/node": "^20",
