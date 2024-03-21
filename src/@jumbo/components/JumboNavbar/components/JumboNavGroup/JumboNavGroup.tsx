@@ -1,4 +1,5 @@
 'use client';
+import { Icon } from '@jumbo/components/Icon';
 import { Div } from '@jumbo/shared';
 import { MenuItems, NavbarGroup } from '@jumbo/types';
 import { getNavChildren } from '@jumbo/utilities/helpers';
@@ -70,7 +71,9 @@ function JumboNavGroup({ item }: JumboNavGroupProps) {
         >
           {open ? <ArrowDropDownIcon /> : <ArrowRightIcon />}
         </Div>
-
+        <ListItemIcon sx={{ color: 'inherit', minWidth: 32 }}>
+          <Icon name={navItem.icon} fontSize={'small'} />
+        </ListItemIcon>
         <ListItemText
           primary={t(navItem.label)}
           sx={{

@@ -92,6 +92,20 @@ export const mainTheme: JumboThemeOptions = {
       active: '#475259',
       hover: '#F5F7FA',
     },
+    nav: {
+      action: {
+        active: '#7352C7',
+        hover: '#7352C7',
+      },
+      background: {
+        active: '#7352C7',
+        hover: '#E9ECEF',
+      },
+      tick: {
+        active: '#7352C7',
+        hover: '#ADB5BD',
+      },
+    },
   },
   shadows: shadows,
   typography: {

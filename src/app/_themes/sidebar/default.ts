@@ -50,7 +50,7 @@ export const sidebarTheme: JumboThemeOptions = {
         hover: '#7352C7',
       },
       background: {
-        active: 'rgb(73, 52, C7, 0.15)',
+        active: 'rgba(115, 82, 199, 0.15)',
         hover: '#E9ECEF',
       },
       tick: {
