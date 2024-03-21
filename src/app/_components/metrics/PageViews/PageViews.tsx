@@ -24,7 +24,7 @@ const PageViews = () => {
       }
       contentSx={{ textAlign: 'center' }}
       contentWrapper={true}
-      headerDivider={true}
+      headerSx={{ borderBottom: 1, borderBottomColor: 'divider' }}
     >
       <Typography variant={'h2'}>386,290</Typography>
       <Typography variant={'body1'}>

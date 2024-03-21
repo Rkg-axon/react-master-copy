@@ -12,6 +12,8 @@ const Comments = ({ scrollHeight }: { scrollHeight?: number }) => {
         <Chip label={'8 New Comments'} color={'primary'} size={'small'} />
       }
       headerSx={{ borderBottom: 1, borderBottomColor: 'divider' }}
+      contentWrapper
+      contentSx={{ p: 0 }}
     >
       <JumboScrollbar
         autoHeight

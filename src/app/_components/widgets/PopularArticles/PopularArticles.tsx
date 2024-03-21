@@ -11,7 +11,14 @@ const PopularArticles = ({ scrollHeight }: { scrollHeight?: number }) => {
       title={t('widgets.title.popularArticles')}
       action={<JumboDdMenu menuItems={menuItems} />}
       contentWrapper
-      contentSx={{ px: 3 }}
+      contentSx={{ p: 0 }}
+      headerSx={{ pb: 1 }}
+      sx={{
+        '.MuiCardHeader-action': {
+          my: -0.75,
+          mr: -1,
+        },
+      }}
     >
       <JumboScrollbar
         autoHeight

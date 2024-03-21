@@ -47,7 +47,7 @@ export default function ecommerce() {
       </Grid>
 
       <Grid item xs={12} md={6}>
-        <LatestNotifications />
+        <LatestNotifications scrollHeight={387} />
       </Grid>
       <Grid item xs={12}>
         <SiteVisitors />

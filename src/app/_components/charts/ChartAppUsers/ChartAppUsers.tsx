@@ -56,7 +56,7 @@ const ChartAppUsers = () => {
         <ListItemInline>
           <ListItemIcon sx={{ minWidth: 16 }}>
             <FiberManualRecordIcon
-              sx={{ color: COLORS[0], fontSize: '10px' }}
+              sx={{ color: COLORS[0], fontSize: '14px' }}
             />
           </ListItemIcon>
           <ListItemText primary='Android' />
@@ -64,7 +64,7 @@ const ChartAppUsers = () => {
         <ListItemInline>
           <ListItemIcon sx={{ minWidth: 16 }}>
             <FiberManualRecordIcon
-              sx={{ color: COLORS[1], fontSize: '10px' }}
+              sx={{ color: COLORS[1], fontSize: '14px' }}
             />
           </ListItemIcon>
           <ListItemText primary='iOS' />
@@ -72,7 +72,7 @@ const ChartAppUsers = () => {
         <ListItemInline>
           <ListItemIcon sx={{ minWidth: 16 }}>
             <FiberManualRecordIcon
-              sx={{ color: COLORS[2], fontSize: '10px' }}
+              sx={{ color: COLORS[2], fontSize: '14px' }}
             />
           </ListItemIcon>
           <ListItemText primary='Web' />

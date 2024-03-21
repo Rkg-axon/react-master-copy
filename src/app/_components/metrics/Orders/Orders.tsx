@@ -24,7 +24,7 @@ const Orders = () => {
       }
       contentSx={{ textAlign: 'center' }}
       contentWrapper
-      headerDivider={true}
+      headerSx={{ borderBottom: 1, borderBottomColor: 'divider' }}
     >
       <Typography variant={'h2'}>80,790</Typography>
       <Typography variant={'body1'}>

@@ -45,8 +45,9 @@ const CommentItem = ({ item }: { item: CommentType }) => {
           </Typography>
         }
         secondary={item.comment}
+        sx={{ flex: 1 }}
       />
-      <ListItemText sx={{ ml: 2, flexShrink: 0, mt: 1 }}>
+      <ListItemText sx={{ ml: 2, flex: '0 0 auto', mt: 1 }}>
         <Typography variant={'body1'} color={'text.secondary'} fontSize={12}>
           {item.date}
         </Typography>
@@ -56,9 +57,11 @@ const CommentItem = ({ item }: { item: CommentType }) => {
         sx={{
           position: 'absolute',
           right: 24,
-          top: 36,
+          top: '50%',
           transition: 'all 0.2s',
           opacity: 0,
+          transform: 'translateY(-50%)',
+          mt: 0,
         }}
       >
         <Fab size='small' color={'primary'}>

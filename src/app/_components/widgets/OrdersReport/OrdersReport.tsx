@@ -21,6 +21,8 @@ const OrdersReport = ({ chartHeight, subTitle }: OrdersReportProps) => {
         subTitle === null ? subTitle : t(`widgets.subheader.orderReports`)
       }
       sx={{ textAlign: 'center' }}
+      contentWrapper
+      contentSx={{ pt: 0 }}
     >
       <OrdersReportChart height={chartHeight} />
     </JumboCard>

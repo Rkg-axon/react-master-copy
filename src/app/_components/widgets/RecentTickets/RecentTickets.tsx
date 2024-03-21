@@ -5,7 +5,11 @@ import { RecentTicketsList } from './components';
 const RecentTickets = () => {
   const t = useTranslations();
   return (
-    <JumboCard title={t('widgets.title.recentTicket')}>
+    <JumboCard
+      title={t('widgets.title.recentTicket')}
+      contentWrapper
+      contentSx={{ p: 0 }}
+    >
       <JumboScrollbar autoHeight autoHeightMin={284}>
         <RecentTicketsList />
       </JumboScrollbar>

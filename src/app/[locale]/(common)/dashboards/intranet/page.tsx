@@ -1,3 +1,4 @@
+import { MarkerClustererMap } from '@app/_components/maps/MarkerClustererMap';
 import { Orders } from '@app/_components/metrics/Orders';
 import { PageViews } from '@app/_components/metrics/PageViews';
 import { Visits } from '@app/_components/metrics/Visits';
@@ -61,7 +62,7 @@ const Intranet = () => {
         <MarketingCampaign scrollHeight={428} />
       </Grid>
       <Grid item xs={12} md={6}>
-        <LatestNotifications />
+        <LatestNotifications scrollHeight={387} />
       </Grid>
       <Grid item xs={12} md={6}>
         <WeeklySales />
@@ -69,9 +70,9 @@ const Intranet = () => {
       <Grid item xs={12} md={6}>
         <UserPhotos />
       </Grid>
-      {/* <Grid item xs={12}>
+      <Grid item xs={12}>
         <MarkerClustererMap />
-      </Grid> */}
+      </Grid>
       <Grid item xs={12}>
         <PopularProducts />
       </Grid>

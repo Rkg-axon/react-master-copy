@@ -23,7 +23,7 @@ const AuthorItem = ({ author }: AuthorItemProps) => {
     <ListItemButton
       component={'li'}
       sx={{
-        p: 3,
+        px: 3,
         borderBottom: 1,
         borderBottomColor: 'divider',
       }}

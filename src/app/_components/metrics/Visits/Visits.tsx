@@ -23,7 +23,7 @@ const Visits = () => {
       }
       contentWrapper
       contentSx={{ textAlign: 'center' }}
-      headerDivider
+      headerSx={{ borderBottom: 1, borderBottomColor: 'divider' }}
     >
       <Stack direction={'row'} sx={{ maxWidth: 600, mx: 'auto' }}>
         <Div sx={{ width: '50%', textAlign: 'center' }}>

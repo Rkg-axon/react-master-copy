@@ -25,7 +25,7 @@ export default function AboutUs() {
           </Typography>
         }
         contentWrapper
-        contentSx={{ p: 3 }}
+        contentSx={{ pt: 0 }}
       >
         <Grid container spacing={3.75}>
           <Grid item xs={12} md={6}>

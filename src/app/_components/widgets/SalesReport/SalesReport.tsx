@@ -15,6 +15,8 @@ function SalesReport() {
           {t('widgets.title.salesReports')}
         </Typography>
       }
+      contentWrapper
+      contentSx={{ pt: 0 }}
     >
       <Grid container columnSpacing={2}>
         <Grid item xs={5} alignSelf={'center'}>
