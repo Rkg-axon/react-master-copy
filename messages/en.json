@@ -153,5 +153,18 @@
       "projects":"Projects",
       "users":"Users"
     }
+  },
+  "modules":{
+    "title":{
+      "lineChart":"Line Charts",
+      "barChart":"Bar Charts",
+      "areaChart":"Area Charts",
+      "composedChart":"Composed Charts",
+      "scatterChart":"Scatter Charts",
+      "radialChart":"Radial Charts",
+      "radarChart":"Radar Charts",
+      "treemapChart":"Treemap Charts",
+      "pieChart":"Pie Charts"
+    }
   }
 }
