@@ -18,10 +18,19 @@ function TotalRevenueThisYear() {
           sx={{ bgcolor: '#F5F7FA', color: 'grey.800' }}
         />
       }
-      reverse
       textColor='common.white'
-      sx={{ borderTop: '4px solid #E73145' }}
       bgcolor={['#f4a3ac', '#e73145']}
+      reverse
+      sx={{
+        borderTop: '4px solid #E73145',
+        '.MuiCardHeader-title': {
+          color: 'inherit',
+          fontSize: '1.25rem',
+        },
+        '.MuiCardHeader-subheader': {
+          color: 'inherit',
+        },
+      }}
     >
       <Div sx={{ p: 3, pb: 0 }}>
         <OnlineSignupChart />

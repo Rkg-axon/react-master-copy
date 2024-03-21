@@ -38,7 +38,7 @@ const renderLegend = (props: Props): React.ReactNode => {
           <ListItemInline key={`item-${index}`}>
             <ListItemIcon sx={{ minWidth: 16 }}>
               <FiberManualRecordIcon
-                sx={{ color: entry.color, fontSize: '10px' }}
+                sx={{ color: entry.color, fontSize: '14px' }}
               />
             </ListItemIcon>
             <ListItemText primary={entry.value} />

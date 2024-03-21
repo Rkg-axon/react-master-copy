@@ -6,7 +6,11 @@ import { projects } from './data';
 const ProjectsListCard = ({ scrollHeight }: { scrollHeight?: number }) => {
   const t = useTranslations();
   return (
-    <JumboCard title={t('widgets.title.projectsList')} contentWrapper>
+    <JumboCard
+      title={t('widgets.title.projectsList')}
+      contentSx={{ p: 0 }}
+      contentWrapper
+    >
       <JumboScrollbar autoHeight autoHeightMin={392}>
         <ProjectList data={projects} />
       </JumboScrollbar>

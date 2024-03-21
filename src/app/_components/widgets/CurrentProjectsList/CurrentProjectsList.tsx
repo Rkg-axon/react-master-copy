@@ -12,7 +12,8 @@ const CurrentProjectsList = ({ scrollHeight }: { scrollHeight?: number }) => {
       subheader={t('widgets.subheader.currentProjects')}
       action={<Chip color={'warning'} label={'This week'} size={'small'} />}
       headerSx={{ borderBottom: 1, borderBottomColor: 'divider' }}
-      sx={{ p: 0 }}
+      contentWrapper
+      contentSx={{ p: 0 }}
     >
       <JumboScrollbar
         autoHeight

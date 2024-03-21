@@ -1,3 +1,4 @@
+import { Div } from '@jumbo/shared';
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
@@ -44,13 +45,15 @@ const WordOfTheDay1 = () => {
         >
           <VolumeUpIcon fontSize='medium' />
         </Fab>
-        <Typography my={2.25}>
-          A cryptocurrency wallet is an app that allows cryptocurrency users to
-          store and retrieve their digital assets.
-        </Typography>
-        <Button variant={'contained'} color={'inherit'} disableElevation>
-          Learn More
-        </Button>
+        <Div sx={{ maxWidth: 360, marginInline: 'auto' }}>
+          <Typography my={2.25}>
+            A cryptocurrency wallet is an app that allows cryptocurrency users
+            to store and retrieve their digital assets.
+          </Typography>
+          <Button variant={'contained'} color={'inherit'} disableElevation>
+            Learn More
+          </Button>
+        </Div>
       </CardContent>
     </Card>
   );

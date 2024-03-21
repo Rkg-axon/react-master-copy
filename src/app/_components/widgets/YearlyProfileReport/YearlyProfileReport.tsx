@@ -14,6 +14,8 @@ const YearlyProfileReport = () => {
           {t('widgets.title.yearlyProfileReports')}
         </Typography>
       }
+      contentWrapper
+      contentSx={{ pt: 0 }}
     >
       <Grid container columnSpacing={2}>
         <Grid item xs={8}>

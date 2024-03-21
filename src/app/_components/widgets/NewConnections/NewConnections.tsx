@@ -15,6 +15,7 @@ function NewConnections({ scrollHeight }: { scrollHeight?: number }) {
         </Button>
       }
       contentWrapper
+      contentSx={{ p: 0 }}
     >
       <JumboScrollbar
         autoHeight

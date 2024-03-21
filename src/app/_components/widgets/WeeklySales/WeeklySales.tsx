@@ -52,7 +52,8 @@ const WeeklySales = () => {
           </IconButton>
         </Tooltip>
       }
-      sx={{ p: 0 }}
+      contentWrapper
+      contentSx={{ p: 0 }}
     >
       {showChart ? (
         <JumboScrollbar

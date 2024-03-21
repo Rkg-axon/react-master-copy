@@ -1,8 +1,10 @@
 'use client';
 import { CardHeaderWithExtras } from '@app/_components/_core';
-import { JumboCard, JumboScrollbar, JumboTabs } from '@jumbo/components';
+import { JumboScrollbar, JumboTabs } from '@jumbo/components';
 import { JumboDdMenu } from '@jumbo/components/JumboDdMenu';
 import { Close, MoreHoriz } from '@mui/icons-material';
+import { Card } from '@mui/material';
+import CardContent from '@mui/material/CardContent';
 import { useTranslations } from 'next-intl';
 import React from 'react';
 import { TaskItem } from './components';
@@ -39,7 +41,7 @@ const TasksList2 = ({ scrollHeight }: { scrollHeight?: number }) => {
   });
 
   return (
-    <JumboCard>
+    <Card>
       <CardHeaderWithExtras
         title={t('widgets.title.taskList')}
         count={20}
@@ -61,16 +63,22 @@ const TasksList2 = ({ scrollHeight }: { scrollHeight?: number }) => {
           />
         }
         spacing={3}
+        sx={{
+          borderBottom: 1,
+          borderBottomColor: 'divider',
+        }}
       />
-      <JumboScrollbar
-        autoHeight
-        autoHeightMin={scrollHeight ? scrollHeight : 392}
-      >
-        {visibleTasks.map((task) => (
-          <TaskItem key={task.id} item={task} />
-        ))}
-      </JumboScrollbar>
-    </JumboCard>
+      <CardContent sx={{ p: 0 }}>
+        <JumboScrollbar
+          autoHeight
+          autoHeightMin={scrollHeight ? scrollHeight : 392}
+        >
+          {visibleTasks.map((task) => (
+            <TaskItem key={task.id} item={task} />
+          ))}
+        </JumboScrollbar>
+      </CardContent>
+    </Card>
   );
 };
 

@@ -14,7 +14,7 @@ type ArticleItemProps = {
 };
 const ArticleItem = ({ data }: ArticleItemProps) => {
   return (
-    <ListItem alignItems='flex-start' sx={{ p: 1 }}>
+    <ListItem alignItems='flex-start' sx={{ px: 3 }}>
       <ListItemAvatar sx={{ mr: 2, overflow: 'hidden', borderRadius: 2 }}>
         <img
           width={'140'}

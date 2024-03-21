@@ -1,14 +1,16 @@
 import { SxProps } from '@mui/material';
 import { Theme } from '@mui/system';
+import { useLocale } from 'next-intl';
 import { usePathname } from 'next/navigation';
 import React from 'react';
 import { JumboNavbarContext } from '../components/JumboNavbarProvider/JumboNavbarContext';
 
 function useJumboNavbar() {
   const pathname = usePathname();
+  const locale = useLocale();
   const context = React.useContext(JumboNavbarContext);
   function isActive(path: string) {
-    return pathname === path;
+    return pathname === `${locale ? '/' + locale : ''}${path}`;
   }
 
   return { isActive, ...context };
@@ -16,6 +18,7 @@ function useJumboNavbar() {
 
 function useJumboNavGroupSx() {
   const { theme, miniAndClosed } = useJumboNavbar();
+
   const menuBefore = {
     left: 0,
     top: 0,

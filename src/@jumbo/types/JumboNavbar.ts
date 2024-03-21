@@ -1,4 +1,4 @@
-import { Theme } from '@mui/material';
+import { Palette, Theme } from '@mui/material';
 
 type NavbarContext = {
   items: MenuItems;
@@ -31,6 +31,24 @@ type NavbarSection = {
 type MenuItem = NavbarSection | NavbarGroup | NavbarItem;
 type MenuItems = MenuItem[];
 
+type NavbarTheme = Theme & {
+  palette: Palette & {
+    nav: {
+      action: {
+        active: string;
+        hover: string;
+      };
+      background: {
+        active: string;
+        hover: string;
+      };
+      tick: {
+        active: string;
+        hover: string;
+      };
+    };
+  };
+};
 export {
   type MenuItem,
   type MenuItems,
@@ -38,4 +56,5 @@ export {
   type NavbarGroup,
   type NavbarItem,
   type NavbarSection,
+  type NavbarTheme,
 };

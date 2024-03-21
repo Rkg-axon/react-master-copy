@@ -8,7 +8,11 @@ import { userPhotos } from './data';
 const UserPhotos = () => {
   const t = useTranslations();
   return (
-    <JumboCard title={t('widgets.title.pictures')} sx={{ p: 0 }}>
+    <JumboCard
+      title={t('widgets.title.pictures')}
+      contentWrapper
+      contentSx={{ p: 0 }}
+    >
       <JumboScrollbar autoHeight autoHeightMin={358}>
         <Div sx={{ px: 3 }}>
           <ImageList

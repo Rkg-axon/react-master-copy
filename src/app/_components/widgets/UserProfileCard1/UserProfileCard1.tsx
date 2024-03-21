@@ -1,6 +1,6 @@
 'use client';
 
-import { ASSET_AVATARS } from '@app/_utilities/constants/paths';
+import { ASSET_AVATARS, ASSET_IMAGES } from '@app/_utilities/constants/paths';
 import { JumboBackdrop, JumboCard } from '@jumbo/components';
 import { Div } from '@jumbo/shared';
 import { MoreHoriz } from '@mui/icons-material';
@@ -19,9 +19,10 @@ function UserProfileCard1() {
   return (
     <JumboCard>
       <Div
-        // bgimage={`${ASSET_IMAGES}/event2.jpg`}
         sx={{
           height: 256,
+          position: 'relative',
+          background: `url(${ASSET_IMAGES}/event2.jpg) center center / cover no-repeat`,
         }}
       >
         <JumboBackdrop />

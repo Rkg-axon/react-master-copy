@@ -19,11 +19,12 @@ const RecentTicketItem = ({ item }: RecentTicketItemProps) => {
     <ListItemButton
       component={'li'}
       sx={{
-        p: 1.25,
+        //p: (theme) => theme.spacing(1.25, 3),
+        p: '12px 24px',
         transition: 'all 0.2s',
 
         '&:hover': {
-          boxShadow: `0 3px 10px 0 #999`,
+          boxShadow: `rgba(0, 0, 0, 0.2) 0px 3px 10px 0px`,
           transform: 'translateY(-4px)',
 
           '& .MuiChip-animation': {

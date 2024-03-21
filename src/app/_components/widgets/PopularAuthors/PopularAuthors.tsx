@@ -9,6 +9,8 @@ const PopularAuthors = ({ scrollHeight }: { scrollHeight?: number }) => {
       title={t('widgets.title.popularAuthors')}
       subheader={t('widgets.subheader.popularAuthors')}
       headerSx={{ borderBottom: 1, borderBottomColor: 'divider' }}
+      contentWrapper
+      contentSx={{ p: 0 }}
     >
       <JumboScrollbar
         autoHeight
