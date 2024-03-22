@@ -168,7 +168,8 @@
       "drawingViewMap":"Google map with drawing view",
       "simpleMap":"Simple map",
       "styledMap":"Styled map",
-      "directionsMap":"Map Directions between 2 points"
+      "directionsMap":"Map Directions between 2 points",
+      "overlayMap":"Overlay Map"
     }
   }
 }
