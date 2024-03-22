@@ -164,7 +164,11 @@
       "radialChart":"Radial Charts",
       "radarChart":"Radar Charts",
       "treemapChart":"Treemap Charts",
-      "pieChart":"Pie Charts"
+      "pieChart":"Pie Charts",
+      "drawingViewMap":"Google map with drawing view",
+      "simpleMap":"Simple map",
+      "styledMap":"Styled map",
+      "directionsMap":"Map Directions between 2 points"
     }
   }
 }
