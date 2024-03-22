@@ -24,7 +24,6 @@ const UpgradePlan = () => {
     <FeaturedCard3
       bgcolor={['-135deg', '#E44A77', '#7352C7']}
       textColor='common.white'
-      contentSx={{ p: 0 }}
       avatar={
         <Stack alignItems={'center'}>
           <Stack
