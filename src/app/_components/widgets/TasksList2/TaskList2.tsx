@@ -44,7 +44,6 @@ const TasksList2 = ({ scrollHeight }: { scrollHeight?: number }) => {
     <Card>
       <CardHeaderWithExtras
         title={t('widgets.title.taskList')}
-        count={20}
         extras={
           <JumboTabs
             items={filterTabs}

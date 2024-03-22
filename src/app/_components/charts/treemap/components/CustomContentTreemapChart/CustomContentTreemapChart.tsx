@@ -56,7 +56,7 @@ const CustomContentTreemapChart = () => (
   <JumboCard
     title={'Custom Content Treemap Chart'}
     contentWrapper
-    contentSx={{ backgroundColor: 'background.paper' }}
+    contentSx={{ pt: 0 }}
   >
     <ResponsiveContainer width='100%' height={200}>
       <Treemap

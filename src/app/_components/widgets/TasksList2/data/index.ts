@@ -163,7 +163,7 @@ export const taskCategories: TaskCategoryType[] = [
 export type TaskTagType = {
     id: number;
     name: string;
-    color: string;
+    color: 'warning' | 'error' | 'success' | 'info';
 };
 
 export const taskTags: TaskTagType[] = [
