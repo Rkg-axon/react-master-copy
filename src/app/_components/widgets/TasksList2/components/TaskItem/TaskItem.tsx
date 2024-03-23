@@ -1,4 +1,4 @@
-import { Div } from '@jumbo/shared';
+import { Div } from '@jumbo/shared/';
 import { FiberManualRecord } from '@mui/icons-material';
 import {
   alpha,
@@ -65,7 +65,7 @@ const TaskItem = ({ item }: { item: TaskType }) => {
           if (!tag) return null;
           return (
             <Tooltip title={tag.name} key={index}>
-              <FiberManualRecord sx={{ fontSize: '10px', color: tag.color }} />
+              <FiberManualRecord color={tag.color} sx={{ fontSize: '14px' }} />
             </Tooltip>
           );
         })}

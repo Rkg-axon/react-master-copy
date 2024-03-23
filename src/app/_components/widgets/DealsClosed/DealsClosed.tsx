@@ -1,10 +1,9 @@
 'use client';
 import { ChartDealsClosed } from '@app/_components/charts/ChartDealsClosed';
 import { JumboCard } from '@jumbo/components';
-import { Div } from '@jumbo/shared';
 
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
-import { ListItemIcon, ListItemText } from '@mui/material';
+import { ListItem, ListItemIcon, ListItemText } from '@mui/material';
 import List from '@mui/material/List';
 import { useTranslations } from 'next-intl';
 
@@ -16,7 +15,7 @@ const DealsClosed = () => {
       subheader={t('widgets.subheader.dealsClosed')}
       action={
         <List disablePadding>
-          <Div
+          <ListItem
             sx={{
               width: 'auto',
               display: 'inline-flex',
@@ -25,12 +24,12 @@ const DealsClosed = () => {
           >
             <ListItemIcon sx={{ minWidth: 16 }}>
               <FiberManualRecordIcon
-                sx={{ fontSize: '10px', color: '#1E88E5' }}
+                sx={{ fontSize: '14px', color: '#1E88E5' }}
               />
             </ListItemIcon>
             <ListItemText secondary='Queries' />
-          </Div>
-          <Div
+          </ListItem>
+          <ListItem
             sx={{
               width: 'auto',
               display: 'inline-flex',
@@ -39,11 +38,11 @@ const DealsClosed = () => {
           >
             <ListItemIcon sx={{ minWidth: 16 }}>
               <FiberManualRecordIcon
-                sx={{ color: '#E91E63', fontSize: '10px' }}
+                sx={{ color: '#E91E63', fontSize: '14px' }}
               />
             </ListItemIcon>
             <ListItemText secondary='Closed Deals' />
-          </Div>
+          </ListItem>
         </List>
       }
       sx={{
@@ -53,7 +52,6 @@ const DealsClosed = () => {
         },
       }}
       contentWrapper={true}
-      contentSx={{ p: 3 }}
     >
       <ChartDealsClosed />
     </JumboCard>

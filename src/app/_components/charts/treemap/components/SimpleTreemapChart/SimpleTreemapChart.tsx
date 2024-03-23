@@ -7,10 +7,15 @@ const SimpleTreemapChart = () => (
   <JumboCard
     title={'Simple Treemap Chart'}
     contentWrapper
-    contentSx={{ backgroundColor: 'background.paper' }}
+    contentSx={{ pt: 0 }}
   >
     <ResponsiveContainer width='100%' height={200}>
-      <Treemap data={treemapData} dataKey='size' stroke={'#fff'} fill={'#1e88e5'} />
+      <Treemap
+        data={treemapData}
+        dataKey='size'
+        stroke={'#fff'}
+        fill={'#1e88e5'}
+      />
     </ResponsiveContainer>
   </JumboCard>
 );

@@ -4,7 +4,6 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { Card, CardContent, ListItem, Typography } from '@mui/material';
 import Button from '@mui/material/Button';
 import CardHeader from '@mui/material/CardHeader';
-import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
 import List from '@mui/material/List';
 import Stack from '@mui/material/Stack';
@@ -15,8 +14,10 @@ const YourCurrentPlan = () => {
   const t = useTranslations();
   return (
     <Card>
-      <CardHeader title={t('widgets.title.yourCurrentPlan')} />
-      <Divider />
+      <CardHeader
+        title={t('widgets.title.yourCurrentPlan')}
+        sx={{ borderBottom: 1, borderBottomColor: 'divider' }}
+      />
       <CardContent>
         <Stack direction={'row'} spacing={2}>
           <Grid item xs={7}>
