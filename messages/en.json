@@ -169,7 +169,10 @@
       "simpleMap":"Simple map",
       "styledMap":"Styled map",
       "directionsMap":"Map Directions between 2 points",
-      "overlayMap":"Overlay Map"
+      "overlayMap":"Overlay Map",
+      "popupInfoMap":"Popup Info Map",
+      "streetViewMap":"Sreet View Panorama Map",
+      "clustererMap":"Map with Marker Clusters"
     }
   }
 }
