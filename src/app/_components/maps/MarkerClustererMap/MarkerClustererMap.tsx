@@ -44,7 +44,6 @@ const MarkerClustererMap = ({ padding = false }: { padding: boolean }) => {
       });
     // return () => {
     //   abortController.abort();
-    //   console.log('abort');
     // };
   }, []);
 

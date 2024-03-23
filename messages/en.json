@@ -172,7 +172,8 @@
       "overlayMap":"Overlay Map",
       "popupInfoMap":"Popup Info Map",
       "streetViewMap":"Sreet View Panorama Map",
-      "clustererMap":"Map with Marker Clusters"
+      "clustererMap":"Map with Marker Clusters",
+      "geoLocationMap":"Geo Location Map"
     }
   }
 }
