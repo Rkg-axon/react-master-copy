@@ -7,23 +7,23 @@ import {
 } from '@jumbo/types';
 export const createJumboTheme = (
   mainTheme: JumboThemeOptions,
-  headerTheme: JumboThemeOptions,
-  sidebarTheme: JumboThemeOptions,
-  footerTheme: JumboThemeOptions
+  // headerTheme: JumboThemeOptions,
+  // sidebarTheme: JumboThemeOptions,
+  // footerTheme: JumboThemeOptions
 ) => {
   const theme: JumboThemeConfig = {
     main: mainTheme,
     header: {
       ...mainTheme,
-      ...(headerTheme ?? {}),
+      // ...(headerTheme ?? {}),
     },
     sidebar: {
       ...mainTheme,
-      ...(sidebarTheme ?? {}),
+      // ...(sidebarTheme ?? {}),
     },
     footer: {
       ...mainTheme,
-      ...(footerTheme ?? {}),
+      // ...(footerTheme ?? {}),
     },
   };
   return theme;
