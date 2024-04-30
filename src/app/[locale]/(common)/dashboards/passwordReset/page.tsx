@@ -79,9 +79,7 @@ export const PasswordReset = () => {
                         </Button>
                         <Typography variant='body1' align='center'>
                             Didn’t receive the email?
-                            <Link href='#'>
-                                log in
-                            </Link>
+                            <Link href='#'>log in </Link>
                             <Typography>
                                 <Link href='#'>
                                     <KeyboardBackspaceIcon />Back to login
