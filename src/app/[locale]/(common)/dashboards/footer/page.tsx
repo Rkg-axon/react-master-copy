@@ -28,7 +28,7 @@ const FooterBar = () => {
                                     <RiFacebookFill  color='#fff' size="35px"/>
                                 </MenuItem>
                                 <MenuItem sx={{padding:1, backgroundColor:'#727272', borderRadius:'50%'}}>
-                                    <RiLinkedinFill color='#fff' size="35px"/>
+                                    <RiLinkedinFill color='#fff' size="35px" />
                                 </MenuItem>
                                 <MenuItem sx={{padding:1, backgroundColor:'#727272', borderRadius:'50%'}}>
                                     <RiTwitterFill color='#fff' size="35px"/>
