@@ -34,19 +34,6 @@ import { useMutation, useQuery } from '@tanstack/react-query';
 
 
 export const ForgotPassword = () => {
-    //define a unique key for the query 
-    const forgotPassQueryKey = ['forgot_password'];
-    //mutate function to make request to server
-
-    const fetchForgotPassword = async () => {
-        const  response = await fetch('https');
-        return response.json();
-    };
-
-    const { data , error } = useQuery({
-        queryKey: ['forgot_password'],
-        queryFn: fetchForgotPassword
-    })
 
     return (
         <Div>
@@ -69,6 +56,7 @@ export const ForgotPassword = () => {
                 <Typography
                     variant='body1'
                     mb={5}
+                    textAlign={"center"}
                 >No worries, we'll send your reset instructions</Typography>
                 <FormContainer
                     defaultValues={{
@@ -85,13 +73,14 @@ export const ForgotPassword = () => {
                         />
                         <Button sx={{
                             borderRadius: 100,
+                            marginBottom: 3
                         }} 
                         variant='contained' type={'submit'} >
                             Reset password
                         </Button>
-                        <Typography variant='body1' align='center'>
-                            <Link href='#'>
-                                <KeyboardBackspaceIcon/>Back to login
+                        <Typography>
+                            <Link href='#' display={'flex'} justifyContent={'center'}>
+                                <KeyboardBackspaceIcon sx={{paddingRight:1, color:'#000'}} />Back to login
                             </Link>
                         </Typography>
                     </Stack>

@@ -9,6 +9,7 @@ import { QueryClient, QueryClientProvider, useQuery } from '@tanstack/react-quer
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import NavigationBar from './(common)/dashboards/header/page';
 import FooterBar from './(common)/dashboards/footer/page';
+import { PasswordChange } from './(common)/dashboards/passwordChange/page';
 
 const queryClient = new QueryClient()
 
@@ -19,9 +20,10 @@ export default function Home() {
             <QueryClientProvider client={queryClient}>
                 <NavigationBar/>
                 <FooterBar/>
-                {/* <ForgotPassword /> */}
-                {/* <SetNewPassowrd /> */}
-                {/* <PasswordReset /> */}
+                <ForgotPassword />
+                <SetNewPassowrd />
+                <PasswordReset />
+                <PasswordChange />
                 <ReactQueryDevtools initialIsOpen={true} />
 
             </QueryClientProvider>

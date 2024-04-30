@@ -60,7 +60,7 @@ export const PasswordReset = () => {
                 boxShadow: 2,
             }}
             >
-                <Typography variant='body1' mb={5}>
+                <Typography variant='body1' mb={5} align='center'>
                     we sent a code to
                 </Typography>
                 <FormContainer
@@ -70,7 +70,7 @@ export const PasswordReset = () => {
                 >
 
                     <Stack sx={{ maxWidth: 418, marginInline: 'auto' }} spacing={2}>
-                        <MuiOtpInput length={4} value={otpValue}/>
+                        <MuiOtpInput length={4} value={otpValue} />
                         <Button sx={{
                             borderRadius: 100,
                         }}
@@ -79,12 +79,12 @@ export const PasswordReset = () => {
                         </Button>
                         <Typography variant='body1' align='center'>
                             Didn’t receive the email?
-                            <Link href='#'>log in </Link>
-                            <Typography>
-                                <Link href='#'>
-                                    <KeyboardBackspaceIcon />Back to login
-                                </Link>
-                            </Typography>
+                            <Link href='#'> log in </Link>
+                        </Typography>
+                        <Typography align='center'>
+                            <Link href='#' display={'flex'} justifyContent={'center'}>
+                                <KeyboardBackspaceIcon sx={{paddingRight:1, color:'#000'}} />Back to login
+                            </Link>
                         </Typography>
                     </Stack>
                 </FormContainer>

@@ -59,7 +59,7 @@ export const SetNewPassowrd = () => {
             }}
             >
                 <Typography
-                    variant='body1' mb={5}
+                    variant='body1' mb={5} textAlign={'center'}
                 >Must be at least 8 characters.</Typography>
                 <FormContainer
                     defaultValues={{
@@ -87,9 +87,9 @@ export const SetNewPassowrd = () => {
                             variant='contained' type={'submit'}>
                             Reset password
                         </Button>
-                        <Typography variant='body1' align='center'>
-                            <Link href='#'>
-                                <KeyboardBackspaceIcon />Back to login
+                        <Typography align='center'>
+                            <Link href='#' display={'flex'} justifyContent={'center'}>
+                                <KeyboardBackspaceIcon sx={{paddingRight:1, color:'#000'}} />Back to login
                             </Link>
                         </Typography>
                     </Stack>
